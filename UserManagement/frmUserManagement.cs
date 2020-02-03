@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using CoreApp;
 
@@ -18,11 +19,11 @@ namespace UserManagement
             InitializeComponent();
             rdAdmin.Checked = false;
         }
-        clsUtility Obj = new clsUtility();
+        clsUtility ObjUtil = new clsUtility();
         clsConnection_DAL ObjDAL = new clsConnection_DAL(true);
         string DBName = string.Empty;
         int LogID = 0;
-        bool admin = false;
+        bool admin = true;//false
 
         Image Add = UserManagement.Properties.Resources.B_click;
         public void LoginStatus(int LoginID, bool IsAdmin)
@@ -69,12 +70,12 @@ namespace UserManagement
             //DBName = arr[3].ToString();
             LoadData();
 
-            Obj.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
-            Obj.SetCommandButtonStatus(clsCommon.ButtonStatus.Beginning, admin);
+            ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
+            ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.Beginning, admin);
         }
         private void LoadData()
         {
-            Obj.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
+            ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
             DataTable dt = null;
             if (admin)
             {
@@ -82,14 +83,14 @@ namespace UserManagement
                 //    "CreatedBy,CreatedOn,UpdatedBy,UpdatedOn" +
                 //    " from " + DBName + ".[dbo].[UserManagement]");
                 //dt = ObjDAL.ExecuteSelectStatement("select ID,UserName,Password,(case when IsAdmin=1 then 'Admin'when IsAdmin=0 then 'Limited User'end)as 'IsAdmin'" +
-                dt = ObjDAL.ExecuteSelectStatement("select ID,UserName,Password,SecurityQuestion,Answer,(case when IsAdmin=1 then 'Admin'when IsAdmin=0 then 'Limited User'end)as 'AccountType'" +
-                    ",(case when IsBlock=1 then 'Yes'when isnull(IsBlock,0)=0 then 'No'end)as 'IsBlock'" +
+                dt = ObjDAL.ExecuteSelectStatement("select ID,UserName,[Password],ISNULL(EmailID,'') AS EmailID,SecurityQuestion,Answer,(CASE WHEN IsAdmin=1 THEN 'Admin'WHEN IsAdmin=0 THEN 'Limited User'END)as 'AccountType'" +
+                    ",(CASE WHEN IsBlock=1 THEN 'Yes'WHEN ISNULL(IsBlock,0)=0 THEN 'No'END)as 'IsBlock'" +
                     " from " + DBName + ".[dbo].[UserManagement]");
             }
             else
             {
-                dt = ObjDAL.GetDataCol(DBName + ".dbo.UserManagement", "ID,UserName,Password,SecurityQuestion,Answer," +
-                    "(case when IsAdmin=1 then 'Admin'when IsAdmin=0 then 'Limited User'end)as 'AccountType'", "ID=" + LogID, "ID");
+                dt = ObjDAL.GetDataCol(DBName + ".dbo.UserManagement", "ID,UserName,[Password],SecurityQuestion,Answer,ISNULL(EmailID,'') AS EmailID," +
+                    "(CASE WHEN IsAdmin=1 THEN 'Admin'WHEN IsAdmin=0 THEN 'Limited User'END)as 'AccountType'", "ID=" + LogID, "ID");
             }
             if (dt != null && dt.Rows.Count > 0)
             {
@@ -114,46 +115,46 @@ namespace UserManagement
                 rdBlock.Enabled = false;
                 ClearAll();
                 LoadData();
-                Obj.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterCancel, admin);
+                ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterCancel, admin);
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (Validate())
+            if (Validateform())
             {
                 if (DuplicateUser(ID))
                 {
-                    string pass = Obj.Encrypt(txtPassword.Text, true);
+                    string pass = ObjUtil.Encrypt(txtPassword.Text, true);
                     ObjDAL.UpdateColumnData("UserName", SqlDbType.NVarChar, txtUserName.Text);
                     ObjDAL.UpdateColumnData("Password", SqlDbType.NVarChar, pass);
+                    ObjDAL.UpdateColumnData("EmailID", SqlDbType.VarChar, txtEmail.Text);
                     ObjDAL.UpdateColumnData("SecurityQuestion", SqlDbType.NVarChar, cmbSecurity.SelectedItem.ToString());
-                    ObjDAL.UpdateColumnData("Answer", SqlDbType.NVarChar, Obj.Encrypt(txtAsnwer.Text.Trim(), true));
-                    if (rdAdmin.Checked)
+                    ObjDAL.UpdateColumnData("Answer", SqlDbType.NVarChar, ObjUtil.Encrypt(txtAsnwer.Text.Trim(), true));
+                    //if (rdAdmin.Checked)
+                    //{
+                    //    ObjDAL.UpdateColumnData("IsAdmin", SqlDbType.Bit, 1);
+                    //}
+                    //else
+                    //{
+                    //    ObjDAL.UpdateColumnData("IsAdmin", SqlDbType.Bit, 0);
+                    //    if (admin == false)
+                    //    {
+                    //        admin = false;
+                    //        clsUtility.IsAdmin = admin;
+                    //    }
+                    //}
+                    ObjDAL.UpdateColumnData("IsAdmin", SqlDbType.Bit, rdAdmin.Checked == true ? 1 : 0);
+                    if (rdAdmin.Checked == false)
                     {
-                        ObjDAL.UpdateColumnData("IsAdmin", SqlDbType.Bit, 1);
-                    }
-                    else
-                    {
-                        ObjDAL.UpdateColumnData("IsAdmin", SqlDbType.Bit, 0);
-                        if (admin == false)
-                        {
-                            admin = false;
-                            clsUtility.IsAdmin = admin;
-                        }
+                        admin = false;
+                        clsUtility.IsAdmin = admin;
                     }
                     if (IsAdmin())
                     {
                         if (CountofAdmin())
                         {
-                            if (rdBlock.Checked)
-                            {
-                                ObjDAL.UpdateColumnData("IsBlock", SqlDbType.Bit, 1);
-                            }
-                            else
-                            {
-                                ObjDAL.UpdateColumnData("IsBlock", SqlDbType.Bit, 0);
-                            }
+                            ObjDAL.UpdateColumnData("IsBlock", SqlDbType.Bit, rdBlock.Checked == true ? 1 : 0);
                         }
                         else
                         {
@@ -179,42 +180,17 @@ namespace UserManagement
                     }
                     else
                     {
-                        if (rdBlock.Checked)
-                        {
-                            ObjDAL.UpdateColumnData("IsBlock", SqlDbType.Bit, 1);
-                        }
-                        else
-                        {
-                            ObjDAL.UpdateColumnData("IsBlock", SqlDbType.Bit, 0);
-                        }
+                        ObjDAL.UpdateColumnData("IsBlock", SqlDbType.Bit, rdBlock.Checked == true ? 1 : 0);
                     }
-                    //else
-                    //{
-                    //    if (CountofAdmin())
-                    //    {                                                       
-                    //        ObjDAL.UpdateColumnData("IsAdmin", SqlDbType.Bit, 0);
-                    //        if (admin == false)
-                    //        {
-                    //            admin = false;
-                    //            clsUtility.IsAdmin = admin;
-                    //        }
-                    //    }
-                    //    else
-                    //    {
-                    //        clsUtility.ShowInfoMessage("'" + UserName + "' user is not Updated\n Because atleast one User is Administrator ", clsUtility.strProjectTitle);
-                    //        grpAccount.Focus();
-                    //        ObjDAL.ResetData();
-                    //        return;
-                    //    }
-                    //}
-                    if (UserName != txtUserName.Text.Trim() || txtVerifyPassword.Text.Trim() != Obj.Decrypt(pass, true) || rdAdmin.Checked || rdLimitedUser.Checked)
+
+                    if (UserName != txtUserName.Text.Trim() || txtVerifyPassword.Text.Trim() != ObjUtil.Decrypt(pass, true) || rdAdmin.Checked || rdLimitedUser.Checked)
                     {
                         ObjDAL.UpdateColumnData("UpdatedOn", SqlDbType.DateTime, DateTime.Now);
                         ObjDAL.UpdateColumnData("UpdatedBy", SqlDbType.Int, LogID); //if LogID=0 then Test Admin else user
                     }
                     if (ObjDAL.UpdateData(DBName + ".dbo.UserManagement", "UserName='" + UserName + "'") > 0)
                     {
-                        Obj.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterUpdate, admin);
+                        ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterUpdate, admin);
                         LoadData();
                         ClearAll();
                         clsUtility.ShowInfoMessage("'" + UserName + "' user is Updated", clsUtility.strProjectTitle);
@@ -228,7 +204,7 @@ namespace UserManagement
                 }
                 else
                 {
-                    clsUtility.ShowErrorMessage("'" + txtUserName.Text + "' User is already exist..", clsUtility.strProjectTitle);
+                    clsUtility.ShowErrorMessage("'" + txtUserName.Text + "' UserName OR EmailID is already exist..", clsUtility.strProjectTitle);
                     txtUserName.Focus();
                     ObjDAL.ResetData();
                 }
@@ -242,28 +218,6 @@ namespace UserManagement
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //if (CountofAdmin())
-            //{
-            //    DialogResult d = MessageBox.Show("Are you sure want to delete '" + txtUserName.Text + "' user ", clsUtility.strProjectTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            //    if (d == DialogResult.Yes)
-            //    {
-            //        if (ObjDAL.DeleteData(DBName + ".dbo.UserManagement", "UserName='" + txtUserName.Text + "'") > 0)
-            //        {
-            //            clsUtility.ShowInfoMessage("'" + txtUserName.Text + "' user is deleted  ", clsUtility.strProjectTitle);
-            //            ClearAll();
-            //            LoadData();
-            //            Obj.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterDelete, admin);
-            //        }
-            //        else
-            //        {
-            //            clsUtility.ShowErrorMessage("'" + txtUserName.Text + "' user is not deleted  ", clsUtility.strProjectTitle);
-            //        }
-            //    }
-            //}
-            //else
-            //{
-            //    clsUtility.ShowErrorMessage("'" + txtUserName.Text + "' user is not deleted\n Because only one User is Administrator ", clsUtility.strProjectTitle);
-            //}
             if (clsUtility.LoginID == ID)
             {
                 clsUtility.ShowInfoMessage(dataGridView1.SelectedRows[0].Cells["UserName"].Value.ToString() + " user is not deleted " + Environment.NewLine + " because its already login..", clsUtility.strProjectTitle);
@@ -290,7 +244,7 @@ namespace UserManagement
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            Obj.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterEdit, admin);
+            ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterEdit, admin);
             grpUserDetail.Enabled = true;
             if (admin)
             {
@@ -306,21 +260,24 @@ namespace UserManagement
             txtUserName.Focus();
             txtUserName.SelectionStart = txtUserName.MaxLength;
         }
-        private bool Validate()
+        private bool Validateform()
         {
-            if (Obj.IsControlTextEmpty(txtUserName))
+            string EId = @"^[a-z][a-z|0-9|]*([_][a-z|0-9]+)*([.][a-z|" +
+   @"0-9]+([_][a-z|0-9]+)*)?@[a-z][a-z|0-9|]*\.([a-z]" +
+   @"[a-z|0-9]*(\.[a-z][a-z|0-9]*)?)$";
+            if (ObjUtil.IsControlTextEmpty(txtUserName))
             {
                 clsUtility.ShowInfoMessage("Enter User Name            ", clsUtility.strProjectTitle);
                 txtUserName.Focus();
                 return false;
             }
-            else if (Obj.IsControlTextEmpty(txtPassword))
+            else if (ObjUtil.IsControlTextEmpty(txtPassword))
             {
                 clsUtility.ShowInfoMessage("Enter Password             ", clsUtility.strProjectTitle);
                 txtPassword.Focus();
                 return false;
             }
-            else if (Obj.IsControlTextEmpty(txtVerifyPassword))
+            else if (ObjUtil.IsControlTextEmpty(txtVerifyPassword))
             {
                 clsUtility.ShowInfoMessage("Enter Verify Password             ", clsUtility.strProjectTitle);
                 txtVerifyPassword.Focus();
@@ -332,16 +289,37 @@ namespace UserManagement
                 txtPassword.Focus();
                 return false;
             }
+            else if (ObjUtil.IsControlTextEmpty(txtEmail))
+            {
+                clsUtility.ShowInfoMessage("Enter E-Mail Address            ", clsUtility.strProjectTitle);
+                txtEmail.Focus();
+                return false;
+            }
+            else if (!Regex.Match(txtEmail.Text, EId).Success)
+            {
+                clsUtility.ShowInfoMessage("Enter Valid E-Mail Address.", clsUtility.strProjectTitle);
+                txtEmail.Focus();
+                return false;
+            }
+            else if (ObjUtil.IsControlTextEmpty(cmbSecurity))
+            {
+                clsUtility.ShowInfoMessage("Select Security question for password retrival.", clsUtility.strProjectTitle);
+                cmbSecurity.Focus();
+                return false;
+            }
+            else if (ObjUtil.IsControlTextEmpty(txtAsnwer))
+            {
+                clsUtility.ShowInfoMessage("Enter Security's question.", clsUtility.strProjectTitle);
+                txtAsnwer.Focus();
+                return false;
+            }
             else if (rdAdmin.Checked == false && rdLimitedUser.Checked == false)
             {
                 clsUtility.ShowInfoMessage("Select Account Type      ", clsUtility.strProjectTitle);
                 grpAccount.Focus();
                 return false;
             }
-            else
-            {
-                return true;
-            }
+            return true;
         }
         private bool DuplicateUser(int i)
         {
@@ -349,10 +327,14 @@ namespace UserManagement
             if (i == 0)
             {
                 a = ObjDAL.CountRecords(DBName + ".dbo.UserManagement", "UserName='" + txtUserName.Text + "'");
+                if (a == 0)
+                {
+                    a = ObjDAL.CountRecords(DBName + ".dbo.UserManagement", "EmailID='" + txtEmail.Text + "'");
+                }
             }
             else
             {
-                a = ObjDAL.CountRecords(DBName + ".dbo.UserManagement", "UserName='" + txtUserName.Text + "' and ID!=" + i);
+                a = ObjDAL.CountRecords(DBName + ".dbo.UserManagement", "UserName='" + txtUserName.Text + "' AND ID !=" + i + "OR EmailID = '" + txtEmail.Text + "'");
             }
             if (a > 0)
             {
@@ -365,37 +347,40 @@ namespace UserManagement
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (Validate())
+            if (Validateform())
             {
                 if (DuplicateUser(0))
                 {
                     string name = txtUserName.Text;
-                    string pass = Obj.Encrypt(txtPassword.Text, true);
+                    string pass = ObjUtil.Encrypt(txtPassword.Text, true);
                     ObjDAL.SetColumnData("UserName", SqlDbType.NVarChar, txtUserName.Text.Trim());
                     ObjDAL.SetColumnData("Password", SqlDbType.NVarChar, pass);
+                    ObjDAL.SetColumnData("EmailID", SqlDbType.VarChar, txtEmail.Text);
                     ObjDAL.SetColumnData("SecurityQuestion", SqlDbType.NVarChar, cmbSecurity.SelectedItem.ToString());
-                    ObjDAL.SetColumnData("Answer", SqlDbType.NVarChar, Obj.Encrypt(txtAsnwer.Text.Trim(), true));
+                    ObjDAL.SetColumnData("Answer", SqlDbType.NVarChar, ObjUtil.Encrypt(txtAsnwer.Text.Trim(), true));
                     ObjDAL.SetColumnData("CreatedBy", SqlDbType.Int, LogID); //if LogID=0 then Test Admin else user
 
-                    if (rdBlock.Checked)
-                    {
-                        ObjDAL.SetColumnData("IsBlock", SqlDbType.Bit, 1);
-                    }
-                    else
-                    {
-                        ObjDAL.SetColumnData("IsBlock", SqlDbType.Bit, 0);
-                    }
-                    if (rdAdmin.Checked)
-                    {
-                        ObjDAL.SetColumnData("IsAdmin", SqlDbType.Bit, 1);
-                    }
-                    else if (rdLimitedUser.Checked)
-                    {
-                        ObjDAL.SetColumnData("IsAdmin", SqlDbType.Bit, 0);
-                    }
+                    //if (rdBlock.Checked)
+                    //{
+                    //    ObjDAL.SetColumnData("IsBlock", SqlDbType.Bit, 1);
+                    //}
+                    //else
+                    //{
+                    //    ObjDAL.SetColumnData("IsBlock", SqlDbType.Bit, 0);
+                    //}
+                    //if (rdAdmin.Checked)
+                    //{
+                    //    ObjDAL.SetColumnData("IsAdmin", SqlDbType.Bit, 1);
+                    //}
+                    //else if (rdLimitedUser.Checked)
+                    //{
+                    //    ObjDAL.SetColumnData("IsAdmin", SqlDbType.Bit, 0);
+                    //}
+                    ObjDAL.SetColumnData("IsBlock", SqlDbType.Bit, rdBlock.Checked == true ? 1 : 0);
+                    ObjDAL.SetColumnData("IsAdmin", SqlDbType.Bit, rdAdmin.Checked == true ? 1 : 0);
                     if (ObjDAL.InsertData(DBName + ".dbo.UserManagement", true) > 0)
                     {
-                        Obj.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterSave, admin);
+                        ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterSave, admin);
                         ClearAll();
                         LoadData();
                         clsUtility.ShowInfoMessage("User Name: '" + name + "' is Saved Successfully..", clsUtility.strProjectTitle);
@@ -408,7 +393,7 @@ namespace UserManagement
                 }
                 else
                 {
-                    clsUtility.ShowErrorMessage("'" + txtUserName.Text + "' User is already exist..", clsUtility.strProjectTitle);
+                    clsUtility.ShowErrorMessage("'" + txtUserName.Text + "' UserName OR EmailID is already exist..", clsUtility.strProjectTitle);
                     ObjDAL.ResetData();
                     txtUserName.Focus();
                 }
@@ -420,6 +405,7 @@ namespace UserManagement
             txtPassword.Clear();
             txtVerifyPassword.Clear();
             txtAsnwer.Clear();
+            txtEmail.Clear();
             cmbSecurity.SelectedIndex = -1;
             rdAdmin.Checked = false;
             rdLimitedUser.Checked = false;
@@ -429,7 +415,7 @@ namespace UserManagement
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ClearAll();
-            Obj.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterNew, admin);
+            ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterNew, admin);
             grpUserDetail.Enabled = true;
             grpAccount.Enabled = true;
             grpIsBlock.Enabled = true;
@@ -439,8 +425,8 @@ namespace UserManagement
 
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            Obj.SetRowNumber(dataGridView1);
-            Obj.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
+            ObjUtil.SetRowNumber(dataGridView1);
+            ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
 
             dataGridView1.Columns["ID"].Visible = false;
             dataGridView1.Columns["Password"].Visible = false;
@@ -487,14 +473,15 @@ namespace UserManagement
                     {
                         rdLimitedUser.Checked = true;
                     }
-                    Obj.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterGridClick, admin);
+                    ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterGridClick, admin);
 
                     txtUserName.Text = dataGridView1.SelectedRows[0].Cells["UserName"].Value.ToString();
                     UserName = txtUserName.Text;
-                    txtPassword.Text = Obj.Decrypt(dataGridView1.SelectedRows[0].Cells["Password"].Value.ToString(), true);
+                    txtPassword.Text = ObjUtil.Decrypt(dataGridView1.SelectedRows[0].Cells["Password"].Value.ToString(), true);
                     txtVerifyPassword.Text = txtPassword.Text;
+                    txtEmail.Text = dataGridView1.SelectedRows[0].Cells["EmailID"].Value.ToString();
                     cmbSecurity.SelectedItem = dataGridView1.SelectedRows[0].Cells["SecurityQuestion"].Value.ToString();
-                    txtAsnwer.Text = Obj.Decrypt(dataGridView1.SelectedRows[0].Cells["Answer"].Value.ToString(), true);
+                    txtAsnwer.Text = ObjUtil.Decrypt(dataGridView1.SelectedRows[0].Cells["Answer"].Value.ToString(), true);
                     txtUserName.Focus();
                 }
                 catch
@@ -541,7 +528,7 @@ namespace UserManagement
                 txtVerifyPassword.SelectionStart = txtVerifyPassword.MaxLength;
                 return;
             }
-            if (e.KeyCode == Keys.Up)
+            else if (e.KeyCode == Keys.Up)
             {
                 txtPassword.Focus();
                 txtPassword.SelectionStart = txtPassword.MaxLength;
@@ -553,8 +540,12 @@ namespace UserManagement
         {
             if (e.KeyCode == Keys.Down)
             {
-                txtUserName.Focus();
-                txtUserName.SelectionStart = txtUserName.MaxLength;
+                cmbSecurity.Focus();
+                return;
+            }
+            else if (e.KeyCode == Keys.Up)
+            {
+                txtVerifyPassword.Focus();
                 return;
             }
         }
@@ -568,7 +559,7 @@ namespace UserManagement
                     clsUtility.ShowInfoMessage("'" + txtUserName.Text + "' user is deleted  ", clsUtility.strProjectTitle);
                     ClearAll();
                     LoadData();
-                    Obj.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterDelete, admin);
+                    ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterDelete, admin);
                 }
                 else
                 {
@@ -579,12 +570,22 @@ namespace UserManagement
         }
         private void MouseFoucsEnter(object sender, EventArgs e)
         {
-            Obj.SetTextHighlightColor(sender);
+            ObjUtil.SetTextHighlightColor(sender);
 
         }
         private void MouseFoucsLeave(object sender, EventArgs e)
         {
-            Obj.SetTextHighlightColor(sender, Color.White);
+            ObjUtil.SetTextHighlightColor(sender, Color.White);
+        }
+
+        private void txtAsnwer_MouseEnter(object sender, EventArgs e)
+        {
+            txtAsnwer.UseSystemPasswordChar = false;
+        }
+
+        private void txtAsnwer_MouseLeave(object sender, EventArgs e)
+        {
+            txtAsnwer.UseSystemPasswordChar = true;
         }
     }
 }

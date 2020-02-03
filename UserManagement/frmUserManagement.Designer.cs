@@ -44,6 +44,10 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.grpGridview = new System.Windows.Forms.GroupBox();
             this.grpUserDetail = new System.Windows.Forms.GroupBox();
+            this.cmbSecurity = new System.Windows.Forms.ComboBox();
+            this.txtAsnwer = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.rdAdmin = new System.Windows.Forms.RadioButton();
             this.grpAccount = new System.Windows.Forms.GroupBox();
             this.rdLimitedUser = new System.Windows.Forms.RadioButton();
@@ -53,10 +57,8 @@
             this.grpIsBlock = new System.Windows.Forms.GroupBox();
             this.rdUnblocked = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbSecurity = new System.Windows.Forms.ComboBox();
-            this.txtAsnwer = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grpGridview.SuspendLayout();
             this.grpUserDetail.SuspendLayout();
@@ -81,7 +83,7 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblPassword.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(40, 62);
+            this.lblPassword.Location = new System.Drawing.Point(40, 63);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(109, 17);
             this.lblPassword.TabIndex = 15;
@@ -90,7 +92,7 @@
             // txtUserName
             // 
             this.txtUserName.BackColor = System.Drawing.Color.White;
-            this.txtUserName.Location = new System.Drawing.Point(183, 21);
+            this.txtUserName.Location = new System.Drawing.Point(181, 21);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(206, 25);
             this.txtUserName.TabIndex = 1;
@@ -101,7 +103,7 @@
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.Color.White;
-            this.txtPassword.Location = new System.Drawing.Point(183, 62);
+            this.txtPassword.Location = new System.Drawing.Point(181, 59);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(206, 25);
             this.txtPassword.TabIndex = 2;
@@ -113,7 +115,7 @@
             // txtVerifyPassword
             // 
             this.txtVerifyPassword.BackColor = System.Drawing.Color.White;
-            this.txtVerifyPassword.Location = new System.Drawing.Point(183, 103);
+            this.txtVerifyPassword.Location = new System.Drawing.Point(181, 97);
             this.txtVerifyPassword.Name = "txtVerifyPassword";
             this.txtVerifyPassword.Size = new System.Drawing.Size(206, 25);
             this.txtVerifyPassword.TabIndex = 3;
@@ -127,7 +129,7 @@
             this.lblVerifyPass.AutoSize = true;
             this.lblVerifyPass.BackColor = System.Drawing.Color.Transparent;
             this.lblVerifyPass.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVerifyPass.Location = new System.Drawing.Point(40, 103);
+            this.lblVerifyPass.Location = new System.Drawing.Point(40, 102);
             this.lblVerifyPass.Name = "lblVerifyPass";
             this.lblVerifyPass.Size = new System.Drawing.Size(113, 17);
             this.lblVerifyPass.TabIndex = 18;
@@ -140,10 +142,10 @@
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(471, 52);
+            this.btnCancel.Location = new System.Drawing.Point(471, 51);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(71, 25);
-            this.btnCancel.TabIndex = 9;
+            this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -155,10 +157,10 @@
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelete.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(389, 52);
+            this.btnDelete.Location = new System.Drawing.Point(389, 51);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(71, 25);
-            this.btnDelete.TabIndex = 8;
+            this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -170,10 +172,10 @@
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEdit.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(227, 52);
+            this.btnEdit.Location = new System.Drawing.Point(227, 51);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(71, 25);
-            this.btnEdit.TabIndex = 6;
+            this.btnEdit.TabIndex = 4;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -185,10 +187,10 @@
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSave.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(145, 52);
+            this.btnSave.Location = new System.Drawing.Point(145, 51);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(71, 25);
-            this.btnSave.TabIndex = 5;
+            this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -200,10 +202,10 @@
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(56, 52);
+            this.btnAdd.Location = new System.Drawing.Point(56, 51);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(76, 25);
-            this.btnAdd.TabIndex = 4;
+            this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Add New";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -215,10 +217,10 @@
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(307, 52);
+            this.btnUpdate.Location = new System.Drawing.Point(307, 51);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(71, 25);
-            this.btnUpdate.TabIndex = 7;
+            this.btnUpdate.TabIndex = 5;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -234,7 +236,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView1.Size = new System.Drawing.Size(562, 147);
-            this.dataGridView1.TabIndex = 36;
+            this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
@@ -243,7 +245,7 @@
             this.grpGridview.BackColor = System.Drawing.Color.Transparent;
             this.grpGridview.Controls.Add(this.dataGridView1);
             this.grpGridview.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpGridview.Location = new System.Drawing.Point(20, 372);
+            this.grpGridview.Location = new System.Drawing.Point(26, 422);
             this.grpGridview.Name = "grpGridview";
             this.grpGridview.Size = new System.Drawing.Size(575, 175);
             this.grpGridview.TabIndex = 37;
@@ -254,7 +256,9 @@
             // 
             this.grpUserDetail.BackColor = System.Drawing.Color.Transparent;
             this.grpUserDetail.Controls.Add(this.cmbSecurity);
+            this.grpUserDetail.Controls.Add(this.txtEmail);
             this.grpUserDetail.Controls.Add(this.lblUserName);
+            this.grpUserDetail.Controls.Add(this.label5);
             this.grpUserDetail.Controls.Add(this.txtAsnwer);
             this.grpUserDetail.Controls.Add(this.lblPassword);
             this.grpUserDetail.Controls.Add(this.label6);
@@ -264,12 +268,65 @@
             this.grpUserDetail.Controls.Add(this.lblVerifyPass);
             this.grpUserDetail.Controls.Add(this.txtVerifyPassword);
             this.grpUserDetail.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpUserDetail.Location = new System.Drawing.Point(56, 85);
+            this.grpUserDetail.Location = new System.Drawing.Point(56, 90);
             this.grpUserDetail.Name = "grpUserDetail";
-            this.grpUserDetail.Size = new System.Drawing.Size(488, 217);
+            this.grpUserDetail.Size = new System.Drawing.Size(488, 255);
             this.grpUserDetail.TabIndex = 0;
             this.grpUserDetail.TabStop = false;
             this.grpUserDetail.Text = "User Details";
+            // 
+            // cmbSecurity
+            // 
+            this.cmbSecurity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSecurity.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSecurity.FormattingEnabled = true;
+            this.cmbSecurity.Items.AddRange(new object[] {
+            "In what city or town was your first job?",
+            "What was your childhood nickname? ",
+            "What was your favorite place to visit as a child?",
+            "Where did you vacation last year?",
+            "Who was your childhood hero? "});
+            this.cmbSecurity.Location = new System.Drawing.Point(181, 174);
+            this.cmbSecurity.Name = "cmbSecurity";
+            this.cmbSecurity.Size = new System.Drawing.Size(291, 27);
+            this.cmbSecurity.TabIndex = 5;
+            // 
+            // txtAsnwer
+            // 
+            this.txtAsnwer.BackColor = System.Drawing.Color.White;
+            this.txtAsnwer.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAsnwer.Location = new System.Drawing.Point(181, 214);
+            this.txtAsnwer.MaxLength = 12;
+            this.txtAsnwer.Name = "txtAsnwer";
+            this.txtAsnwer.Size = new System.Drawing.Size(206, 26);
+            this.txtAsnwer.TabIndex = 6;
+            this.txtAsnwer.UseSystemPasswordChar = true;
+            this.txtAsnwer.Enter += new System.EventHandler(this.MouseFoucsEnter);
+            this.txtAsnwer.Leave += new System.EventHandler(this.MouseFoucsLeave);
+            this.txtAsnwer.MouseEnter += new System.EventHandler(this.txtAsnwer_MouseEnter);
+            this.txtAsnwer.MouseLeave += new System.EventHandler(this.txtAsnwer_MouseLeave);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(40, 219);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(97, 17);
+            this.label6.TabIndex = 184;
+            this.label6.Text = "Enter Answer :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(19, 180);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(159, 17);
+            this.label2.TabIndex = 183;
+            this.label2.Text = "Select Security Question :";
             // 
             // rdAdmin
             // 
@@ -279,7 +336,7 @@
             this.rdAdmin.Location = new System.Drawing.Point(24, 25);
             this.rdAdmin.Name = "rdAdmin";
             this.rdAdmin.Size = new System.Drawing.Size(106, 21);
-            this.rdAdmin.TabIndex = 19;
+            this.rdAdmin.TabIndex = 0;
             this.rdAdmin.TabStop = true;
             this.rdAdmin.Text = "Administrator";
             this.rdAdmin.UseVisualStyleBackColor = false;
@@ -289,10 +346,10 @@
             this.grpAccount.BackColor = System.Drawing.Color.Transparent;
             this.grpAccount.Controls.Add(this.rdLimitedUser);
             this.grpAccount.Controls.Add(this.rdAdmin);
-            this.grpAccount.Location = new System.Drawing.Point(56, 308);
+            this.grpAccount.Location = new System.Drawing.Point(56, 351);
             this.grpAccount.Name = "grpAccount";
             this.grpAccount.Size = new System.Drawing.Size(272, 62);
-            this.grpAccount.TabIndex = 38;
+            this.grpAccount.TabIndex = 0;
             this.grpAccount.TabStop = false;
             this.grpAccount.Text = "Select Account Type";
             // 
@@ -303,7 +360,7 @@
             this.rdLimitedUser.Location = new System.Drawing.Point(155, 25);
             this.rdLimitedUser.Name = "rdLimitedUser";
             this.rdLimitedUser.Size = new System.Drawing.Size(103, 21);
-            this.rdLimitedUser.TabIndex = 20;
+            this.rdLimitedUser.TabIndex = 1;
             this.rdLimitedUser.Text = "Limited User";
             this.rdLimitedUser.UseVisualStyleBackColor = false;
             // 
@@ -337,7 +394,7 @@
             this.rdBlock.Location = new System.Drawing.Point(14, 24);
             this.rdBlock.Name = "rdBlock";
             this.rdBlock.Size = new System.Drawing.Size(74, 21);
-            this.rdBlock.TabIndex = 21;
+            this.rdBlock.TabIndex = 0;
             this.rdBlock.Text = "Blocked";
             this.rdBlock.UseVisualStyleBackColor = false;
             // 
@@ -346,10 +403,10 @@
             this.grpIsBlock.BackColor = System.Drawing.Color.Transparent;
             this.grpIsBlock.Controls.Add(this.rdUnblocked);
             this.grpIsBlock.Controls.Add(this.rdBlock);
-            this.grpIsBlock.Location = new System.Drawing.Point(335, 308);
+            this.grpIsBlock.Location = new System.Drawing.Point(335, 351);
             this.grpIsBlock.Name = "grpIsBlock";
             this.grpIsBlock.Size = new System.Drawing.Size(209, 62);
-            this.grpIsBlock.TabIndex = 39;
+            this.grpIsBlock.TabIndex = 1;
             this.grpIsBlock.TabStop = false;
             this.grpIsBlock.Text = "Change Block Status";
             // 
@@ -360,7 +417,7 @@
             this.rdUnblocked.Location = new System.Drawing.Point(107, 25);
             this.rdUnblocked.Name = "rdUnblocked";
             this.rdUnblocked.Size = new System.Drawing.Size(89, 21);
-            this.rdUnblocked.TabIndex = 22;
+            this.rdUnblocked.TabIndex = 1;
             this.rdUnblocked.Text = "Unblocked";
             this.rdUnblocked.UseVisualStyleBackColor = false;
             // 
@@ -370,60 +427,34 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 553);
+            this.label1.Location = new System.Drawing.Point(29, 605);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(121, 17);
             this.label1.TabIndex = 180;
             this.label1.Text = "Total Records : 0";
             // 
-            // cmbSecurity
+            // txtEmail
             // 
-            this.cmbSecurity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSecurity.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSecurity.FormattingEnabled = true;
-            this.cmbSecurity.Items.AddRange(new object[] {
-            "In what city or town was your first job?",
-            "What was your childhood nickname? ",
-            "What was your favorite place to visit as a child?",
-            "Where did you vacation last year?",
-            "Who was your childhood hero? "});
-            this.cmbSecurity.Location = new System.Drawing.Point(181, 139);
-            this.cmbSecurity.Name = "cmbSecurity";
-            this.cmbSecurity.Size = new System.Drawing.Size(291, 27);
-            this.cmbSecurity.TabIndex = 181;
+            this.txtEmail.BackColor = System.Drawing.Color.White;
+            this.txtEmail.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(181, 135);
+            this.txtEmail.MaxLength = 25;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(206, 26);
+            this.txtEmail.TabIndex = 4;
+            this.txtEmail.Enter += new System.EventHandler(this.MouseFoucsEnter);
+            this.txtEmail.Leave += new System.EventHandler(this.MouseFoucsLeave);
             // 
-            // txtAsnwer
+            // label5
             // 
-            this.txtAsnwer.BackColor = System.Drawing.Color.White;
-            this.txtAsnwer.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAsnwer.Location = new System.Drawing.Point(185, 180);
-            this.txtAsnwer.MaxLength = 12;
-            this.txtAsnwer.Name = "txtAsnwer";
-            this.txtAsnwer.Size = new System.Drawing.Size(219, 26);
-            this.txtAsnwer.TabIndex = 182;
-            this.txtAsnwer.UseSystemPasswordChar = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(40, 185);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 17);
-            this.label6.TabIndex = 184;
-            this.label6.Text = "Enter Answer :";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 142);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 17);
-            this.label2.TabIndex = 183;
-            this.label2.Text = "Select Security Question :";
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(40, 141);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 17);
+            this.label5.TabIndex = 182;
+            this.label5.Text = "E-Mail :";
             // 
             // frmUserManagement
             // 
@@ -431,7 +462,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(619, 573);
+            this.ClientSize = new System.Drawing.Size(619, 631);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.grpIsBlock);
             this.Controls.Add(this.panel2);
@@ -498,6 +529,7 @@
         public System.Windows.Forms.TextBox txtAsnwer;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
-
+        public System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label5;
     }
 }
