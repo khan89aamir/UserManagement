@@ -31,7 +31,6 @@ namespace UserManagement
         public string strReuestType;
         private void ForgetPassword_Load(object sender, EventArgs e)
         {
-            //button1.BackgroundImage = B_Leave;
             DBName = ObjDAL.GetCurrentDBName(true);
         }
 
@@ -47,10 +46,7 @@ namespace UserManagement
         }
         private bool FormValidation()
         {
-            string EId = @"^[a-z][a-z|0-9|]*([_][a-z|0-9]+)*([.][a-z|" +
-               @"0-9]+([_][a-z|0-9]+)*)?@[a-z][a-z|0-9|]*\.([a-z]" +
-               @"[a-z|0-9]*(\.[a-z][a-z|0-9]*)?)$";
-            string validating = txtEmail.Text.Trim();
+            string ValidatingEmailID = txtEmail.Text.Trim();
 
             //clsUtility.ShowInfoMessage(Regex.Match(validating, EId).Success.ToString(), clsUtility.strProjectTitle);
 
@@ -67,7 +63,7 @@ namespace UserManagement
                 txtEmail.Focus();
                 return false;
             }
-            else if (!Regex.Match(validating, EId).Success)
+            else if (!ObjUtil.ValidateEmail(ValidatingEmailID))
             {
                 clsUtility.ShowInfoMessage("Enter Valid E-Mail Address.", clsUtility.strProjectTitle);
                 txtEmail.Focus();
@@ -100,7 +96,7 @@ namespace UserManagement
 
                     if (SecurityQuestion == cmbSecurity.SelectedItem.ToString() && Answer.ToLower() == txtAsnwer.Text.ToLower() && EmailID.ToLower() == txtEmail.Text.ToLower())
                     {
-                        txtRetrivePassword.Text = Password;
+                        txtRetrivePassword.Text = ObjUtil.Decrypt(Password, true);
                     }
                     else
                     {
@@ -116,12 +112,6 @@ namespace UserManagement
                 }
                 return true;
             }
-            //else
-            //{
-            //    clsUtility.ShowInfoMessage("Enter Valid E-Mail Address.", clsUtility.strProjectTitle);
-            //    txtEmail.Focus();
-            //    return false;
-            //}
         }
 
         private void TestLoad()
@@ -205,17 +195,11 @@ namespace UserManagement
 
         private void txtRetrivePassword_MouseEnter(object sender, EventArgs e)
         {
-            if (txtRetrivePassword.Text.Length > 0)
-                txtRetrivePassword.Text = ObjUtil.Decrypt(txtRetrivePassword.Text, true);
-
             txtRetrivePassword.UseSystemPasswordChar = false;
         }
 
         private void txtRetrivePassword_MouseLeave(object sender, EventArgs e)
         {
-            if (txtRetrivePassword.Text.Length > 0)
-                txtRetrivePassword.Text = ObjUtil.Encrypt(txtRetrivePassword.Text, true);
-
             txtRetrivePassword.UseSystemPasswordChar = true;
         }
 

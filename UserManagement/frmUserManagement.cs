@@ -21,9 +21,12 @@ namespace UserManagement
         }
         clsUtility ObjUtil = new clsUtility();
         clsConnection_DAL ObjDAL = new clsConnection_DAL(true);
+
+        int ID = 0;
+        string UserName = string.Empty;
         string DBName = string.Empty;
         int LogID = 0;
-        bool admin = true;//false
+        bool admin = false;//false
 
         Image Add = UserManagement.Properties.Resources.B_click;
         public void LoginStatus(int LoginID, bool IsAdmin)
@@ -47,14 +50,6 @@ namespace UserManagement
             }
         }
 
-        //Image Save = UserManagement.Properties.Resources.B_click;
-        //Image Edit = UserManagement.Properties.Resources.B_click;
-        //Image Update = UserManagement.Properties.Resources.B_click;
-        //Image Delete = UserManagement.Properties.Resources.B_click;
-        //Image Cancel = UserManagement.Properties.Resources.B_click;
-
-        int ID = 0;
-        string UserName = string.Empty;
         private void frmUserManagement_Load(object sender, EventArgs e)
         {
             btnAdd.BackgroundImage = Add;
@@ -79,10 +74,6 @@ namespace UserManagement
             DataTable dt = null;
             if (admin)
             {
-                //dt = ObjDAL.ExecuteSelectStatement("select ID,UserName,Password,(case when IsAdmin=1 then 'Admin'when IsAdmin=0 then 'Limited User'end)as 'IsAdmin', " +
-                //    "CreatedBy,CreatedOn,UpdatedBy,UpdatedOn" +
-                //    " from " + DBName + ".[dbo].[UserManagement]");
-                //dt = ObjDAL.ExecuteSelectStatement("select ID,UserName,Password,(case when IsAdmin=1 then 'Admin'when IsAdmin=0 then 'Limited User'end)as 'IsAdmin'" +
                 dt = ObjDAL.ExecuteSelectStatement("select ID,UserName,[Password],ISNULL(EmailID,'') AS EmailID,SecurityQuestion,Answer,(CASE WHEN IsAdmin=1 THEN 'Admin'WHEN IsAdmin=0 THEN 'Limited User'END)as 'AccountType'" +
                     ",(CASE WHEN IsBlock=1 THEN 'Yes'WHEN ISNULL(IsBlock,0)=0 THEN 'No'END)as 'IsBlock'" +
                     " from " + DBName + ".[dbo].[UserManagement]");
@@ -92,7 +83,7 @@ namespace UserManagement
                 dt = ObjDAL.GetDataCol(DBName + ".dbo.UserManagement", "ID,UserName,[Password],SecurityQuestion,Answer,ISNULL(EmailID,'') AS EmailID," +
                     "(CASE WHEN IsAdmin=1 THEN 'Admin'WHEN IsAdmin=0 THEN 'Limited User'END)as 'AccountType'", "ID=" + LogID, "ID");
             }
-            if (dt != null && dt.Rows.Count > 0)
+            if (ObjUtil.ValidateTable(dt))
             {
                 dataGridView1.DataSource = dt;
             }
@@ -131,19 +122,6 @@ namespace UserManagement
                     ObjDAL.UpdateColumnData("EmailID", SqlDbType.VarChar, txtEmail.Text);
                     ObjDAL.UpdateColumnData("SecurityQuestion", SqlDbType.NVarChar, cmbSecurity.SelectedItem.ToString());
                     ObjDAL.UpdateColumnData("Answer", SqlDbType.NVarChar, ObjUtil.Encrypt(txtAsnwer.Text.Trim(), true));
-                    //if (rdAdmin.Checked)
-                    //{
-                    //    ObjDAL.UpdateColumnData("IsAdmin", SqlDbType.Bit, 1);
-                    //}
-                    //else
-                    //{
-                    //    ObjDAL.UpdateColumnData("IsAdmin", SqlDbType.Bit, 0);
-                    //    if (admin == false)
-                    //    {
-                    //        admin = false;
-                    //        clsUtility.IsAdmin = admin;
-                    //    }
-                    //}
                     ObjDAL.UpdateColumnData("IsAdmin", SqlDbType.Bit, rdAdmin.Checked == true ? 1 : 0);
                     if (rdAdmin.Checked == false)
                     {
@@ -256,15 +234,11 @@ namespace UserManagement
                 grpAccount.Enabled = false;
                 grpIsBlock.Enabled = false;
             }
-
             txtUserName.Focus();
             txtUserName.SelectionStart = txtUserName.MaxLength;
         }
         private bool Validateform()
         {
-            string EId = @"^[a-z][a-z|0-9|]*([_][a-z|0-9]+)*([.][a-z|" +
-   @"0-9]+([_][a-z|0-9]+)*)?@[a-z][a-z|0-9|]*\.([a-z]" +
-   @"[a-z|0-9]*(\.[a-z][a-z|0-9]*)?)$";
             if (ObjUtil.IsControlTextEmpty(txtUserName))
             {
                 clsUtility.ShowInfoMessage("Enter User Name            ", clsUtility.strProjectTitle);
@@ -295,7 +269,7 @@ namespace UserManagement
                 txtEmail.Focus();
                 return false;
             }
-            else if (!Regex.Match(txtEmail.Text, EId).Success)
+            else if (!ObjUtil.ValidateEmail(txtEmail.Text))
             {
                 clsUtility.ShowInfoMessage("Enter Valid E-Mail Address.", clsUtility.strProjectTitle);
                 txtEmail.Focus();
@@ -359,23 +333,6 @@ namespace UserManagement
                     ObjDAL.SetColumnData("SecurityQuestion", SqlDbType.NVarChar, cmbSecurity.SelectedItem.ToString());
                     ObjDAL.SetColumnData("Answer", SqlDbType.NVarChar, ObjUtil.Encrypt(txtAsnwer.Text.Trim(), true));
                     ObjDAL.SetColumnData("CreatedBy", SqlDbType.Int, LogID); //if LogID=0 then Test Admin else user
-
-                    //if (rdBlock.Checked)
-                    //{
-                    //    ObjDAL.SetColumnData("IsBlock", SqlDbType.Bit, 1);
-                    //}
-                    //else
-                    //{
-                    //    ObjDAL.SetColumnData("IsBlock", SqlDbType.Bit, 0);
-                    //}
-                    //if (rdAdmin.Checked)
-                    //{
-                    //    ObjDAL.SetColumnData("IsAdmin", SqlDbType.Bit, 1);
-                    //}
-                    //else if (rdLimitedUser.Checked)
-                    //{
-                    //    ObjDAL.SetColumnData("IsAdmin", SqlDbType.Bit, 0);
-                    //}
                     ObjDAL.SetColumnData("IsBlock", SqlDbType.Bit, rdBlock.Checked == true ? 1 : 0);
                     ObjDAL.SetColumnData("IsAdmin", SqlDbType.Bit, rdAdmin.Checked == true ? 1 : 0);
                     if (ObjDAL.InsertData(DBName + ".dbo.UserManagement", true) > 0)
@@ -464,7 +421,6 @@ namespace UserManagement
                         }
                     }
                     //AccountType
-                    //if (dataGridView1.SelectedRows[0].Cells["IsAdmin"].Value.ToString() == "Admin")
                     if (dataGridView1.SelectedRows[0].Cells["AccountType"].Value.ToString() == "Admin")
                     {
                         rdAdmin.Checked = true;
@@ -546,6 +502,7 @@ namespace UserManagement
             else if (e.KeyCode == Keys.Up)
             {
                 txtVerifyPassword.Focus();
+                txtVerifyPassword.SelectionStart = txtVerifyPassword.MaxLength;
                 return;
             }
         }
