@@ -26,7 +26,7 @@ namespace UserManagement
         string UserName = string.Empty;
         string DBName = string.Empty;
         int LogID = 0;
-        bool admin = false;//false
+        bool admin = true;//false
 
         Image Add = UserManagement.Properties.Resources.B_click;
         public void LoginStatus(int LoginID, bool IsAdmin)
