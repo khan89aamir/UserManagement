@@ -37,7 +37,7 @@ namespace UserManagement
         }
         private bool CountofAdmin()
         {
-            DataTable dt = ObjDAL.GetData(DBName + ".dbo.UserManagement", "IsAdmin=1", "ID");
+            DataTable dt = ObjDAL.GetData(DBName + ".dbo.UserManagement", "IsAdmin=1", "UserID");
             if (dt != null && dt.Rows.Count > 1)
             {
                 //grpAccount.Enabled = true;
@@ -74,14 +74,14 @@ namespace UserManagement
             DataTable dt = null;
             if (admin)
             {
-                dt = ObjDAL.ExecuteSelectStatement("select ID,UserName,[Password],ISNULL(EmailID,'') AS EmailID,SecurityQuestion,Answer,(CASE WHEN IsAdmin=1 THEN 'Admin'WHEN IsAdmin=0 THEN 'Limited User'END)as 'AccountType'" +
+                dt = ObjDAL.ExecuteSelectStatement("select UserID,UserName,[Password],ISNULL(EmailID,'') AS EmailID,SecurityQuestion,Answer,(CASE WHEN IsAdmin=1 THEN 'Admin'WHEN IsAdmin=0 THEN 'Limited User'END)as 'AccountType'" +
                     ",(CASE WHEN IsBlock=1 THEN 'Yes'WHEN ISNULL(IsBlock,0)=0 THEN 'No'END)as 'IsBlock'" +
                     " from " + DBName + ".[dbo].[UserManagement]");
             }
             else
             {
-                dt = ObjDAL.GetDataCol(DBName + ".dbo.UserManagement", "ID,UserName,[Password],SecurityQuestion,Answer,ISNULL(EmailID,'') AS EmailID," +
-                    "(CASE WHEN IsAdmin=1 THEN 'Admin'WHEN IsAdmin=0 THEN 'Limited User'END)as 'AccountType'", "ID=" + LogID, "ID");
+                dt = ObjDAL.GetDataCol(DBName + ".dbo.UserManagement", "UserID,UserName,[Password],SecurityQuestion,Answer,ISNULL(EmailID,'') AS EmailID," +
+                    "(CASE WHEN IsAdmin=1 THEN 'Admin'WHEN IsAdmin=0 THEN 'Limited User'END)as 'AccountType'", "UserID=" + LogID, "UserID");
             }
             if (ObjUtil.ValidateTable(dt))
             {
@@ -308,7 +308,7 @@ namespace UserManagement
             }
             else
             {
-                a = ObjDAL.CountRecords(DBName + ".dbo.UserManagement", "UserName='" + txtUserName.Text + "' AND ID !=" + i + "OR EmailID = '" + txtEmail.Text + "'");
+                a = ObjDAL.CountRecords(DBName + ".dbo.UserManagement", "UserID !=" + i +" AND (UserName = '" + txtUserName.Text + "' OR EmailID = '" + txtEmail.Text + "')");
             }
             if (a > 0)
             {
@@ -385,7 +385,7 @@ namespace UserManagement
             ObjUtil.SetRowNumber(dataGridView1);
             ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
 
-            dataGridView1.Columns["ID"].Visible = false;
+            dataGridView1.Columns["UserID"].Visible = false;
             dataGridView1.Columns["Password"].Visible = false;
             dataGridView1.Columns["Answer"].Visible = false;
             label1.Text = "Total Records : " + dataGridView1.Rows.Count;
@@ -408,7 +408,7 @@ namespace UserManagement
                 {
                     grpUserDetail.Enabled = false;
                     grpAccount.Enabled = false;
-                    ID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value);
+                    ID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["UserID"].Value);
                     if (admin)
                     {
                         if (dataGridView1.SelectedRows[0].Cells["IsBlock"].Value.ToString() == "Yes")
