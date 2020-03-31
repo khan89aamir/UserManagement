@@ -46,6 +46,8 @@
             this.txtRetrivePassword = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.picIMGPass = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picIMGPass)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -239,8 +241,6 @@
             this.txtRetrivePassword.UseSystemPasswordChar = true;
             this.txtRetrivePassword.Enter += new System.EventHandler(this.txtUserName_Enter);
             this.txtRetrivePassword.Leave += new System.EventHandler(this.txtUserName_Leave);
-            this.txtRetrivePassword.MouseEnter += new System.EventHandler(this.txtRetrivePassword_MouseEnter);
-            this.txtRetrivePassword.MouseLeave += new System.EventHandler(this.txtRetrivePassword_MouseLeave);
             // 
             // label7
             // 
@@ -265,6 +265,19 @@
             this.label9.TabIndex = 193;
             this.label9.Text = "*";
             // 
+            // picIMGPass
+            // 
+            this.picIMGPass.BackColor = System.Drawing.Color.Transparent;
+            this.picIMGPass.Image = ((System.Drawing.Image)(resources.GetObject("picIMGPass.Image")));
+            this.picIMGPass.Location = new System.Drawing.Point(470, 235);
+            this.picIMGPass.Name = "picIMGPass";
+            this.picIMGPass.Size = new System.Drawing.Size(31, 25);
+            this.picIMGPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picIMGPass.TabIndex = 214;
+            this.picIMGPass.TabStop = false;
+            this.picIMGPass.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picIMGPass_MouseDown);
+            this.picIMGPass.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picIMGPass_MouseUp);
+            // 
             // frmForgetPassword
             // 
             this.AcceptButton = this.btnSubmit;
@@ -273,6 +286,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(557, 330);
+            this.Controls.Add(this.picIMGPass);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtRetrivePassword);
@@ -299,6 +313,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Forget Password";
             this.Load += new System.EventHandler(this.ForgetPassword_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picIMGPass)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,5 +338,6 @@
         public System.Windows.Forms.TextBox txtRetrivePassword;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.PictureBox picIMGPass;
     }
 }

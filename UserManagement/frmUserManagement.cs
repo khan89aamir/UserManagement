@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,8 +26,9 @@ namespace UserManagement
         string DBName = string.Empty;
         int LogID = 0;
         bool admin = true;//false
-
-        Image Add = UserManagement.Properties.Resources.B_click;
+        
+        Image B_Leave = UserManagement.Properties.Resources.B_click;
+        Image B_Enter = UserManagement.Properties.Resources.B_on;
         public void LoginStatus(int LoginID, bool IsAdmin)
         {
             LogID = LoginID;
@@ -52,12 +52,12 @@ namespace UserManagement
 
         private void frmUserManagement_Load(object sender, EventArgs e)
         {
-            btnAdd.BackgroundImage = Add;
-            btnSave.BackgroundImage = Add;
-            btnEdit.BackgroundImage = Add;
-            btnUpdate.BackgroundImage = Add;
-            btnDelete.BackgroundImage = Add;
-            btnCancel.BackgroundImage = Add;
+            btnAdd.BackgroundImage = B_Leave;
+            btnSave.BackgroundImage = B_Leave;
+            btnEdit.BackgroundImage = B_Leave;
+            btnUpdate.BackgroundImage = B_Leave;
+            btnDelete.BackgroundImage = B_Leave;
+            btnCancel.BackgroundImage = B_Leave;
 
             DBName = ObjDAL.GetCurrentDBName(true);
             //string a = ObjDAL.ReadConStringFromFile("AppConfig/ServerConfig.sc", true);
@@ -74,9 +74,9 @@ namespace UserManagement
             DataTable dt = null;
             if (admin)
             {
-                dt = ObjDAL.ExecuteSelectStatement("select UserID,UserName,[Password],ISNULL(EmailID,'') AS EmailID,SecurityQuestion,Answer,(CASE WHEN IsAdmin=1 THEN 'Admin'WHEN IsAdmin=0 THEN 'Limited User'END)as 'AccountType'" +
+                dt = ObjDAL.ExecuteSelectStatement("SELECT UserID,UserName,[Password],ISNULL(EmailID,'') AS EmailID,SecurityQuestion,Answer,(CASE WHEN IsAdmin=1 THEN 'Admin'WHEN IsAdmin=0 THEN 'Limited User'END)as 'AccountType'" +
                     ",(CASE WHEN IsBlock=1 THEN 'Yes'WHEN ISNULL(IsBlock,0)=0 THEN 'No'END)as 'IsBlock'" +
-                    " from " + DBName + ".[dbo].[UserManagement]");
+                    " FROM " + DBName + ".[dbo].[UserManagement]");
             }
             else
             {
@@ -190,7 +190,7 @@ namespace UserManagement
         }
         private bool IsAdmin()
         {
-            object a = ObjDAL.ExecuteScalar("select IsAdmin from " + DBName + ".[dbo].[UserManagement] with(nolock) where UserName='" + txtUserName.Text.Trim() + "'");
+            object a = ObjDAL.ExecuteScalar("SELECT IsAdmin FROM " + DBName + ".[dbo].[UserManagement] WITH(NOLOCK) WHERE UserName='" + txtUserName.Text.Trim() + "'");
             bool admin = Convert.ToBoolean(a);
             return admin;
         }
@@ -260,7 +260,7 @@ namespace UserManagement
             else if (txtPassword.Text.Trim() != txtVerifyPassword.Text.Trim())
             {
                 clsUtility.ShowInfoMessage("Password and Verify Password must be Same       ", clsUtility.strProjectTitle);
-                txtPassword.Focus();
+                txtVerifyPassword.Focus();
                 return false;
             }
             else if (ObjUtil.IsControlTextEmpty(txtEmail))
@@ -325,9 +325,9 @@ namespace UserManagement
             {
                 if (DuplicateUser(0))
                 {
-                    string name = txtUserName.Text;
+                    string name = txtUserName.Text.Trim();
                     string pass = ObjUtil.Encrypt(txtPassword.Text, true);
-                    ObjDAL.SetColumnData("UserName", SqlDbType.NVarChar, txtUserName.Text.Trim());
+                    ObjDAL.SetColumnData("UserName", SqlDbType.NVarChar, name);
                     ObjDAL.SetColumnData("Password", SqlDbType.NVarChar, pass);
                     ObjDAL.SetColumnData("EmailID", SqlDbType.VarChar, txtEmail.Text);
                     ObjDAL.SetColumnData("SecurityQuestion", SqlDbType.NVarChar, cmbSecurity.SelectedItem.ToString());
@@ -345,13 +345,12 @@ namespace UserManagement
                     else
                     {
                         clsUtility.ShowInfoMessage("User Name: '" + name + "' is not Saved Successfully..", clsUtility.strProjectTitle);
-                        ObjDAL.ResetData();
                     }
+                    ObjDAL.ResetData();
                 }
                 else
                 {
                     clsUtility.ShowErrorMessage("'" + txtUserName.Text + "' UserName OR EmailID is already exist..", clsUtility.strProjectTitle);
-                    ObjDAL.ResetData();
                     txtUserName.Focus();
                 }
             }
@@ -383,7 +382,8 @@ namespace UserManagement
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             ObjUtil.SetRowNumber(dataGridView1);
-            ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
+            ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.ColumnHeader);
+            //ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
 
             dataGridView1.Columns["UserID"].Visible = false;
             dataGridView1.Columns["Password"].Visible = false;
@@ -406,6 +406,7 @@ namespace UserManagement
             {
                 try
                 {
+                    ClearAll();
                     grpUserDetail.Enabled = false;
                     grpAccount.Enabled = false;
                     ID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["UserID"].Value);
@@ -436,34 +437,13 @@ namespace UserManagement
                     txtPassword.Text = ObjUtil.Decrypt(dataGridView1.SelectedRows[0].Cells["Password"].Value.ToString(), true);
                     txtVerifyPassword.Text = txtPassword.Text;
                     txtEmail.Text = dataGridView1.SelectedRows[0].Cells["EmailID"].Value.ToString();
-                    cmbSecurity.SelectedItem = dataGridView1.SelectedRows[0].Cells["SecurityQuestion"].Value.ToString();
+                    cmbSecurity.Text = dataGridView1.SelectedRows[0].Cells["SecurityQuestion"].Value.ToString();
                     txtAsnwer.Text = ObjUtil.Decrypt(dataGridView1.SelectedRows[0].Cells["Answer"].Value.ToString(), true);
                     txtUserName.Focus();
                 }
                 catch
                 { }
             }
-        }
-
-        private void imgpass_MouseEnter(object sender, EventArgs e)
-        {
-            txtPassword.UseSystemPasswordChar = false;
-        }
-
-        private void imgpass_MouseLeave(object sender, EventArgs e)
-        {
-            txtPassword.UseSystemPasswordChar = true;
-        }
-
-        private void imgverify_MouseEnter(object sender, EventArgs e)
-        {
-            txtVerifyPassword.UseSystemPasswordChar = false;
-            string a = e.GetType().Name;
-        }
-
-        private void imgverify_MouseLeave(object sender, EventArgs e)
-        {
-            txtVerifyPassword.UseSystemPasswordChar = true;
         }
 
         private void txtUserName_KeyDown(object sender, KeyEventArgs e)
@@ -528,21 +508,34 @@ namespace UserManagement
         private void MouseFoucsEnter(object sender, EventArgs e)
         {
             ObjUtil.SetTextHighlightColor(sender);
-
         }
         private void MouseFoucsLeave(object sender, EventArgs e)
         {
             ObjUtil.SetTextHighlightColor(sender, Color.White);
         }
 
-        private void txtAsnwer_MouseEnter(object sender, EventArgs e)
+        private void btnAdd_MouseEnter(object sender, EventArgs e)
         {
-            txtAsnwer.UseSystemPasswordChar = false;
+            Button btn = (Button)sender;
+            btn.BackgroundImage = B_Enter;
         }
 
-        private void txtAsnwer_MouseLeave(object sender, EventArgs e)
+        private void btnAdd_MouseLeave(object sender, EventArgs e)
         {
-            txtAsnwer.UseSystemPasswordChar = true;
+            Button btn = (Button)sender;
+            btn.BackgroundImage = B_Leave;
+        }
+
+        private void picIMGPass1_MouseDown(object sender, MouseEventArgs e)
+        {
+            TextBox txt = (TextBox)sender;
+            txt.UseSystemPasswordChar = false;
+        }
+
+        private void picIMGPass1_MouseUp(object sender, MouseEventArgs e)
+        {
+            TextBox txt = (TextBox)sender;
+            txt.UseSystemPasswordChar = true;
         }
     }
 }

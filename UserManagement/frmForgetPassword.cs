@@ -29,6 +29,7 @@ namespace UserManagement
         DataTable dt = null;
         string DBName = string.Empty;
         public string strReuestType;
+
         private void ForgetPassword_Load(object sender, EventArgs e)
         {
             DBName = ObjDAL.GetCurrentDBName(true);
@@ -47,8 +48,6 @@ namespace UserManagement
         private bool FormValidation()
         {
             string ValidatingEmailID = txtEmail.Text.Trim();
-
-            //clsUtility.ShowInfoMessage(Regex.Match(validating, EId).Success.ToString(), clsUtility.strProjectTitle);
 
             if (ObjUtil.IsControlTextEmpty(txtUserName))
             {
@@ -82,7 +81,6 @@ namespace UserManagement
                 return false;
             }
             else
-            //else if (ObjUtil.ValidateEmail(txtEmail.Text))
             {
                 dt = ObjDAL.GetDataCol(DBName + ".dbo.UserManagement", "[UserName],[SecurityQuestion],[Answer],[Password],EmailID", "UserName='" + txtUserName.Text + "'", null);
                 if (ObjUtil.ValidateTable(dt))
@@ -129,10 +127,9 @@ namespace UserManagement
                 Obj.Body = body;
                 Obj.SendEMail();
                 b = Obj.IsMail;
-                //Thread th = new Thread(new ThreadStart(Obj.SendEMail));
 
             }
-            catch //(Exception ex)
+            catch
             {
                 ObjThread.CloseImageLoadingDialog();
             }
@@ -146,11 +143,11 @@ namespace UserManagement
                     ObjThread.ShowImageLoading(clsUtility.strProjectTitle, "Sending An E-Mail please Wait..", this, null);
                     Thread th = new Thread(new ThreadStart(TestLoad));
                     th.Start();
-                    DataTable dt = ObjDAL.ExecuteSelectStatement("Select UserName,Password from " + DBName + ".dbo.UserManagement");
+                    DataTable dt = ObjDAL.ExecuteSelectStatement("SELECT UserName,Password FROM " + DBName + ".dbo.UserManagement WITH(NOLOCK)");
                     string body = string.Empty;
                     string content = string.Empty;
                     content = "Machine Name " + Environment.MachineName + " has request for a new Password for " + clsUtility.strProjectTitle + " and Total Users found : " + dt.Rows.Count;
-                    if (dt != null && dt.Rows.Count > 0)
+                    if (ObjUtil.ValidateTable(dt))
                     {
                         for (int i = 0; i < dt.Rows.Count; i++)
                         {
@@ -193,16 +190,6 @@ namespace UserManagement
             ClearAll();
         }
 
-        private void txtRetrivePassword_MouseEnter(object sender, EventArgs e)
-        {
-            txtRetrivePassword.UseSystemPasswordChar = false;
-        }
-
-        private void txtRetrivePassword_MouseLeave(object sender, EventArgs e)
-        {
-            txtRetrivePassword.UseSystemPasswordChar = true;
-        }
-
         private void txtUserName_Enter(object sender, EventArgs e)
         {
             ObjUtil.SetTextHighlightColor(sender);
@@ -212,6 +199,15 @@ namespace UserManagement
         {
             ObjUtil.SetTextHighlightColor(sender, Color.White);
         }
+
+        private void picIMGPass_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtRetrivePassword.UseSystemPasswordChar = false;
+        }
+
+        private void picIMGPass_MouseUp(object sender, MouseEventArgs e)
+        {
+            txtRetrivePassword.UseSystemPasswordChar = true;
+        }
     }
 }
-
