@@ -65,7 +65,7 @@ namespace UserManagement
             //DBName = arr[3].ToString();
             LoadData();
 
-            ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
+            //ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.Beginning, admin);
         }
         private void LoadData()

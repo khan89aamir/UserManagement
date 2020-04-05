@@ -102,7 +102,7 @@
             this.txtUserName.Location = new System.Drawing.Point(181, 21);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(206, 25);
-            this.txtUserName.TabIndex = 1;
+            this.txtUserName.TabIndex = 0;
             this.txtUserName.Enter += new System.EventHandler(this.MouseFoucsEnter);
             this.txtUserName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUserName_KeyDown);
             this.txtUserName.Leave += new System.EventHandler(this.MouseFoucsLeave);
@@ -113,7 +113,7 @@
             this.txtPassword.Location = new System.Drawing.Point(181, 59);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(206, 25);
-            this.txtPassword.TabIndex = 2;
+            this.txtPassword.TabIndex = 1;
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.Enter += new System.EventHandler(this.MouseFoucsEnter);
             this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
@@ -127,7 +127,7 @@
             this.txtVerifyPassword.Location = new System.Drawing.Point(181, 97);
             this.txtVerifyPassword.Name = "txtVerifyPassword";
             this.txtVerifyPassword.Size = new System.Drawing.Size(206, 25);
-            this.txtVerifyPassword.TabIndex = 3;
+            this.txtVerifyPassword.TabIndex = 2;
             this.txtVerifyPassword.UseSystemPasswordChar = true;
             this.txtVerifyPassword.Enter += new System.EventHandler(this.MouseFoucsEnter);
             this.txtVerifyPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtVerifyPassword_KeyDown);
@@ -156,7 +156,7 @@
             this.btnCancel.Location = new System.Drawing.Point(471, 51);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(71, 25);
-            this.btnCancel.TabIndex = 7;
+            this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -173,7 +173,7 @@
             this.btnDelete.Location = new System.Drawing.Point(389, 51);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(71, 25);
-            this.btnDelete.TabIndex = 6;
+            this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -190,7 +190,7 @@
             this.btnEdit.Location = new System.Drawing.Point(227, 51);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(71, 25);
-            this.btnEdit.TabIndex = 4;
+            this.btnEdit.TabIndex = 5;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -207,7 +207,7 @@
             this.btnSave.Location = new System.Drawing.Point(145, 51);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(71, 25);
-            this.btnSave.TabIndex = 3;
+            this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -224,7 +224,7 @@
             this.btnAdd.Location = new System.Drawing.Point(56, 51);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(76, 25);
-            this.btnAdd.TabIndex = 2;
+            this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Add New";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -241,7 +241,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(307, 51);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(71, 25);
-            this.btnUpdate.TabIndex = 5;
+            this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -390,7 +390,7 @@
             this.cmbSecurity.Location = new System.Drawing.Point(181, 174);
             this.cmbSecurity.Name = "cmbSecurity";
             this.cmbSecurity.Size = new System.Drawing.Size(291, 27);
-            this.cmbSecurity.TabIndex = 5;
+            this.cmbSecurity.TabIndex = 4;
             // 
             // txtEmail
             // 
@@ -400,7 +400,7 @@
             this.txtEmail.MaxLength = 25;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(206, 26);
-            this.txtEmail.TabIndex = 4;
+            this.txtEmail.TabIndex = 3;
             this.txtEmail.Enter += new System.EventHandler(this.MouseFoucsEnter);
             this.txtEmail.Leave += new System.EventHandler(this.MouseFoucsLeave);
             // 
@@ -423,7 +423,7 @@
             this.txtAsnwer.MaxLength = 12;
             this.txtAsnwer.Name = "txtAsnwer";
             this.txtAsnwer.Size = new System.Drawing.Size(206, 26);
-            this.txtAsnwer.TabIndex = 6;
+            this.txtAsnwer.TabIndex = 5;
             this.txtAsnwer.UseSystemPasswordChar = true;
             this.txtAsnwer.Enter += new System.EventHandler(this.MouseFoucsEnter);
             this.txtAsnwer.Leave += new System.EventHandler(this.MouseFoucsLeave);
@@ -474,7 +474,7 @@
             this.grpAccount.Location = new System.Drawing.Point(56, 351);
             this.grpAccount.Name = "grpAccount";
             this.grpAccount.Size = new System.Drawing.Size(272, 62);
-            this.grpAccount.TabIndex = 0;
+            this.grpAccount.TabIndex = 1;
             this.grpAccount.TabStop = false;
             this.grpAccount.Text = "Select Account Type";
             // 
@@ -543,7 +543,7 @@
             this.grpIsBlock.Location = new System.Drawing.Point(335, 351);
             this.grpIsBlock.Name = "grpIsBlock";
             this.grpIsBlock.Size = new System.Drawing.Size(209, 62);
-            this.grpIsBlock.TabIndex = 1;
+            this.grpIsBlock.TabIndex = 2;
             this.grpIsBlock.TabStop = false;
             this.grpIsBlock.Text = "Change Block Status";
             // 

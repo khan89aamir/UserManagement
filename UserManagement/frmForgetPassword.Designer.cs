@@ -103,7 +103,7 @@
             this.txtEmail.MaxLength = 25;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(267, 26);
-            this.txtEmail.TabIndex = 3;
+            this.txtEmail.TabIndex = 1;
             this.txtEmail.Enter += new System.EventHandler(this.txtUserName_Enter);
             this.txtEmail.Leave += new System.EventHandler(this.txtUserName_Leave);
             // 
@@ -162,7 +162,7 @@
             this.cmbSecurity.Location = new System.Drawing.Point(197, 155);
             this.cmbSecurity.Name = "cmbSecurity";
             this.cmbSecurity.Size = new System.Drawing.Size(291, 27);
-            this.cmbSecurity.TabIndex = 185;
+            this.cmbSecurity.TabIndex = 2;
             // 
             // txtAsnwer
             // 
@@ -172,7 +172,7 @@
             this.txtAsnwer.MaxLength = 12;
             this.txtAsnwer.Name = "txtAsnwer";
             this.txtAsnwer.Size = new System.Drawing.Size(267, 26);
-            this.txtAsnwer.TabIndex = 186;
+            this.txtAsnwer.TabIndex = 3;
             this.txtAsnwer.UseSystemPasswordChar = true;
             this.txtAsnwer.Enter += new System.EventHandler(this.txtUserName_Enter);
             this.txtAsnwer.Leave += new System.EventHandler(this.txtUserName_Leave);
@@ -221,7 +221,7 @@
             this.btnReset.Location = new System.Drawing.Point(355, 277);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(109, 38);
-            this.btnReset.TabIndex = 190;
+            this.btnReset.TabIndex = 6;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -237,7 +237,7 @@
             this.txtRetrivePassword.Name = "txtRetrivePassword";
             this.txtRetrivePassword.ReadOnly = true;
             this.txtRetrivePassword.Size = new System.Drawing.Size(267, 26);
-            this.txtRetrivePassword.TabIndex = 191;
+            this.txtRetrivePassword.TabIndex = 4;
             this.txtRetrivePassword.UseSystemPasswordChar = true;
             this.txtRetrivePassword.Enter += new System.EventHandler(this.txtUserName_Enter);
             this.txtRetrivePassword.Leave += new System.EventHandler(this.txtUserName_Leave);
