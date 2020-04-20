@@ -54,10 +54,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CoreApp, Version=3.0.0.5, Culture=neutral, processorArchitecture=x86">
-      <HintPath>..\packages\CoreApp_DLLs.3.0.5\lib\CoreApp.dll</HintPath>
+      <HintPath>..\packages\CoreApp_DLLs.3.0.6\lib\CoreApp.dll</HintPath>
     </Reference>
     <Reference Include="CoreSys, Version=1.1.0.0, Culture=neutral, processorArchitecture=x86">
-      <HintPath>..\packages\CoreApp_DLLs.3.0.5\lib\CoreSys.dll</HintPath>
+      <HintPath>..\packages\CoreApp_DLLs.3.0.6\lib\CoreSys.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

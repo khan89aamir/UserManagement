@@ -25,8 +25,9 @@ namespace UserManagement
         string UserName = string.Empty;
         string DBName = string.Empty;
         int LogID = 0;
-        bool admin = true;//false
-        
+        //bool admin = true;
+        bool admin = false;
+
         Image B_Leave = UserManagement.Properties.Resources.B_click;
         Image B_Enter = UserManagement.Properties.Resources.B_on;
         public void LoginStatus(int LoginID, bool IsAdmin)
@@ -65,7 +66,7 @@ namespace UserManagement
             //DBName = arr[3].ToString();
             LoadData();
 
-            //ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
+            ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.Beginning, admin);
         }
         private void LoadData()
@@ -76,7 +77,7 @@ namespace UserManagement
             {
                 dt = ObjDAL.ExecuteSelectStatement("SELECT UserID,UserName,[Password],ISNULL(EmailID,'') AS EmailID,SecurityQuestion,Answer,(CASE WHEN IsAdmin=1 THEN 'Admin'WHEN IsAdmin=0 THEN 'Limited User'END)as 'AccountType'" +
                     ",(CASE WHEN IsBlock=1 THEN 'Yes'WHEN ISNULL(IsBlock,0)=0 THEN 'No'END)as 'IsBlock'" +
-                    " FROM " + DBName + ".[dbo].[UserManagement]");
+                    " FROM " + DBName + ".[dbo].[UserManagement] WITH(NOLOCK)");
             }
             else
             {
