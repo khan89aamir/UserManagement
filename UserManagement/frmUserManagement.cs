@@ -30,6 +30,7 @@ namespace UserManagement
 
         Image B_Leave = UserManagement.Properties.Resources.B_click;
         Image B_Enter = UserManagement.Properties.Resources.B_on;
+
         public void LoginStatus(int LoginID, bool IsAdmin)
         {
             LogID = LoginID;
@@ -71,18 +72,17 @@ namespace UserManagement
         }
         private void LoadData()
         {
-            ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
             DataTable dt = null;
             if (admin)
             {
-                dt = ObjDAL.ExecuteSelectStatement("SELECT UserID,UserName,[Password],ISNULL(EmailID,'') AS EmailID,SecurityQuestion,Answer,(CASE WHEN IsAdmin=1 THEN 'Admin'WHEN IsAdmin=0 THEN 'Limited User'END)as 'AccountType'" +
-                    ",(CASE WHEN IsBlock=1 THEN 'Yes'WHEN ISNULL(IsBlock,0)=0 THEN 'No'END)as 'IsBlock'" +
+                dt = ObjDAL.ExecuteSelectStatement("SELECT UserID,UserName,[Password],ISNULL(EmailID,'') AS EmailID,SecurityQuestion,Answer,(CASE IsAdmin WHEN 1 THEN 'Admin'WHEN 0 THEN 'Limited User'END)as 'AccountType'" +
+                    ",(CASE ISNULL(IsBlock,0) WHEN 1 THEN 'Yes' WHEN 0 THEN 'No'END)as 'IsBlock'" +
                     " FROM " + DBName + ".[dbo].[UserManagement] WITH(NOLOCK)");
             }
             else
             {
                 dt = ObjDAL.GetDataCol(DBName + ".dbo.UserManagement", "UserID,UserName,[Password],SecurityQuestion,Answer,ISNULL(EmailID,'') AS EmailID," +
-                    "(CASE WHEN IsAdmin=1 THEN 'Admin'WHEN IsAdmin=0 THEN 'Limited User'END)as 'AccountType'", "UserID=" + LogID, "UserID");
+                    "(CASE IsAdmin WHEN 1 THEN 'Admin' WHEN 0 THEN 'Limited User'END)as 'AccountType'", "UserID=" + LogID, "UserID");
             }
             if (ObjUtil.ValidateTable(dt))
             {
@@ -164,22 +164,21 @@ namespace UserManagement
 
                     if (UserName != txtUserName.Text.Trim() || txtVerifyPassword.Text.Trim() != ObjUtil.Decrypt(pass, true) || rdAdmin.Checked || rdLimitedUser.Checked)
                     {
-                        ObjDAL.UpdateColumnData("UpdatedOn", SqlDbType.DateTime, DateTime.Now);
+                        ObjDAL.UpdateColumnData("UpdatedOn", SqlDbType.DateTime, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                         ObjDAL.UpdateColumnData("UpdatedBy", SqlDbType.Int, LogID); //if LogID=0 then Test Admin else user
                     }
-                    if (ObjDAL.UpdateData(DBName + ".dbo.UserManagement", "UserName='" + UserName + "'") > 0)
+                    if (ObjDAL.UpdateData(DBName + ".dbo.UserManagement", "UserID=" + ID + "'") > 0)
                     {
                         ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterUpdate, admin);
                         LoadData();
                         ClearAll();
                         clsUtility.ShowInfoMessage("'" + UserName + "' user is Updated", clsUtility.strProjectTitle);
-                        ObjDAL.ResetData();
                     }
                     else
                     {
                         clsUtility.ShowErrorMessage("'" + UserName + "' user is not Updated", clsUtility.strProjectTitle);
-                        ObjDAL.ResetData();
                     }
+                    ObjDAL.ResetData();
                 }
                 else
                 {
@@ -373,9 +372,10 @@ namespace UserManagement
         {
             ClearAll();
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterNew, admin);
-            grpUserDetail.Enabled = true;
-            grpAccount.Enabled = true;
-            grpIsBlock.Enabled = true;
+            //grpUserDetail.Enabled = true;
+            //grpAccount.Enabled = true;
+            //grpIsBlock.Enabled = true;
+            btnSave.Enabled = false;
 
             txtUserName.Focus();
         }
@@ -383,22 +383,12 @@ namespace UserManagement
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             ObjUtil.SetRowNumber(dataGridView1);
-            ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.ColumnHeader);
-            //ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
+            ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
 
             dataGridView1.Columns["UserID"].Visible = false;
             dataGridView1.Columns["Password"].Visible = false;
             dataGridView1.Columns["Answer"].Visible = false;
             label1.Text = "Total Records : " + dataGridView1.Rows.Count;
-            //dataGridView1.Columns["UserName"].HeaderText = "User Name";
-            //dataGridView1.Columns["IsAdmin"].HeaderText = "Account Type";
-            //if (admin)
-            //{
-            //    dataGridView1.Columns["CreatedBy"].HeaderText = "Created By";
-            //    dataGridView1.Columns["CreatedOn"].HeaderText = "Created On";
-            //    dataGridView1.Columns["UpdatedBy"].HeaderText = "Updated By";
-            //    dataGridView1.Columns["UpdatedOn"].HeaderText = "Updated On";
-            //}
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -432,6 +422,7 @@ namespace UserManagement
                         rdLimitedUser.Checked = true;
                     }
                     ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterGridClick, admin);
+                    btnDelete.Enabled = false;
 
                     txtUserName.Text = dataGridView1.SelectedRows[0].Cells["UserName"].Value.ToString();
                     UserName = txtUserName.Text;
@@ -529,14 +520,24 @@ namespace UserManagement
 
         private void picIMGPass1_MouseDown(object sender, MouseEventArgs e)
         {
-            TextBox txt = (TextBox)sender;
-            txt.UseSystemPasswordChar = false;
+            txtPassword.UseSystemPasswordChar = false;
+            txtVerifyPassword.UseSystemPasswordChar = false;
         }
 
         private void picIMGPass1_MouseUp(object sender, MouseEventArgs e)
         {
-            TextBox txt = (TextBox)sender;
-            txt.UseSystemPasswordChar = true;
+            txtPassword.UseSystemPasswordChar = true;
+            txtVerifyPassword.UseSystemPasswordChar = true;
+        }
+
+        private void picIMGPass2_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtAsnwer.UseSystemPasswordChar = false;
+        }
+
+        private void picIMGPass2_MouseUp(object sender, MouseEventArgs e)
+        {
+            txtAsnwer.UseSystemPasswordChar = true;
         }
     }
 }
