@@ -24,9 +24,9 @@ namespace UserManagement
         int ID = 0;
         string UserName = string.Empty;
         string DBName = string.Empty;
-        int LogID = 0;
-        //bool admin = true;
-        bool admin = false;
+        int LogID = 1;
+        bool admin = true;
+        //bool admin = false;
 
         Image B_Leave = UserManagement.Properties.Resources.B_click;
         Image B_Enter = UserManagement.Properties.Resources.B_on;
@@ -76,7 +76,7 @@ namespace UserManagement
             if (admin)
             {
                 dt = ObjDAL.ExecuteSelectStatement("SELECT UserID,UserName,[Password],ISNULL(EmailID,'') AS EmailID,SecurityQuestion,Answer,(CASE IsAdmin WHEN 1 THEN 'Admin'WHEN 0 THEN 'Limited User'END)as 'AccountType'" +
-                    ",(CASE ISNULL(IsBlock,0) WHEN 1 THEN 'Yes' WHEN 0 THEN 'No'END)as 'IsBlock'" +
+                    ",(CASE ISNULL(IsBlock,0) WHEN 1 THEN 'Yes' WHEN 0 THEN 'No' END)as 'IsBlock'" +
                     " FROM " + DBName + ".[dbo].[UserManagement] WITH(NOLOCK)");
             }
             else
@@ -167,7 +167,7 @@ namespace UserManagement
                         ObjDAL.UpdateColumnData("UpdatedOn", SqlDbType.DateTime, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                         ObjDAL.UpdateColumnData("UpdatedBy", SqlDbType.Int, LogID); //if LogID=0 then Test Admin else user
                     }
-                    if (ObjDAL.UpdateData(DBName + ".dbo.UserManagement", "UserID=" + ID + "'") > 0)
+                    if (ObjDAL.UpdateData(DBName + ".dbo.UserManagement", "UserID=" + ID) > 0)
                     {
                         ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterUpdate, admin);
                         LoadData();
@@ -184,7 +184,6 @@ namespace UserManagement
                 {
                     clsUtility.ShowErrorMessage("'" + txtUserName.Text + "' UserName OR EmailID is already exist..", clsUtility.strProjectTitle);
                     txtUserName.Focus();
-                    ObjDAL.ResetData();
                 }
             }
         }
@@ -210,14 +209,12 @@ namespace UserManagement
                 else
                 {
                     clsUtility.ShowErrorMessage("'" + txtUserName.Text + "' user is not deleted\n Because atleast one User have an Administrator ", clsUtility.strProjectTitle);
-                    ObjDAL.ResetData();
                 }
             }
             else
             {
                 UserDeleted();
             }
-
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -308,7 +305,7 @@ namespace UserManagement
             }
             else
             {
-                a = ObjDAL.CountRecords(DBName + ".dbo.UserManagement", "UserID !=" + i +" AND (UserName = '" + txtUserName.Text + "' OR EmailID = '" + txtEmail.Text + "')");
+                a = ObjDAL.CountRecords(DBName + ".dbo.UserManagement", "UserID !=" + i + " AND (UserName = '" + txtUserName.Text + "' OR EmailID = '" + txtEmail.Text + "')");
             }
             if (a > 0)
             {
@@ -483,7 +480,7 @@ namespace UserManagement
             DialogResult d = MessageBox.Show("Are you sure want to delete '" + txtUserName.Text + "' user ", clsUtility.strProjectTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (d == DialogResult.Yes)
             {
-                if (ObjDAL.DeleteData(DBName + ".dbo.UserManagement", "UserName='" + txtUserName.Text + "'") > 0)
+                if (ObjDAL.DeleteData(DBName + ".dbo.UserManagement", "UserID=" + ID) > 0)
                 {
                     clsUtility.ShowInfoMessage("'" + txtUserName.Text + "' user is deleted  ", clsUtility.strProjectTitle);
                     ClearAll();
@@ -538,6 +535,16 @@ namespace UserManagement
         private void picIMGPass2_MouseUp(object sender, MouseEventArgs e)
         {
             txtAsnwer.UseSystemPasswordChar = true;
+        }
+
+        private void txtUserName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = ObjUtil.IsAlphaNumeric(e);
+            if (e.Handled)
+            {
+                clsUtility.ShowInfoMessage("Enter Valid UserName...", clsUtility.strProjectTitle);
+                txtUserName.Focus();
+            }
         }
     }
 }

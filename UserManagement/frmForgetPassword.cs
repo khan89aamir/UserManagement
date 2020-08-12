@@ -17,6 +17,7 @@ namespace UserManagement
         {
             InitializeComponent();
         }
+
         clsUtility ObjUtil = new clsUtility();
         clsConnection_DAL ObjDAL = new clsConnection_DAL(true);
         clsThreadTask ObjThread = new clsThreadTask();
@@ -127,7 +128,6 @@ namespace UserManagement
                 Obj.Body = body;
                 Obj.SendEMail();
                 b = Obj.IsMail;
-
             }
             catch
             {

@@ -109,6 +109,7 @@
             this.txtUserName.TabIndex = 0;
             this.txtUserName.Enter += new System.EventHandler(this.MouseFoucsEnter);
             this.txtUserName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUserName_KeyDown);
+            this.txtUserName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUserName_KeyPress);
             this.txtUserName.Leave += new System.EventHandler(this.MouseFoucsLeave);
             // 
             // txtPassword
