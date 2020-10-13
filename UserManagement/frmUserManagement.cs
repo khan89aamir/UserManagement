@@ -94,7 +94,6 @@ namespace UserManagement
             }
             grpUserDetail.Enabled = false;
             grpAccount.Enabled = false;
-            grpIsBlock.Enabled = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -104,7 +103,6 @@ namespace UserManagement
             {
                 grpUserDetail.Enabled = false;
                 grpAccount.Enabled = false;
-                rdBlock.Enabled = false;
                 ClearAll();
                 LoadData();
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterCancel, admin);
@@ -129,39 +127,7 @@ namespace UserManagement
                         admin = false;
                         clsUtility.IsAdmin = admin;
                     }
-                    if (IsAdmin())
-                    {
-                        if (CountofAdmin())
-                        {
-                            ObjDAL.UpdateColumnData("IsBlock", SqlDbType.Bit, rdBlock.Checked == true ? 1 : 0);
-                        }
-                        else
-                        {
-                            if (rdBlock.Checked)
-                            {
-                                clsUtility.ShowInfoMessage("'" + UserName + "' user is not Blocked\n Because atleast one User is Administrator ", clsUtility.strProjectTitle);
-                                grpAccount.Focus();
-                                ObjDAL.ResetData();
-                                return;
-                            }
-                            else
-                            {
-                                ObjDAL.UpdateColumnData("IsBlock", SqlDbType.Bit, 0);
-                            }
-                            if (rdLimitedUser.Checked)
-                            {
-                                clsUtility.ShowInfoMessage("'" + UserName + "' user is not Updated\n Because atleast one User is Administrator ", clsUtility.strProjectTitle);
-                                grpAccount.Focus();
-                                ObjDAL.ResetData();
-                                return;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        ObjDAL.UpdateColumnData("IsBlock", SqlDbType.Bit, rdBlock.Checked == true ? 1 : 0);
-                    }
-
+                    
                     if (UserName != txtUserName.Text.Trim() || txtVerifyPassword.Text.Trim() != ObjUtil.Decrypt(pass, true) || rdAdmin.Checked || rdLimitedUser.Checked)
                     {
                         ObjDAL.UpdateColumnData("UpdatedOn", SqlDbType.DateTime, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
@@ -224,12 +190,10 @@ namespace UserManagement
             if (admin)
             {
                 grpAccount.Enabled = true;
-                grpIsBlock.Enabled = true;
             }
             else
             {
                 grpAccount.Enabled = false;
-                grpIsBlock.Enabled = false;
             }
             txtUserName.Focus();
             txtUserName.SelectionStart = txtUserName.MaxLength;
@@ -330,7 +294,6 @@ namespace UserManagement
                     ObjDAL.SetColumnData("SecurityQuestion", SqlDbType.NVarChar, cmbSecurity.SelectedItem.ToString());
                     ObjDAL.SetColumnData("Answer", SqlDbType.NVarChar, ObjUtil.Encrypt(txtAsnwer.Text.Trim(), true));
                     ObjDAL.SetColumnData("CreatedBy", SqlDbType.Int, LogID); //if LogID=0 then Test Admin else user
-                    ObjDAL.SetColumnData("IsBlock", SqlDbType.Bit, rdBlock.Checked == true ? 1 : 0);
                     ObjDAL.SetColumnData("IsAdmin", SqlDbType.Bit, rdAdmin.Checked == true ? 1 : 0);
                     if (ObjDAL.InsertData(DBName + ".dbo.UserManagement", true) > 0)
                     {
@@ -362,8 +325,6 @@ namespace UserManagement
             cmbSecurity.SelectedIndex = -1;
             rdAdmin.Checked = false;
             rdLimitedUser.Checked = false;
-            rdBlock.Checked = false;
-            rdUnblocked.Checked = false;
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -398,17 +359,6 @@ namespace UserManagement
                     grpUserDetail.Enabled = false;
                     grpAccount.Enabled = false;
                     ID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["UserID"].Value);
-                    if (admin)
-                    {
-                        if (dataGridView1.SelectedRows[0].Cells["IsBlock"].Value.ToString() == "Yes")
-                        {
-                            rdBlock.Checked = true;
-                        }
-                        else
-                        {
-                            rdUnblocked.Checked = true;
-                        }
-                    }
                     //AccountType
                     if (dataGridView1.SelectedRows[0].Cells["AccountType"].Value.ToString() == "Admin")
                     {

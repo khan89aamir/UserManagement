@@ -48,7 +48,6 @@
             this.picIMGPass1 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -61,13 +60,10 @@
             this.rdAdmin = new System.Windows.Forms.RadioButton();
             this.grpAccount = new System.Windows.Forms.GroupBox();
             this.rdLimitedUser = new System.Windows.Forms.RadioButton();
-            this.label11 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
-            this.rdBlock = new System.Windows.Forms.RadioButton();
-            this.grpIsBlock = new System.Windows.Forms.GroupBox();
-            this.rdUnblocked = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grpGridview.SuspendLayout();
             this.grpUserDetail.SuspendLayout();
@@ -75,7 +71,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picIMGPass1)).BeginInit();
             this.grpAccount.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.grpIsBlock.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblUserName
@@ -273,11 +268,11 @@
             // grpUserDetail
             // 
             this.grpUserDetail.BackColor = System.Drawing.Color.Transparent;
+            this.grpUserDetail.Controls.Add(this.label7);
             this.grpUserDetail.Controls.Add(this.picIMGPass2);
             this.grpUserDetail.Controls.Add(this.picIMGPass1);
             this.grpUserDetail.Controls.Add(this.label10);
             this.grpUserDetail.Controls.Add(this.label9);
-            this.grpUserDetail.Controls.Add(this.label7);
             this.grpUserDetail.Controls.Add(this.label4);
             this.grpUserDetail.Controls.Add(this.label3);
             this.grpUserDetail.Controls.Add(this.label8);
@@ -350,18 +345,6 @@
             this.label9.Size = new System.Drawing.Size(15, 17);
             this.label9.TabIndex = 239;
             this.label9.Text = "*";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(828, 27);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(15, 17);
-            this.label7.TabIndex = 238;
-            this.label7.Text = "*";
             // 
             // label4
             // 
@@ -509,18 +492,6 @@
             this.rdLimitedUser.Text = "Limited User";
             this.rdLimitedUser.UseVisualStyleBackColor = false;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label11.Location = new System.Drawing.Point(436, 270);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(15, 17);
-            this.label11.TabIndex = 243;
-            this.label11.Text = "*";
-            // 
             // panel2
             // 
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
@@ -544,40 +515,6 @@
             this.label12.TabIndex = 82;
             this.label12.Text = "User Management";
             // 
-            // rdBlock
-            // 
-            this.rdBlock.AutoSize = true;
-            this.rdBlock.BackColor = System.Drawing.Color.Transparent;
-            this.rdBlock.Location = new System.Drawing.Point(39, 25);
-            this.rdBlock.Name = "rdBlock";
-            this.rdBlock.Size = new System.Drawing.Size(74, 21);
-            this.rdBlock.TabIndex = 0;
-            this.rdBlock.Text = "Blocked";
-            this.rdBlock.UseVisualStyleBackColor = false;
-            // 
-            // grpIsBlock
-            // 
-            this.grpIsBlock.BackColor = System.Drawing.Color.Transparent;
-            this.grpIsBlock.Controls.Add(this.rdUnblocked);
-            this.grpIsBlock.Controls.Add(this.rdBlock);
-            this.grpIsBlock.Location = new System.Drawing.Point(481, 261);
-            this.grpIsBlock.Name = "grpIsBlock";
-            this.grpIsBlock.Size = new System.Drawing.Size(417, 62);
-            this.grpIsBlock.TabIndex = 2;
-            this.grpIsBlock.TabStop = false;
-            this.grpIsBlock.Text = "Change Block Status";
-            // 
-            // rdUnblocked
-            // 
-            this.rdUnblocked.AutoSize = true;
-            this.rdUnblocked.BackColor = System.Drawing.Color.Transparent;
-            this.rdUnblocked.Location = new System.Drawing.Point(271, 25);
-            this.rdUnblocked.Name = "rdUnblocked";
-            this.rdUnblocked.Size = new System.Drawing.Size(89, 21);
-            this.rdUnblocked.TabIndex = 1;
-            this.rdUnblocked.Text = "Unblocked";
-            this.rdUnblocked.UseVisualStyleBackColor = false;
-            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -590,6 +527,18 @@
             this.label1.TabIndex = 180;
             this.label1.Text = "Total Records : 0";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label7.Location = new System.Drawing.Point(828, 27);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(15, 17);
+            this.label7.TabIndex = 244;
+            this.label7.Text = "*";
+            // 
             // frmUserManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -597,9 +546,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(910, 587);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.grpIsBlock);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.grpAccount);
             this.Controls.Add(this.grpUserDetail);
@@ -629,8 +576,6 @@
             this.grpAccount.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.grpIsBlock.ResumeLayout(false);
-            this.grpIsBlock.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -658,9 +603,6 @@
         private System.Windows.Forms.RadioButton rdLimitedUser;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.RadioButton rdBlock;
-        private System.Windows.Forms.GroupBox grpIsBlock;
-        private System.Windows.Forms.RadioButton rdUnblocked;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbSecurity;
         public System.Windows.Forms.TextBox txtAsnwer;
@@ -670,12 +612,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox picIMGPass2;
         private System.Windows.Forms.PictureBox picIMGPass1;
+        private System.Windows.Forms.Label label7;
     }
 }
