@@ -76,13 +76,13 @@ namespace UserManagement
             if (admin)
             {
                 dt = ObjDAL.ExecuteSelectStatement("SELECT UserID,UserName,[Password],ISNULL(EmailID,'') AS EmailID,SecurityQuestion,Answer,(CASE IsAdmin WHEN 1 THEN 'Admin'WHEN 0 THEN 'Limited User'END)as 'AccountType'" +
-                    ",(CASE ISNULL(IsBlock,0) WHEN 1 THEN 'Yes' WHEN 0 THEN 'No' END)as 'IsBlock'" +
+                    ",(CASE ActiveStatus WHEN 1 THEN 'Active' WHEN 0 THEN 'InActive' END)as 'ActiveStatus'" +
                     " FROM " + DBName + ".[dbo].[UserManagement] WITH(NOLOCK)");
             }
             else
             {
                 dt = ObjDAL.GetDataCol(DBName + ".dbo.UserManagement", "UserID,UserName,[Password],SecurityQuestion,Answer,ISNULL(EmailID,'') AS EmailID," +
-                    "(CASE IsAdmin WHEN 1 THEN 'Admin' WHEN 0 THEN 'Limited User'END)as 'AccountType'", "UserID=" + LogID, "UserID");
+                    "(CASE IsAdmin WHEN 1 THEN 'Admin' WHEN 0 THEN 'Limited User'END)as 'AccountType',(CASE ActiveStatus WHEN 1 THEN 'Active' WHEN 0 THEN 'InActive' END)as 'ActiveStatus'", "UserID=" + LogID, "UserID");
             }
             if (ObjUtil.ValidateTable(dt))
             {
@@ -94,6 +94,7 @@ namespace UserManagement
             }
             grpUserDetail.Enabled = false;
             grpAccount.Enabled = false;
+            grpActive.Enabled = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -122,6 +123,7 @@ namespace UserManagement
                     ObjDAL.UpdateColumnData("SecurityQuestion", SqlDbType.NVarChar, cmbSecurity.SelectedItem.ToString());
                     ObjDAL.UpdateColumnData("Answer", SqlDbType.NVarChar, ObjUtil.Encrypt(txtAsnwer.Text.Trim(), true));
                     ObjDAL.UpdateColumnData("IsAdmin", SqlDbType.Bit, rdAdmin.Checked == true ? 1 : 0);
+                    ObjDAL.UpdateColumnData("ActiveStatus", SqlDbType.Bit, rdActive.Checked == true ? 1 : 0);
                     if (rdAdmin.Checked == false)
                     {
                         admin = false;
@@ -187,6 +189,7 @@ namespace UserManagement
         {
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterEdit, admin);
             grpUserDetail.Enabled = true;
+            grpActive.Enabled = true;
             if (admin)
             {
                 grpAccount.Enabled = true;
@@ -295,6 +298,7 @@ namespace UserManagement
                     ObjDAL.SetColumnData("Answer", SqlDbType.NVarChar, ObjUtil.Encrypt(txtAsnwer.Text.Trim(), true));
                     ObjDAL.SetColumnData("CreatedBy", SqlDbType.Int, LogID); //if LogID=0 then Test Admin else user
                     ObjDAL.SetColumnData("IsAdmin", SqlDbType.Bit, rdAdmin.Checked == true ? 1 : 0);
+                    ObjDAL.SetColumnData("ActiveStatus", SqlDbType.Bit, rdActive.Checked == true ? 1 : 0);
                     if (ObjDAL.InsertData(DBName + ".dbo.UserManagement", true) > 0)
                     {
                         ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterSave, admin);
@@ -325,6 +329,8 @@ namespace UserManagement
             cmbSecurity.SelectedIndex = -1;
             rdAdmin.Checked = false;
             rdLimitedUser.Checked = false;
+            rdActive.Checked = false;
+            rdInActive.Checked = false;
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -332,7 +338,7 @@ namespace UserManagement
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterNew, admin);
             //grpUserDetail.Enabled = true;
             //grpAccount.Enabled = true;
-            //grpIsBlock.Enabled = true;
+            //grpActive.Enabled = true;
             btnSave.Enabled = false;
 
             txtUserName.Focus();
@@ -367,6 +373,14 @@ namespace UserManagement
                     else
                     {
                         rdLimitedUser.Checked = true;
+                    }
+                    if (dataGridView1.SelectedRows[0].Cells["ActiveStatus"].Value.ToString() == "Active")
+                    {
+                        rdActive.Checked = true;
+                    }
+                    else
+                    {
+                        rdInActive.Checked = true;
                     }
                     ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterGridClick, admin);
                     btnDelete.Enabled = false;

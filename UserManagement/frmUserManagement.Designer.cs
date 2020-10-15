@@ -44,6 +44,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.grpGridview = new System.Windows.Forms.GroupBox();
             this.grpUserDetail = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.picIMGPass2 = new System.Windows.Forms.PictureBox();
             this.picIMGPass1 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -63,7 +64,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.grpActive = new System.Windows.Forms.GroupBox();
+            this.rdInActive = new System.Windows.Forms.RadioButton();
+            this.rdActive = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grpGridview.SuspendLayout();
             this.grpUserDetail.SuspendLayout();
@@ -71,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picIMGPass1)).BeginInit();
             this.grpAccount.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.grpActive.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblUserName
@@ -295,6 +299,18 @@
             this.grpUserDetail.TabIndex = 0;
             this.grpUserDetail.TabStop = false;
             this.grpUserDetail.Text = "User Details";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label7.Location = new System.Drawing.Point(828, 27);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(15, 17);
+            this.label7.TabIndex = 244;
+            this.label7.Text = "*";
             // 
             // picIMGPass2
             // 
@@ -527,17 +543,41 @@
             this.label1.TabIndex = 180;
             this.label1.Text = "Total Records : 0";
             // 
-            // label7
+            // grpActive
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(828, 27);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(15, 17);
-            this.label7.TabIndex = 244;
-            this.label7.Text = "*";
+            this.grpActive.BackColor = System.Drawing.Color.Transparent;
+            this.grpActive.Controls.Add(this.rdInActive);
+            this.grpActive.Controls.Add(this.rdActive);
+            this.grpActive.Location = new System.Drawing.Point(442, 261);
+            this.grpActive.Name = "grpActive";
+            this.grpActive.Size = new System.Drawing.Size(417, 62);
+            this.grpActive.TabIndex = 181;
+            this.grpActive.TabStop = false;
+            this.grpActive.Text = "Select Active Status";
+            // 
+            // rdInActive
+            // 
+            this.rdInActive.AutoSize = true;
+            this.rdInActive.BackColor = System.Drawing.Color.Transparent;
+            this.rdInActive.Location = new System.Drawing.Point(258, 25);
+            this.rdInActive.Name = "rdInActive";
+            this.rdInActive.Size = new System.Drawing.Size(77, 21);
+            this.rdInActive.TabIndex = 1;
+            this.rdInActive.Text = "InActive";
+            this.rdInActive.UseVisualStyleBackColor = false;
+            // 
+            // rdActive
+            // 
+            this.rdActive.AutoSize = true;
+            this.rdActive.BackColor = System.Drawing.Color.Transparent;
+            this.rdActive.Checked = true;
+            this.rdActive.Location = new System.Drawing.Point(40, 25);
+            this.rdActive.Name = "rdActive";
+            this.rdActive.Size = new System.Drawing.Size(65, 21);
+            this.rdActive.TabIndex = 0;
+            this.rdActive.TabStop = true;
+            this.rdActive.Text = "Active";
+            this.rdActive.UseVisualStyleBackColor = false;
             // 
             // frmUserManagement
             // 
@@ -546,6 +586,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(910, 587);
+            this.Controls.Add(this.grpActive);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.grpAccount);
@@ -576,6 +617,8 @@
             this.grpAccount.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.grpActive.ResumeLayout(false);
+            this.grpActive.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -618,5 +661,8 @@
         private System.Windows.Forms.PictureBox picIMGPass2;
         private System.Windows.Forms.PictureBox picIMGPass1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox grpActive;
+        private System.Windows.Forms.RadioButton rdInActive;
+        private System.Windows.Forms.RadioButton rdActive;
     }
 }
