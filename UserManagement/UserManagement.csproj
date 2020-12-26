@@ -84,8 +84,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmForgetPassword.ar-KW.resx">
+      <DependentUpon>frmForgetPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmForgetPassword.resx">
       <DependentUpon>frmForgetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUserManagement.ar-KW.resx">
+      <DependentUpon>frmUserManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUserManagement.resx">
       <DependentUpon>frmUserManagement.cs</DependentUpon>
@@ -122,6 +128,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\animated.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\titlebg_green.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\titlebg.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

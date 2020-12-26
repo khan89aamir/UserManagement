@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Threading;
+using System.Globalization;
 using CoreApp;
 
 namespace UserManagement
@@ -15,6 +17,9 @@ namespace UserManagement
     {
         public frmUserManagement()
         {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo(User_Lang);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(User_Lang);
+
             InitializeComponent();
             rdAdmin.Checked = false;
         }
@@ -27,6 +32,8 @@ namespace UserManagement
         int LogID = 1;
         bool admin = true;
         //bool admin = false;
+        public static string User_Lang = "en-US";
+        public bool IsNew = false;
 
         Image B_Leave = UserManagement.Properties.Resources.B_click;
         Image B_Enter = UserManagement.Properties.Resources.B_on;
@@ -54,6 +61,16 @@ namespace UserManagement
 
         private void frmUserManagement_Load(object sender, EventArgs e)
         {
+            if (IsNew)
+            {
+                this.BackgroundImage = UserManagement.Properties.Resources.back_green;
+                pnlTitle.BackgroundImage = UserManagement.Properties.Resources.titlebg_green;
+            }
+            else
+            {
+                this.BackgroundImage = UserManagement.Properties.Resources.back;
+                pnlTitle.BackgroundImage = UserManagement.Properties.Resources.titlebg;
+            }
             btnAdd.BackgroundImage = B_Leave;
             btnSave.BackgroundImage = B_Leave;
             btnEdit.BackgroundImage = B_Leave;
@@ -352,7 +369,7 @@ namespace UserManagement
             dataGridView1.Columns["UserID"].Visible = false;
             dataGridView1.Columns["Password"].Visible = false;
             dataGridView1.Columns["Answer"].Visible = false;
-            label1.Text = "Total Records : " + dataGridView1.Rows.Count;
+            lblCount.Text = dataGridView1.Rows.Count.ToString();
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

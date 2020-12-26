@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Threading;
+using System.Globalization;
 using System.Text.RegularExpressions;
 using CoreApp;
 
@@ -15,6 +16,9 @@ namespace UserManagement
     {
         public frmForgetPassword()
         {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo(User_Lang);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(User_Lang);
+
             InitializeComponent();
         }
 
@@ -30,9 +34,22 @@ namespace UserManagement
         DataTable dt = null;
         string DBName = string.Empty;
         public string strReuestType;
+        
+        public static string User_Lang = "en-US";
+        public bool IsNew = false;
 
         private void ForgetPassword_Load(object sender, EventArgs e)
         {
+            if (IsNew)
+            {
+                this.BackgroundImage = UserManagement.Properties.Resources.back_green;
+                pnlTitle.BackgroundImage = UserManagement.Properties.Resources.titlebg_green;
+            }
+            else
+            {
+                this.BackgroundImage = UserManagement.Properties.Resources.back;
+                pnlTitle.BackgroundImage = UserManagement.Properties.Resources.titlebg;
+            }
             DBName = ObjDAL.GetCurrentDBName(true);
         }
 
