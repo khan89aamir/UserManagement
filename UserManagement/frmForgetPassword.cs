@@ -9,10 +9,11 @@ using System.Threading;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using CoreApp;
+using ComponentFactory.Krypton.Toolkit;
 
 namespace UserManagement
 {
-    public partial class frmForgetPassword : Form
+    public partial class frmForgetPassword : KryptonForm
     {
         public frmForgetPassword()
         {
@@ -26,8 +27,6 @@ namespace UserManagement
         clsConnection_DAL ObjDAL = new clsConnection_DAL(true);
         clsThreadTask ObjThread = new clsThreadTask();
 
-        Image B_Leave = UserManagement.Properties.Resources.B_click;
-        Image B_Enter = UserManagement.Properties.Resources.B_on;
         Image imgLoading = UserManagement.Properties.Resources.animated;
 
         bool b = false;
@@ -53,16 +52,6 @@ namespace UserManagement
             DBName = ObjDAL.GetCurrentDBName(true);
         }
 
-        private void ButtonMouserEnter(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            btn.BackgroundImage = B_Enter;
-        }
-        private void ButtonMouseLeave(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            btn.BackgroundImage = B_Leave;
-        }
         private bool FormValidation()
         {
             string ValidatingEmailID = txtEmail.Text.Trim();
@@ -205,16 +194,6 @@ namespace UserManagement
         private void btnReset_Click(object sender, EventArgs e)
         {
             ClearAll();
-        }
-
-        private void txtUserName_Enter(object sender, EventArgs e)
-        {
-            ObjUtil.SetTextHighlightColor(sender);
-        }
-
-        private void txtUserName_Leave(object sender, EventArgs e)
-        {
-            ObjUtil.SetTextHighlightColor(sender, Color.White);
         }
 
         private void picIMGPass_MouseDown(object sender, MouseEventArgs e)

@@ -113,6 +113,76 @@ namespace UserManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnAdd_Values_Image {
+            get {
+                object obj = ResourceManager.GetObject("btnAdd.Values.Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnCancel_Values_Image {
+            get {
+                object obj = ResourceManager.GetObject("btnCancel.Values.Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnDelete_Values_Image {
+            get {
+                object obj = ResourceManager.GetObject("btnDelete.Values.Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnEdit_Values_Image {
+            get {
+                object obj = ResourceManager.GetObject("btnEdit.Values.Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnSave_Values_Image {
+            get {
+                object obj = ResourceManager.GetObject("btnSave.Values.Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnUpdate_Values_Image {
+            get {
+                object obj = ResourceManager.GetObject("btnUpdate.Values.Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kryptonHeaderGroup1_ValuesPrimary_Image {
+            get {
+                object obj = ResourceManager.GetObject("kryptonHeaderGroup1.ValuesPrimary.Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap picIMGPass_Image {
             get {
                 object obj = ResourceManager.GetObject("picIMGPass.Image", resourceCulture);

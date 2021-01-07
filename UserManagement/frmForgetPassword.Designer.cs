@@ -33,7 +33,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.btnSubmit = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cmbSecurity = new System.Windows.Forms.ComboBox();
@@ -41,24 +40,32 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnReset = new System.Windows.Forms.Button();
             this.txtRetrivePassword = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.picIMGPass = new System.Windows.Forms.PictureBox();
             this.pnlTitle = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
+            this.grpKrytonHeader = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
+            this.grpUserDetail = new gGlowBox.gGlowGroupBox();
+            this.btnSubmit = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnReset = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.picIMGPass)).BeginInit();
             this.pnlTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grpKrytonHeader)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grpKrytonHeader.Panel)).BeginInit();
+            this.grpKrytonHeader.Panel.SuspendLayout();
+            this.grpKrytonHeader.SuspendLayout();
+            this.grpUserDetail.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtUserName
             // 
-            resources.ApplyResources(this.txtUserName, "txtUserName");
             this.txtUserName.BackColor = System.Drawing.Color.White;
+            this.grpUserDetail.SetEffectType(this.txtUserName, gGlowBox.gGlowGroupBox.eEffectType.Glow);
+            resources.ApplyResources(this.txtUserName, "txtUserName");
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Enter += new System.EventHandler(this.txtUserName_Enter);
-            this.txtUserName.Leave += new System.EventHandler(this.txtUserName_Leave);
+            this.grpUserDetail.SetsGlowColor(this.txtUserName, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("txtUserName.sGlowColor"))));
             // 
             // label2
             // 
@@ -74,22 +81,11 @@
             // 
             // txtEmail
             // 
-            resources.ApplyResources(this.txtEmail, "txtEmail");
             this.txtEmail.BackColor = System.Drawing.Color.White;
+            this.grpUserDetail.SetEffectType(this.txtEmail, gGlowBox.gGlowGroupBox.eEffectType.Glow);
+            resources.ApplyResources(this.txtEmail, "txtEmail");
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Enter += new System.EventHandler(this.txtUserName_Enter);
-            this.txtEmail.Leave += new System.EventHandler(this.txtUserName_Leave);
-            // 
-            // btnSubmit
-            // 
-            resources.ApplyResources(this.btnSubmit, "btnSubmit");
-            this.btnSubmit.BackgroundImage = global::UserManagement.Properties.Resources.B_click;
-            this.btnSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
-            this.btnSubmit.MouseEnter += new System.EventHandler(this.ButtonMouserEnter);
-            this.btnSubmit.MouseLeave += new System.EventHandler(this.ButtonMouseLeave);
+            this.grpUserDetail.SetsGlowColor(this.txtEmail, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("txtEmail.sGlowColor"))));
             // 
             // label3
             // 
@@ -107,8 +103,9 @@
             // 
             // cmbSecurity
             // 
-            resources.ApplyResources(this.cmbSecurity, "cmbSecurity");
             this.cmbSecurity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.grpUserDetail.SetEffectType(this.cmbSecurity, gGlowBox.gGlowGroupBox.eEffectType.Glow);
+            resources.ApplyResources(this.cmbSecurity, "cmbSecurity");
             this.cmbSecurity.FormattingEnabled = true;
             this.cmbSecurity.Items.AddRange(new object[] {
             resources.GetString("cmbSecurity.Items"),
@@ -117,15 +114,16 @@
             resources.GetString("cmbSecurity.Items3"),
             resources.GetString("cmbSecurity.Items4")});
             this.cmbSecurity.Name = "cmbSecurity";
+            this.grpUserDetail.SetsGlowColor(this.cmbSecurity, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("cmbSecurity.sGlowColor"))));
             // 
             // txtAsnwer
             // 
-            resources.ApplyResources(this.txtAsnwer, "txtAsnwer");
             this.txtAsnwer.BackColor = System.Drawing.Color.White;
+            this.grpUserDetail.SetEffectType(this.txtAsnwer, gGlowBox.gGlowGroupBox.eEffectType.Glow);
+            resources.ApplyResources(this.txtAsnwer, "txtAsnwer");
             this.txtAsnwer.Name = "txtAsnwer";
+            this.grpUserDetail.SetsGlowColor(this.txtAsnwer, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("txtAsnwer.sGlowColor"))));
             this.txtAsnwer.UseSystemPasswordChar = true;
-            this.txtAsnwer.Enter += new System.EventHandler(this.txtUserName_Enter);
-            this.txtAsnwer.Leave += new System.EventHandler(this.txtUserName_Leave);
             // 
             // label6
             // 
@@ -146,26 +144,15 @@
             this.label4.ForeColor = System.Drawing.Color.Crimson;
             this.label4.Name = "label4";
             // 
-            // btnReset
-            // 
-            resources.ApplyResources(this.btnReset, "btnReset");
-            this.btnReset.BackgroundImage = global::UserManagement.Properties.Resources.B_click;
-            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReset.Name = "btnReset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            this.btnReset.MouseEnter += new System.EventHandler(this.ButtonMouserEnter);
-            this.btnReset.MouseLeave += new System.EventHandler(this.ButtonMouseLeave);
-            // 
             // txtRetrivePassword
             // 
-            resources.ApplyResources(this.txtRetrivePassword, "txtRetrivePassword");
             this.txtRetrivePassword.BackColor = System.Drawing.Color.White;
+            this.grpUserDetail.SetEffectType(this.txtRetrivePassword, gGlowBox.gGlowGroupBox.eEffectType.Glow);
+            resources.ApplyResources(this.txtRetrivePassword, "txtRetrivePassword");
             this.txtRetrivePassword.Name = "txtRetrivePassword";
             this.txtRetrivePassword.ReadOnly = true;
+            this.grpUserDetail.SetsGlowColor(this.txtRetrivePassword, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("txtRetrivePassword.sGlowColor"))));
             this.txtRetrivePassword.UseSystemPasswordChar = true;
-            this.txtRetrivePassword.Enter += new System.EventHandler(this.txtUserName_Enter);
-            this.txtRetrivePassword.Leave += new System.EventHandler(this.txtUserName_Leave);
             // 
             // label7
             // 
@@ -182,9 +169,9 @@
             // 
             // picIMGPass
             // 
-            resources.ApplyResources(this.picIMGPass, "picIMGPass");
             this.picIMGPass.BackColor = System.Drawing.Color.Transparent;
             this.picIMGPass.Image = global::UserManagement.Properties.Resources.picIMGPass_Image;
+            resources.ApplyResources(this.picIMGPass, "picIMGPass");
             this.picIMGPass.Name = "picIMGPass";
             this.picIMGPass.TabStop = false;
             this.picIMGPass.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picIMGPass_MouseDown);
@@ -192,8 +179,8 @@
             // 
             // pnlTitle
             // 
+            this.pnlTitle.BackgroundImage = global::UserManagement.Properties.Resources.titlebg_green;
             resources.ApplyResources(this.pnlTitle, "pnlTitle");
-            this.pnlTitle.BackgroundImage = global::UserManagement.Properties.Resources.titlebg;
             this.pnlTitle.Controls.Add(this.label12);
             this.pnlTitle.Name = "pnlTitle";
             // 
@@ -204,30 +191,81 @@
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Name = "label12";
             // 
+            // grpKrytonHeader
+            // 
+            this.grpKrytonHeader.HeaderVisibleSecondary = false;
+            resources.ApplyResources(this.grpKrytonHeader, "grpKrytonHeader");
+            this.grpKrytonHeader.Name = "grpKrytonHeader";
+            // 
+            // grpKrytonHeader.Panel
+            // 
+            this.grpKrytonHeader.Panel.Controls.Add(this.grpUserDetail);
+            this.grpKrytonHeader.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.grpKrytonHeader.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
+            this.grpKrytonHeader.StateCommon.HeaderPrimary.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpKrytonHeader.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpKrytonHeader.ValuesPrimary.Heading = resources.GetString("grpKrytonHeader.ValuesPrimary.Heading");
+            this.grpKrytonHeader.ValuesPrimary.Image = ((System.Drawing.Image)(resources.GetObject("grpKrytonHeader.ValuesPrimary.Image")));
+            // 
+            // grpUserDetail
+            // 
+            this.grpUserDetail.BackColor = System.Drawing.Color.Transparent;
+            this.grpUserDetail.Controls.Add(this.label2);
+            this.grpUserDetail.Controls.Add(this.txtUserName);
+            this.grpUserDetail.Controls.Add(this.txtEmail);
+            this.grpUserDetail.Controls.Add(this.label3);
+            this.grpUserDetail.Controls.Add(this.label5);
+            this.grpUserDetail.Controls.Add(this.picIMGPass);
+            this.grpUserDetail.Controls.Add(this.label8);
+            this.grpUserDetail.Controls.Add(this.label9);
+            this.grpUserDetail.Controls.Add(this.label1);
+            this.grpUserDetail.Controls.Add(this.label7);
+            this.grpUserDetail.Controls.Add(this.label6);
+            this.grpUserDetail.Controls.Add(this.txtRetrivePassword);
+            this.grpUserDetail.Controls.Add(this.txtAsnwer);
+            this.grpUserDetail.Controls.Add(this.label4);
+            this.grpUserDetail.Controls.Add(this.cmbSecurity);
+            resources.ApplyResources(this.grpUserDetail, "grpUserDetail");
+            this.grpUserDetail.GlowAmount = 22;
+            this.grpUserDetail.GlowColorDefault = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(179)))), ((int)(((byte)(205)))));
+            this.grpUserDetail.GlowFeather = 60;
+            this.grpUserDetail.GlowOn = true;
+            this.grpUserDetail.Name = "grpUserDetail";
+            // 
+            // btnSubmit
+            // 
+            resources.ApplyResources(this.btnSubmit, "btnSubmit");
+            this.btnSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.OverrideFocus.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+            this.btnSubmit.StateNormal.Content.LongText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Values.Image = global::UserManagement.Properties.Resources.btnSave_Values_Image;
+            this.btnSubmit.Values.Text = resources.GetString("btnSubmit.Values.Text");
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
+            // btnReset
+            // 
+            resources.ApplyResources(this.btnReset, "btnReset");
+            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReset.Name = "btnReset";
+            this.btnReset.OverrideFocus.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+            this.btnReset.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Values.Image = global::UserManagement.Properties.Resources.btnCancel_Values_Image;
+            this.btnReset.Values.Text = resources.GetString("btnReset.Values.Text");
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // frmForgetPassword
             // 
-            this.AcceptButton = this.btnSubmit;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::UserManagement.Properties.Resources.back;
-            this.Controls.Add(this.pnlTitle);
-            this.Controls.Add(this.picIMGPass);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtRetrivePassword);
+            this.BackgroundImage = global::UserManagement.Properties.Resources.back_green;
+            this.Controls.Add(this.grpKrytonHeader);
             this.Controls.Add(this.btnReset);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.cmbSecurity);
-            this.Controls.Add(this.txtAsnwer);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtUserName);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pnlTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -238,6 +276,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.picIMGPass)).EndInit();
             this.pnlTitle.ResumeLayout(false);
             this.pnlTitle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grpKrytonHeader.Panel)).EndInit();
+            this.grpKrytonHeader.Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grpKrytonHeader)).EndInit();
+            this.grpKrytonHeader.ResumeLayout(false);
+            this.grpUserDetail.ResumeLayout(false);
+            this.grpUserDetail.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,7 +293,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cmbSecurity;
@@ -257,12 +300,15 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnReset;
         public System.Windows.Forms.TextBox txtRetrivePassword;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox picIMGPass;
         private System.Windows.Forms.Panel pnlTitle;
         private System.Windows.Forms.Label label12;
+        private gGlowBox.gGlowGroupBox grpUserDetail;
+        private ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup grpKrytonHeader;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnSubmit;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnReset;
     }
 }

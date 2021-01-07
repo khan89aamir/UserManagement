@@ -10,10 +10,11 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Globalization;
 using CoreApp;
+using ComponentFactory.Krypton.Toolkit;
 
 namespace UserManagement
 {
-    public partial class frmUserManagement : Form
+    public partial class frmUserManagement : KryptonForm
     {
         public frmUserManagement()
         {
@@ -71,12 +72,6 @@ namespace UserManagement
                 this.BackgroundImage = UserManagement.Properties.Resources.back;
                 pnlTitle.BackgroundImage = UserManagement.Properties.Resources.titlebg;
             }
-            btnAdd.BackgroundImage = B_Leave;
-            btnSave.BackgroundImage = B_Leave;
-            btnEdit.BackgroundImage = B_Leave;
-            btnUpdate.BackgroundImage = B_Leave;
-            btnDelete.BackgroundImage = B_Leave;
-            btnCancel.BackgroundImage = B_Leave;
 
             DBName = ObjDAL.GetCurrentDBName(true);
             //string a = ObjDAL.ReadConStringFromFile("AppConfig/ServerConfig.sc", true);
@@ -364,12 +359,14 @@ namespace UserManagement
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             ObjUtil.SetRowNumber(dataGridView1);
-            ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
-
+            //ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
             dataGridView1.Columns["UserID"].Visible = false;
             dataGridView1.Columns["Password"].Visible = false;
             dataGridView1.Columns["Answer"].Visible = false;
-            lblCount.Text = dataGridView1.Rows.Count.ToString();
+
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            grpGridview.ValuesSecondary.Heading = dataGridView1.Rows.Count.ToString();
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -474,26 +471,6 @@ namespace UserManagement
                     ObjDAL.ResetData();
                 }
             }
-        }
-        private void MouseFoucsEnter(object sender, EventArgs e)
-        {
-            ObjUtil.SetTextHighlightColor(sender);
-        }
-        private void MouseFoucsLeave(object sender, EventArgs e)
-        {
-            ObjUtil.SetTextHighlightColor(sender, Color.White);
-        }
-
-        private void btnAdd_MouseEnter(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            btn.BackgroundImage = B_Enter;
-        }
-
-        private void btnAdd_MouseLeave(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            btn.BackgroundImage = B_Leave;
         }
 
         private void picIMGPass1_MouseDown(object sender, MouseEventArgs e)
