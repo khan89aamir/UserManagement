@@ -58,10 +58,10 @@
       <HintPath>..\..\..\..\Tailoring document\Debug\ComponentFactory.Krypton.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="CoreApp, Version=3.1.2.0, Culture=neutral, processorArchitecture=x86">
-      <HintPath>..\packages\CoreApp_DLLs.3.1.2\lib\CoreApp.dll</HintPath>
+      <HintPath>..\packages\CoreApp_DLLs.3.1.20\lib\CoreApp.dll</HintPath>
     </Reference>
     <Reference Include="CoreSys, Version=1.1.0.0, Culture=neutral, processorArchitecture=x86">
-      <HintPath>..\packages\CoreApp_DLLs.3.1.2\lib\CoreSys.dll</HintPath>
+      <HintPath>..\packages\CoreApp_DLLs.3.1.20\lib\CoreSys.dll</HintPath>
     </Reference>
     <Reference Include="gGlowBox">
       <HintPath>..\..\..\..\Tailoring document\Debug\gGlowBox.dll</HintPath>

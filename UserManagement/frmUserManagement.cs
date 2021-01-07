@@ -366,7 +366,7 @@ namespace UserManagement
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            grpGridview.ValuesSecondary.Heading = dataGridView1.Rows.Count.ToString();
+            grpGridview.ValuesSecondary.Heading = "Total Records : " + dataGridView1.Rows.Count.ToString();
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

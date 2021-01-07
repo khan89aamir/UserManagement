@@ -1224,19 +1224,8 @@
   <data name="kryptonHeaderGroup1.ValuesPrimary.Heading" xml:space="preserve">
     <value>Select Account Type</value>
   </data>
-  <data name="kryptonHeaderGroup1.ValuesPrimary.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
-        TUUH5QEGDwMyevATgwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGISURBVDhP
-        jVM9SwNBED0LC7GwsbEwRQrF7N6p3O5JIH5gZWNnYSFaCEGwEoTTxN2s4k9QVLC08jcIfpTBykptVARB
-        sFMRbfTtZRLOxMR78LjbeW/mZubunGbw83471/KY6+CVa3GIUFtFSQimxCwKfNdoxARJycCMnIoXyCgx
-        TFIyZFeyHUhcZ1peMC2W7Zmk/zFQ8HuQ/IT5iygwjR1s4/7eW/U6ydIazIiZePtVMuPnyNIanhGcleRB
-        nOhgHwVSZPkb9tUxHSy4Wu5wJQp2FJIagCUPeSoYpSOSQ78LbZbr2n7Bk42rg9CSmZGM9TIVDEJ7A58d
-        2xpuLv0wl8L1GowXqOdRn/G7sdg7e8ZomyggzyOxJPa4knNkrBHmE1fJPB60yIuyF55T0sp2ZMwSTFLg
-        y12TaSTc0LnKRxCfdMQrir17G6I/mt0CgbNIKMldzDdPpuZUwRKlVhDr4tN2gettzfybH+hwCymNPxbE
-        aBd2MXZRrpHperb8nLGocRR4gHGMQgngOD/i09srMnGF9AAAAABJRU5ErkJggg==
-</value>
+  <data name="kryptonHeaderGroup1.ValuesPrimary.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="&gt;&gt;kryptonHeaderGroup1.Name" xml:space="preserve">
     <value>kryptonHeaderGroup1</value>
@@ -1380,19 +1369,8 @@
   <data name="kryptonHeaderGroup2.ValuesPrimary.Heading" xml:space="preserve">
     <value>Select Active Status</value>
   </data>
-  <data name="kryptonHeaderGroup2.ValuesPrimary.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
-        TUUH5QEGDwMyevATgwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGISURBVDhP
-        jVM9SwNBED0LC7GwsbEwRQrF7N6p3O5JIH5gZWNnYSFaCEGwEoTTxN2s4k9QVLC08jcIfpTBykptVARB
-        sFMRbfTtZRLOxMR78LjbeW/mZubunGbw83471/KY6+CVa3GIUFtFSQimxCwKfNdoxARJycCMnIoXyCgx
-        TFIyZFeyHUhcZ1peMC2W7Zmk/zFQ8HuQ/IT5iygwjR1s4/7eW/U6ydIazIiZePtVMuPnyNIanhGcleRB
-        nOhgHwVSZPkb9tUxHSy4Wu5wJQp2FJIagCUPeSoYpSOSQ78LbZbr2n7Bk42rg9CSmZGM9TIVDEJ7A58d
-        2xpuLv0wl8L1GowXqOdRn/G7sdg7e8ZomyggzyOxJPa4knNkrBHmE1fJPB60yIuyF55T0sp2ZMwSTFLg
-        y12TaSTc0LnKRxCfdMQrir17G6I/mt0CgbNIKMldzDdPpuZUwRKlVhDr4tN2gettzfybH+hwCymNPxbE
-        aBd2MXZRrpHperb8nLGocRR4gHGMQgngOD/i09srMnGF9AAAAABJRU5ErkJggg==
-</value>
+  <data name="kryptonHeaderGroup2.ValuesPrimary.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="&gt;&gt;kryptonHeaderGroup2.Name" xml:space="preserve">
     <value>kryptonHeaderGroup2</value>
@@ -1420,9 +1398,6 @@
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 11.25pt</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
