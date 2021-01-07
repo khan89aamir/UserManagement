@@ -36,9 +36,6 @@ namespace UserManagement
         public static string User_Lang = "en-US";
         public bool IsNew = false;
 
-        Image B_Leave = UserManagement.Properties.Resources.B_click;
-        Image B_Enter = UserManagement.Properties.Resources.B_on;
-
         public void LoginStatus(int LoginID, bool IsAdmin)
         {
             LogID = LoginID;
