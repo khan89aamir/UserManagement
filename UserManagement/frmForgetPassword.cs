@@ -33,22 +33,37 @@ namespace UserManagement
         DataTable dt = null;
         string DBName = string.Empty;
         public string strReuestType;
-        
+
         public static string User_Lang = "en-US";
-        public bool IsNew = false;
+        public bool IsNew = true;
+
+        private void LoadTailoringTheme()
+        {
+            //this.BackgroundImage = TAILORING.Properties.Resources.Background;
+            this.BackgroundImage = null;
+            this.PaletteMode = PaletteMode.SparklePurple;
+            this.BackColor = Color.FromArgb(82, 91, 114);
+
+            btnSubmit.PaletteMode = PaletteMode.SparklePurple;
+            btnSubmit.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            btnReset.PaletteMode = PaletteMode.SparklePurple;
+            btnReset.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+        }
 
         private void ForgetPassword_Load(object sender, EventArgs e)
         {
-            if (IsNew)
-            {
-                this.BackgroundImage = UserManagement.Properties.Resources.back_green;
-                pnlTitle.BackgroundImage = UserManagement.Properties.Resources.titlebg_green;
-            }
-            else
-            {
-                this.BackgroundImage = UserManagement.Properties.Resources.back;
-                pnlTitle.BackgroundImage = UserManagement.Properties.Resources.titlebg;
-            }
+            //if (IsNew)
+            //{
+            //    this.BackgroundImage = UserManagement.Properties.Resources.back_green;
+            //    pnlTitle.BackgroundImage = UserManagement.Properties.Resources.titlebg_green;
+            //}
+            //else
+            //{
+            //    this.BackgroundImage = UserManagement.Properties.Resources.back1;
+            //    pnlTitle.BackgroundImage = UserManagement.Properties.Resources.titlebg;
+            //}
+            LoadTailoringTheme();
             DBName = ObjDAL.GetCurrentDBName(true);
         }
 

@@ -34,7 +34,7 @@ namespace UserManagement
         bool admin = true;
         //bool admin = false;
         public static string User_Lang = "en-US";
-        public bool IsNew = false;
+        public bool IsNew = true;
 
         public void LoginStatus(int LoginID, bool IsAdmin)
         {
@@ -57,18 +57,57 @@ namespace UserManagement
             }
         }
 
+        private void LoadTailoringTheme()
+        {
+            //this.BackgroundImage = TAILORING.Properties.Resources.Background;
+            this.BackgroundImage = null;
+            this.PaletteMode = PaletteMode.SparklePurple;
+            this.BackColor = Color.FromArgb(82, 91, 114);
+
+            btnAdd.PaletteMode = PaletteMode.SparklePurple;
+            btnAdd.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            btnSave.PaletteMode = PaletteMode.SparklePurple;
+            btnSave.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            btnEdit.PaletteMode = PaletteMode.SparklePurple;
+            btnEdit.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            btnUpdate.PaletteMode = PaletteMode.SparklePurple;
+            btnUpdate.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            btnDelete.PaletteMode = PaletteMode.SparklePurple;
+            btnDelete.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            btnCancel.PaletteMode = PaletteMode.SparklePurple;
+            btnCancel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+        }
+
+        private void EnableDisable(bool b)
+        {
+            txtUserName.Enabled = b;
+            txtAsnwer.Enabled = b;
+            txtEmail.Enabled = b;
+            txtPassword.Enabled = b;
+            txtVerifyPassword.Enabled = b;
+            cmbSecurity.Enabled = b;
+        }
+
         private void frmUserManagement_Load(object sender, EventArgs e)
         {
-            if (IsNew)
-            {
-                this.BackgroundImage = UserManagement.Properties.Resources.back_green;
-                pnlTitle.BackgroundImage = UserManagement.Properties.Resources.titlebg_green;
-            }
-            else
-            {
-                this.BackgroundImage = UserManagement.Properties.Resources.back;
-                pnlTitle.BackgroundImage = UserManagement.Properties.Resources.titlebg;
-            }
+            //if (IsNew)
+            //{
+            //    this.BackgroundImage = UserManagement.Properties.Resources.back_green;
+            //    pnlTitle.BackgroundImage = UserManagement.Properties.Resources.titlebg_green;
+            //}
+            //else
+            //{
+            //    this.BackgroundImage = UserManagement.Properties.Resources.back1;
+            //    pnlTitle.BackgroundImage = UserManagement.Properties.Resources.titlebg;
+            //}
+            LoadTailoringTheme();
+
+            EnableDisable(false);
 
             DBName = ObjDAL.GetCurrentDBName(true);
             //string a = ObjDAL.ReadConStringFromFile("AppConfig/ServerConfig.sc", true);
@@ -101,9 +140,6 @@ namespace UserManagement
             {
                 dataGridView1.DataSource = null;
             }
-            grpUserDetail.Enabled = false;
-            grpAccount.Enabled = false;
-            grpActive.Enabled = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -111,8 +147,8 @@ namespace UserManagement
             bool b = clsUtility.ShowQuestionMessage(clsUtility.MsgActionCancel, clsUtility.strProjectTitle);
             if (b)
             {
-                grpUserDetail.Enabled = false;
-                grpAccount.Enabled = false;
+                EnableDisable(false);
+
                 ClearAll();
                 LoadData();
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterCancel, admin);
@@ -138,7 +174,7 @@ namespace UserManagement
                         admin = false;
                         clsUtility.IsAdmin = admin;
                     }
-                    
+
                     if (UserName != txtUserName.Text.Trim() || txtVerifyPassword.Text.Trim() != ObjUtil.Decrypt(pass, true) || rdAdmin.Checked || rdLimitedUser.Checked)
                     {
                         ObjDAL.UpdateColumnData("UpdatedOn", SqlDbType.DateTime, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
@@ -149,6 +185,7 @@ namespace UserManagement
                         ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterUpdate, admin);
                         LoadData();
                         ClearAll();
+                        EnableDisable(false);
                         clsUtility.ShowInfoMessage("'" + UserName + "' user is Updated", clsUtility.strProjectTitle);
                     }
                     else
@@ -197,15 +234,18 @@ namespace UserManagement
         private void btnEdit_Click(object sender, EventArgs e)
         {
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterEdit, admin);
-            grpUserDetail.Enabled = true;
-            grpActive.Enabled = true;
+
+            //rdActive.Enabled = true;
+            //rdInActive.Enabled = true;
             if (admin)
             {
-                grpAccount.Enabled = true;
+                EnableDisable(true);
             }
             else
             {
-                grpAccount.Enabled = false;
+                rdAdmin.Enabled = false;
+                rdLimitedUser.Enabled = false;
+                //grpAccount.Enabled = false;
             }
             txtUserName.Focus();
             txtUserName.SelectionStart = txtUserName.MaxLength;
@@ -313,6 +353,8 @@ namespace UserManagement
                         ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterSave, admin);
                         ClearAll();
                         LoadData();
+
+                        EnableDisable(false);
                         clsUtility.ShowInfoMessage("User Name: '" + name + "' is Saved Successfully..", clsUtility.strProjectTitle);
                     }
                     else
@@ -345,10 +387,12 @@ namespace UserManagement
         {
             ClearAll();
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterNew, admin);
-            //grpUserDetail.Enabled = true;
-            //grpAccount.Enabled = true;
-            //grpActive.Enabled = true;
+            grpUserDetail.Enabled = true;
+            grpAccount.Enabled = true;
+            grpActive.Enabled = true;
             btnSave.Enabled = false;
+
+            EnableDisable(true);
 
             txtUserName.Focus();
         }
@@ -373,8 +417,7 @@ namespace UserManagement
                 try
                 {
                     ClearAll();
-                    grpUserDetail.Enabled = false;
-                    grpAccount.Enabled = false;
+                    EnableDisable(false);
                     ID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["UserID"].Value);
                     //AccountType
                     if (dataGridView1.SelectedRows[0].Cells["AccountType"].Value.ToString() == "Admin")
@@ -460,6 +503,7 @@ namespace UserManagement
                     clsUtility.ShowInfoMessage("'" + txtUserName.Text + "' user is deleted  ", clsUtility.strProjectTitle);
                     ClearAll();
                     LoadData();
+                    EnableDisable(false);
                     ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterDelete, admin);
                 }
                 else
@@ -500,6 +544,11 @@ namespace UserManagement
                 clsUtility.ShowInfoMessage("Enter Valid UserName...", clsUtility.strProjectTitle);
                 txtUserName.Focus();
             }
+        }
+
+        private void cmbSecurity_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            lblPassword.Focus();
         }
     }
 }

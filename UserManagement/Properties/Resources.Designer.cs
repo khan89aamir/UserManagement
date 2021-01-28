@@ -73,9 +73,9 @@ namespace UserManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap back {
+        internal static System.Drawing.Bitmap back_green {
             get {
-                object obj = ResourceManager.GetObject("back", resourceCulture);
+                object obj = ResourceManager.GetObject("back_green", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace UserManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap back_green {
+        internal static System.Drawing.Bitmap back1 {
             get {
-                object obj = ResourceManager.GetObject("back_green", resourceCulture);
+                object obj = ResourceManager.GetObject("back1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +153,29 @@ namespace UserManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap kryptonHeaderGroup1_ValuesPrimary_Image {
+        internal static System.Drawing.Bitmap customersmall {
             get {
-                object obj = ResourceManager.GetObject("kryptonHeaderGroup1.ValuesPrimary.Image", resourceCulture);
+                object obj = ResourceManager.GetObject("customersmall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gridview_ValuesPrimary_Image {
+            get {
+                object obj = ResourceManager.GetObject("Gridview.ValuesPrimary.Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap grpSearch_Values_Image {
+            get {
+                object obj = ResourceManager.GetObject("grpSearch.Values.Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -166,6 +186,16 @@ namespace UserManagement.Properties {
         internal static System.Drawing.Bitmap picIMGPass_Image {
             get {
                 object obj = ResourceManager.GetObject("picIMGPass.Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap picIMGPass_Image1 {
+            get {
+                object obj = ResourceManager.GetObject("picIMGPass.Image1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

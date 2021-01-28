@@ -54,17 +54,20 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ComponentFactory.Krypton.Toolkit">
-      <HintPath>..\..\..\..\Tailoring document\Debug\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    <Reference Include="ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\DLL\ComponentFactory.Krypton.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="CoreApp, Version=3.1.2.0, Culture=neutral, processorArchitecture=x86">
-      <HintPath>..\packages\CoreApp_DLLs.3.1.20\lib\CoreApp.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CoreApp\CoreApp\bin\x86\Release\CoreApp.dll</HintPath>
     </Reference>
     <Reference Include="CoreSys, Version=1.1.0.0, Culture=neutral, processorArchitecture=x86">
       <HintPath>..\packages\CoreApp_DLLs.3.1.20\lib\CoreSys.dll</HintPath>
     </Reference>
-    <Reference Include="gGlowBox">
-      <HintPath>..\..\..\..\Tailoring document\Debug\gGlowBox.dll</HintPath>
+    <Reference Include="gGlowBox, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\DLL\gGlowBox.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
@@ -135,6 +138,15 @@
     <None Include="Resources\B_on.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\btnAdd.Values.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnAdd.Values.Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\viewPassword.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\animated.gif" />
   </ItemGroup>
   <ItemGroup>
@@ -145,6 +157,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\titlebg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customersmall.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
