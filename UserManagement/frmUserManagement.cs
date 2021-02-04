@@ -518,6 +518,9 @@ namespace UserManagement
         {
             txtPassword.UseSystemPasswordChar = false;
             txtVerifyPassword.UseSystemPasswordChar = false;
+
+            txtPassword.PasswordChar = '\0';
+            txtVerifyPassword.PasswordChar = '\0';
         }
 
         private void picIMGPass1_MouseUp(object sender, MouseEventArgs e)
@@ -529,6 +532,7 @@ namespace UserManagement
         private void picIMGPass2_MouseDown(object sender, MouseEventArgs e)
         {
             txtAsnwer.UseSystemPasswordChar = false;
+            txtAsnwer.PasswordChar = '\0';
         }
 
         private void picIMGPass2_MouseUp(object sender, MouseEventArgs e)

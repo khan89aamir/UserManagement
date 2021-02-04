@@ -214,6 +214,7 @@ namespace UserManagement
         private void picIMGPass_MouseDown(object sender, MouseEventArgs e)
         {
             txtRetrivePassword.UseSystemPasswordChar = false;
+            txtRetrivePassword.PasswordChar = '\0';
         }
 
         private void picIMGPass_MouseUp(object sender, MouseEventArgs e)
