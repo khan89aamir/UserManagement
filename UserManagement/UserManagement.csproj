@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0DB8C5D7-F4E8-4161-B555-13EF9BEFDE17}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>UserManagement</RootNamespace>
     <AssemblyName>UserManagement</AssemblyName>
@@ -58,12 +58,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\DLL\ComponentFactory.Krypton.Toolkit.dll</HintPath>
     </Reference>
-    <Reference Include="CoreApp, Version=3.1.2.0, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\CoreApp\CoreApp\bin\x86\Release\CoreApp.dll</HintPath>
+    <Reference Include="CoreApp, Version=3.1.2.2, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\CoreApp_DLLs.3.1.21\lib\CoreApp.dll</HintPath>
     </Reference>
     <Reference Include="CoreSys, Version=1.1.0.0, Culture=neutral, processorArchitecture=x86">
-      <HintPath>..\packages\CoreApp_DLLs.3.1.20\lib\CoreSys.dll</HintPath>
+      <HintPath>..\packages\CoreApp_DLLs.3.1.21\lib\CoreSys.dll</HintPath>
     </Reference>
     <Reference Include="gGlowBox, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

@@ -40,19 +40,49 @@ namespace UserManagement
         private void LoadTailoringTheme()
         {
             //this.BackgroundImage = TAILORING.Properties.Resources.Background;
-            this.BackgroundImage = null;
-            this.PaletteMode = PaletteMode.SparklePurple;
-            this.BackColor = Color.FromArgb(82, 91, 114);
 
-            btnSubmit.PaletteMode = PaletteMode.SparklePurple;
             btnSubmit.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 
-            btnReset.PaletteMode = PaletteMode.SparklePurple;
             btnReset.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            if (clsUtility.MessageType.SparklePurple == clsUtility._UserMessageType)
+            {
+                Lable_Color(Color.White);
+
+                this.BackgroundImage = null;
+                this.PaletteMode = PaletteMode.SparklePurple;
+                this.BackColor = Color.FromArgb(82, 91, 114);
+
+                btnSubmit.PaletteMode = PaletteMode.SparklePurple;
+                btnReset.PaletteMode = PaletteMode.SparklePurple;
+            }
+            else if (clsUtility.MessageType.Office2010Blue == clsUtility._UserMessageType)
+            {
+                Lable_Color(Color.Black);
+
+                this.BackgroundImage = Properties.Resources.back_green;
+                pnlTitle.StateCommon.Image = Properties.Resources.titlebg_green;
+                this.PaletteMode = PaletteMode.Office2010Blue;
+                this.BackColor = Color.White;
+
+                grpKrytonHeader.PaletteMode = PaletteMode.Office2010Blue;
+                cmbSecurity.PaletteMode = PaletteMode.Office2010Blue;
+                btnSubmit.PaletteMode = PaletteMode.Office2010Blue;
+                btnReset.PaletteMode = PaletteMode.Office2010Blue;
+            }
         }
 
+        private void Lable_Color(Color clr)
+        {
+            lblAnswer.ForeColor = clr;
+            lblEmail.ForeColor = clr;
+            lblRetrive.ForeColor = clr;
+            lblSecurityQuestion.ForeColor = clr;
+            lblUserName.ForeColor = clr;
+        }
         private void ForgetPassword_Load(object sender, EventArgs e)
         {
+            clsUtility._UserMessageType = clsUtility.MessageType.SparklePurple;
             //if (IsNew)
             //{
             //    this.BackgroundImage = UserManagement.Properties.Resources.back_green;

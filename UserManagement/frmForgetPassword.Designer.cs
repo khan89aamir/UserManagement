@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmForgetPassword));
             this.txtUserName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblUserName = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cmbSecurity = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.txtAsnwer = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblAnswer = new System.Windows.Forms.Label();
+            this.lblSecurityQuestion = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtRetrivePassword = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblRetrive = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.picIMGPass = new System.Windows.Forms.PictureBox();
             this.grpKrytonHeader = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
@@ -71,19 +71,19 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtUserName.StateCommon.Border.Rounding = 10;
             // 
-            // label2
+            // lblUserName
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Name = "label2";
+            resources.ApplyResources(this.lblUserName, "lblUserName");
+            this.lblUserName.BackColor = System.Drawing.Color.Transparent;
+            this.lblUserName.ForeColor = System.Drawing.Color.White;
+            this.lblUserName.Name = "lblUserName";
             // 
-            // label5
+            // lblEmail
             // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Name = "label5";
+            resources.ApplyResources(this.lblEmail, "lblEmail");
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmail.ForeColor = System.Drawing.Color.White;
+            this.lblEmail.Name = "lblEmail";
             // 
             // txtEmail
             // 
@@ -139,19 +139,19 @@
             this.txtAsnwer.StateCommon.Border.Rounding = 10;
             this.txtAsnwer.UseSystemPasswordChar = true;
             // 
-            // label6
+            // lblAnswer
             // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Name = "label6";
+            resources.ApplyResources(this.lblAnswer, "lblAnswer");
+            this.lblAnswer.BackColor = System.Drawing.Color.Transparent;
+            this.lblAnswer.ForeColor = System.Drawing.Color.White;
+            this.lblAnswer.Name = "lblAnswer";
             // 
-            // label1
+            // lblSecurityQuestion
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.lblSecurityQuestion, "lblSecurityQuestion");
+            this.lblSecurityQuestion.BackColor = System.Drawing.Color.Transparent;
+            this.lblSecurityQuestion.ForeColor = System.Drawing.Color.White;
+            this.lblSecurityQuestion.Name = "lblSecurityQuestion";
             // 
             // label4
             // 
@@ -172,12 +172,12 @@
             this.txtRetrivePassword.StateCommon.Border.Rounding = 10;
             this.txtRetrivePassword.UseSystemPasswordChar = true;
             // 
-            // label7
+            // lblRetrive
             // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Name = "label7";
+            resources.ApplyResources(this.lblRetrive, "lblRetrive");
+            this.lblRetrive.BackColor = System.Drawing.Color.Transparent;
+            this.lblRetrive.ForeColor = System.Drawing.Color.White;
+            this.lblRetrive.Name = "lblRetrive";
             // 
             // label9
             // 
@@ -221,17 +221,17 @@
             // grpUserDetail
             // 
             this.grpUserDetail.BackColor = System.Drawing.Color.Transparent;
-            this.grpUserDetail.Controls.Add(this.label2);
+            this.grpUserDetail.Controls.Add(this.lblUserName);
             this.grpUserDetail.Controls.Add(this.txtUserName);
             this.grpUserDetail.Controls.Add(this.txtEmail);
             this.grpUserDetail.Controls.Add(this.label3);
-            this.grpUserDetail.Controls.Add(this.label5);
+            this.grpUserDetail.Controls.Add(this.lblEmail);
             this.grpUserDetail.Controls.Add(this.picIMGPass);
             this.grpUserDetail.Controls.Add(this.label8);
             this.grpUserDetail.Controls.Add(this.label9);
-            this.grpUserDetail.Controls.Add(this.label1);
-            this.grpUserDetail.Controls.Add(this.label7);
-            this.grpUserDetail.Controls.Add(this.label6);
+            this.grpUserDetail.Controls.Add(this.lblSecurityQuestion);
+            this.grpUserDetail.Controls.Add(this.lblRetrive);
+            this.grpUserDetail.Controls.Add(this.lblAnswer);
             this.grpUserDetail.Controls.Add(this.txtRetrivePassword);
             this.grpUserDetail.Controls.Add(this.txtAsnwer);
             this.grpUserDetail.Controls.Add(this.label4);
@@ -326,18 +326,18 @@
         #endregion
 
         public ComponentFactory.Krypton.Toolkit.KryptonTextBox txtUserName;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.Label lblEmail;
         public ComponentFactory.Krypton.Toolkit.KryptonTextBox txtEmail;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label8;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox cmbSecurity;
         public ComponentFactory.Krypton.Toolkit.KryptonTextBox txtAsnwer;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAnswer;
+        private System.Windows.Forms.Label lblSecurityQuestion;
         private System.Windows.Forms.Label label4;
         public ComponentFactory.Krypton.Toolkit.KryptonTextBox txtRetrivePassword;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblRetrive;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox picIMGPass;
         private gGlowBox.gGlowGroupBox grpUserDetail;
