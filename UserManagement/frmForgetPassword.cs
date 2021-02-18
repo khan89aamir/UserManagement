@@ -37,7 +37,7 @@ namespace UserManagement
         public static string User_Lang = "en-US";
         public bool IsNew = true;
 
-        private void LoadTailoringTheme()
+        private void LoadTheme()
         {
             //this.BackgroundImage = TAILORING.Properties.Resources.Background;
 
@@ -80,6 +80,7 @@ namespace UserManagement
             lblSecurityQuestion.ForeColor = clr;
             lblUserName.ForeColor = clr;
         }
+
         private void ForgetPassword_Load(object sender, EventArgs e)
         {
             clsUtility._UserMessageType = clsUtility.MessageType.SparklePurple;
@@ -93,7 +94,7 @@ namespace UserManagement
             //    this.BackgroundImage = UserManagement.Properties.Resources.back1;
             //    pnlTitle.BackgroundImage = UserManagement.Properties.Resources.titlebg;
             //}
-            LoadTailoringTheme();
+            LoadTheme();
             DBName = ObjDAL.GetCurrentDBName(true);
         }
 
