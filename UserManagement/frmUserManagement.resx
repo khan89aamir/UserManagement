@@ -688,10 +688,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>621, 50</value>
+    <value>643, 58</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 34</value>
+    <value>90, 30</value>
   </data>
   <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
     <value>317</value>
@@ -729,10 +729,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnDelete.Location" type="System.Drawing.Point, System.Drawing">
-    <value>529, 50</value>
+    <value>545, 58</value>
   </data>
   <data name="btnDelete.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 34</value>
+    <value>90, 30</value>
   </data>
   <data name="btnDelete.TabIndex" type="System.Int32, mscorlib">
     <value>316</value>
@@ -770,10 +770,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>437, 50</value>
+    <value>447, 58</value>
   </data>
   <data name="btnUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 34</value>
+    <value>90, 30</value>
   </data>
   <data name="btnUpdate.TabIndex" type="System.Int32, mscorlib">
     <value>315</value>
@@ -813,10 +813,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>345, 50</value>
+    <value>349, 58</value>
   </data>
   <data name="btnEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 34</value>
+    <value>90, 30</value>
   </data>
   <data name="btnEdit.TabIndex" type="System.Int32, mscorlib">
     <value>314</value>
@@ -854,10 +854,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>253, 50</value>
+    <value>251, 58</value>
   </data>
   <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 34</value>
+    <value>90, 30</value>
   </data>
   <data name="btnSave.TabIndex" type="System.Int32, mscorlib">
     <value>313</value>
@@ -895,10 +895,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>149, 50</value>
+    <value>149, 58</value>
   </data>
   <data name="btnAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 34</value>
+    <value>90, 30</value>
   </data>
   <data name="btnAdd.TabIndex" type="System.Int32, mscorlib">
     <value>312</value>
@@ -1031,7 +1031,7 @@
   <data name="grpUserDetails.TabIndex" type="System.Int32, mscorlib">
     <value>329</value>
   </data>
-  <data name="grpKrytonHeader.ValuesPrimary.Heading" xml:space="preserve">
+  <data name="grpUserDetails.ValuesPrimary.Heading" xml:space="preserve">
     <value>User Details</value>
   </data>
   <data name="&gt;&gt;grpUserDetails.Name" xml:space="preserve">
@@ -1053,7 +1053,7 @@
     <value>0, 0</value>
   </data>
   <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>881, 146</value>
+    <value>881, 140</value>
   </data>
   <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1233,10 +1233,10 @@
   <data name="grpAccountType.TabIndex" type="System.Int32, mscorlib">
     <value>337</value>
   </data>
-  <data name="kryptonHeaderGroup1.ValuesPrimary.Heading" xml:space="preserve">
+  <data name="grpAccountType.ValuesPrimary.Heading" xml:space="preserve">
     <value>Select Account Type</value>
   </data>
-  <data name="kryptonHeaderGroup1.ValuesPrimary.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="grpAccountType.ValuesPrimary.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
   <data name="&gt;&gt;grpAccountType.Name" xml:space="preserve">
@@ -1255,16 +1255,16 @@
     <value>True</value>
   </data>
   <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 14.25pt, style=Bold</value>
+    <value>Times New Roman, 16.2pt, style=Bold</value>
   </data>
   <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 12</value>
+    <value>61, 12</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 22</value>
+    <value>184, 25</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>82</value>
@@ -1316,10 +1316,10 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 6</value>
+    <value>8, 2</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 34</value>
+    <value>49, 45</value>
   </data>
   <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -1346,7 +1346,7 @@
     <value>0, 0</value>
   </data>
   <data name="pnlTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>910, 40</value>
+    <value>910, 50</value>
   </data>
   <data name="pnlTitle.TabIndex" type="System.Int32, mscorlib">
     <value>373</value>
@@ -1487,10 +1487,10 @@
   <data name="grpActiveStatus.TabIndex" type="System.Int32, mscorlib">
     <value>331</value>
   </data>
-  <data name="kryptonHeaderGroup2.ValuesPrimary.Heading" xml:space="preserve">
+  <data name="grpActiveStatus.ValuesPrimary.Heading" xml:space="preserve">
     <value>Select Active Status</value>
   </data>
-  <data name="kryptonHeaderGroup2.ValuesPrimary.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="grpActiveStatus.ValuesPrimary.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
   <data name="&gt;&gt;grpActiveStatus.Name" xml:space="preserve">

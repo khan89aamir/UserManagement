@@ -56,6 +56,8 @@
             this.btnAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.grpUserDetails = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.grpUserDetail = new gGlowBox.gGlowGroupBox();
+            this.picIMGPass2 = new System.Windows.Forms.PictureBox();
+            this.picIMGPass1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.grpGridview = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.grpAccountType = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
@@ -64,19 +66,19 @@
             this.rdAdmin = new System.Windows.Forms.RadioButton();
             this.pnlTitle = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grpActive = new gGlowBox.gGlowGroupBox();
             this.rdInActive = new System.Windows.Forms.RadioButton();
             this.rdActive = new System.Windows.Forms.RadioButton();
             this.grpActiveStatus = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.picIMGPass2 = new System.Windows.Forms.PictureBox();
-            this.picIMGPass1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.cmbSecurity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpUserDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpUserDetails.Panel)).BeginInit();
             this.grpUserDetails.Panel.SuspendLayout();
             this.grpUserDetails.SuspendLayout();
             this.grpUserDetail.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picIMGPass2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picIMGPass1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpGridview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpGridview.Panel)).BeginInit();
@@ -89,14 +91,12 @@
             this.grpAccount.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnlTitle)).BeginInit();
             this.pnlTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grpActive.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpActiveStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpActiveStatus.Panel)).BeginInit();
             this.grpActiveStatus.Panel.SuspendLayout();
             this.grpActiveStatus.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picIMGPass2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picIMGPass1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUserName
@@ -265,13 +265,11 @@
             resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.OverrideFocus.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnCancel.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnCancel.StateCommon.Border.Rounding = 5;
-            this.btnCancel.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.StateCommon.Border.Rounding = 12;
             this.btnCancel.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Values.Image")));
             this.btnCancel.Values.Text = resources.GetString("btnCancel.Values.Text");
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -286,8 +284,7 @@
             this.btnDelete.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnDelete.StateCommon.Border.Rounding = 5;
-            this.btnDelete.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.StateCommon.Border.Rounding = 12;
             this.btnDelete.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Values.Image")));
             this.btnDelete.Values.Text = resources.GetString("btnDelete.Values.Text");
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -302,8 +299,7 @@
             this.btnUpdate.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnUpdate.StateCommon.Border.Rounding = 5;
-            this.btnUpdate.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.StateCommon.Border.Rounding = 12;
             this.btnUpdate.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Values.Image")));
             this.btnUpdate.Values.Text = resources.GetString("btnUpdate.Values.Text");
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -318,8 +314,7 @@
             this.btnEdit.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnEdit.StateCommon.Border.Rounding = 5;
-            this.btnEdit.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.StateCommon.Border.Rounding = 12;
             this.btnEdit.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Values.Image")));
             this.btnEdit.Values.Text = resources.GetString("btnEdit.Values.Text");
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -334,8 +329,7 @@
             this.btnSave.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnSave.StateCommon.Border.Rounding = 5;
-            this.btnSave.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.StateCommon.Border.Rounding = 12;
             this.btnSave.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Values.Image")));
             this.btnSave.Values.Text = resources.GetString("btnSave.Values.Text");
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -350,8 +344,7 @@
             this.btnAdd.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnAdd.StateCommon.Border.Rounding = 5;
-            this.btnAdd.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.StateCommon.Border.Rounding = 12;
             this.btnAdd.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Values.Image")));
             this.btnAdd.Values.Text = resources.GetString("btnAdd.Values.Text");
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -375,7 +368,7 @@
             this.grpUserDetails.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
             this.grpUserDetails.StateCommon.HeaderPrimary.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpUserDetails.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpUserDetails.ValuesPrimary.Heading = resources.GetString("grpKrytonHeader.ValuesPrimary.Heading");
+            this.grpUserDetails.ValuesPrimary.Heading = resources.GetString("grpUserDetails.ValuesPrimary.Heading");
             this.grpUserDetails.ValuesPrimary.Image = global::UserManagement.Properties.Resources.customersmall;
             // 
             // grpUserDetail
@@ -407,6 +400,26 @@
             this.grpUserDetail.GlowFeather = 70;
             this.grpUserDetail.GlowOn = true;
             this.grpUserDetail.Name = "grpUserDetail";
+            // 
+            // picIMGPass2
+            // 
+            this.picIMGPass2.BackColor = System.Drawing.Color.Transparent;
+            this.picIMGPass2.Image = global::UserManagement.Properties.Resources.picIMGPass_Image1;
+            resources.ApplyResources(this.picIMGPass2, "picIMGPass2");
+            this.picIMGPass2.Name = "picIMGPass2";
+            this.picIMGPass2.TabStop = false;
+            this.picIMGPass2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picIMGPass2_MouseDown);
+            this.picIMGPass2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picIMGPass2_MouseUp);
+            // 
+            // picIMGPass1
+            // 
+            this.picIMGPass1.BackColor = System.Drawing.Color.Transparent;
+            this.picIMGPass1.Image = global::UserManagement.Properties.Resources.picIMGPass_Image1;
+            resources.ApplyResources(this.picIMGPass1, "picIMGPass1");
+            this.picIMGPass1.Name = "picIMGPass1";
+            this.picIMGPass1.TabStop = false;
+            this.picIMGPass1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picIMGPass1_MouseDown);
+            this.picIMGPass1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picIMGPass1_MouseUp);
             // 
             // dataGridView1
             // 
@@ -440,12 +453,19 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.grpGridview.StateCommon.Border.Rounding = 10;
             this.grpGridview.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
+            this.grpGridview.StateCommon.HeaderPrimary.Border.Color1 = System.Drawing.Color.White;
             this.grpGridview.StateCommon.HeaderPrimary.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.grpGridview.StateCommon.HeaderPrimary.Border.Rounding = 10;
+            this.grpGridview.StateCommon.HeaderPrimary.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.grpGridview.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpGridview.StateCommon.HeaderSecondary.Back.Color1 = System.Drawing.Color.Transparent;
+            this.grpGridview.StateCommon.HeaderSecondary.Border.Color1 = System.Drawing.Color.White;
+            this.grpGridview.StateCommon.HeaderSecondary.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.grpGridview.StateCommon.HeaderSecondary.Border.Rounding = 10;
             this.grpGridview.ValuesPrimary.Heading = resources.GetString("grpGridview.ValuesPrimary.Heading");
             this.grpGridview.ValuesPrimary.Image = global::UserManagement.Properties.Resources.Gridview_ValuesPrimary_Image;
             this.grpGridview.ValuesSecondary.Heading = resources.GetString("grpGridview.ValuesSecondary.Heading");
@@ -473,8 +493,8 @@
             this.grpAccountType.StateCommon.HeaderPrimary.Border.Rounding = 10;
             this.grpAccountType.StateCommon.HeaderPrimary.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpAccountType.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpAccountType.ValuesPrimary.Heading = resources.GetString("kryptonHeaderGroup1.ValuesPrimary.Heading");
-            this.grpAccountType.ValuesPrimary.Image = ((System.Drawing.Image)(resources.GetObject("kryptonHeaderGroup1.ValuesPrimary.Image")));
+            this.grpAccountType.ValuesPrimary.Heading = resources.GetString("grpAccountType.ValuesPrimary.Heading");
+            this.grpAccountType.ValuesPrimary.Image = ((System.Drawing.Image)(resources.GetObject("grpAccountType.ValuesPrimary.Image")));
             // 
             // grpAccount
             // 
@@ -528,6 +548,13 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Name = "label1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
             // 
             // grpActive
             // 
@@ -584,35 +611,8 @@
             this.grpActiveStatus.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
             this.grpActiveStatus.StateCommon.HeaderPrimary.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpActiveStatus.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpActiveStatus.ValuesPrimary.Heading = resources.GetString("kryptonHeaderGroup2.ValuesPrimary.Heading");
-            this.grpActiveStatus.ValuesPrimary.Image = ((System.Drawing.Image)(resources.GetObject("kryptonHeaderGroup2.ValuesPrimary.Image")));
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
-            // 
-            // picIMGPass2
-            // 
-            this.picIMGPass2.BackColor = System.Drawing.Color.Transparent;
-            this.picIMGPass2.Image = global::UserManagement.Properties.Resources.picIMGPass_Image1;
-            resources.ApplyResources(this.picIMGPass2, "picIMGPass2");
-            this.picIMGPass2.Name = "picIMGPass2";
-            this.picIMGPass2.TabStop = false;
-            this.picIMGPass2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picIMGPass2_MouseDown);
-            this.picIMGPass2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picIMGPass2_MouseUp);
-            // 
-            // picIMGPass1
-            // 
-            this.picIMGPass1.BackColor = System.Drawing.Color.Transparent;
-            this.picIMGPass1.Image = global::UserManagement.Properties.Resources.picIMGPass_Image1;
-            resources.ApplyResources(this.picIMGPass1, "picIMGPass1");
-            this.picIMGPass1.Name = "picIMGPass1";
-            this.picIMGPass1.TabStop = false;
-            this.picIMGPass1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picIMGPass1_MouseDown);
-            this.picIMGPass1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picIMGPass1_MouseUp);
+            this.grpActiveStatus.ValuesPrimary.Heading = resources.GetString("grpActiveStatus.ValuesPrimary.Heading");
+            this.grpActiveStatus.ValuesPrimary.Image = ((System.Drawing.Image)(resources.GetObject("grpActiveStatus.ValuesPrimary.Image")));
             // 
             // frmUserManagement
             // 
@@ -634,6 +634,10 @@
             this.MaximizeBox = false;
             this.Name = "frmUserManagement";
             this.ShowIcon = false;
+            this.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.StateCommon.Border.Rounding = 5;
             this.Load += new System.EventHandler(this.frmUserManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cmbSecurity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpUserDetails.Panel)).EndInit();
@@ -642,6 +646,8 @@
             this.grpUserDetails.ResumeLayout(false);
             this.grpUserDetail.ResumeLayout(false);
             this.grpUserDetail.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picIMGPass2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picIMGPass1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpGridview.Panel)).EndInit();
             this.grpGridview.Panel.ResumeLayout(false);
@@ -656,15 +662,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pnlTitle)).EndInit();
             this.pnlTitle.ResumeLayout(false);
             this.pnlTitle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.grpActive.ResumeLayout(false);
             this.grpActive.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpActiveStatus.Panel)).EndInit();
             this.grpActiveStatus.Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grpActiveStatus)).EndInit();
             this.grpActiveStatus.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picIMGPass2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picIMGPass1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

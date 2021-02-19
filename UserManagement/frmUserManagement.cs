@@ -61,12 +61,12 @@ namespace UserManagement
         {
             //this.BackgroundImage = TAILORING.Properties.Resources.Background;
 
-            btnAdd.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnSave.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnEdit.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnUpdate.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnDelete.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnCancel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnAdd.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnSave.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnEdit.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnUpdate.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnDelete.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnCancel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 
             picIMGPass1.SizeMode = PictureBoxSizeMode.Zoom;
             picIMGPass2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -101,13 +101,13 @@ namespace UserManagement
 
                 Lable_Color(Color.Black);
 
-                btnAdd.PaletteMode = PaletteMode.Office2010Blue;
-                btnSave.PaletteMode = PaletteMode.Office2010Blue;
-                btnEdit.PaletteMode = PaletteMode.Office2010Blue;
-                btnUpdate.PaletteMode = PaletteMode.Office2010Blue;
-                btnDelete.PaletteMode = PaletteMode.Office2010Blue;
-                btnCancel.PaletteMode = PaletteMode.Office2010Blue;
-                cmbSecurity.PaletteMode = PaletteMode.Office2010Blue;
+                btnAdd.PaletteMode = PaletteMode.Office2007Blue;
+                btnSave.PaletteMode = PaletteMode.Office2007Blue;
+                btnEdit.PaletteMode = PaletteMode.Office2007Blue;
+                btnUpdate.PaletteMode = PaletteMode.Office2007Blue;
+                btnDelete.PaletteMode = PaletteMode.Office2007Blue;
+                btnCancel.PaletteMode = PaletteMode.Office2007Blue;
+                cmbSecurity.PaletteMode = PaletteMode.Office2007Blue;
 
                 btnAdd.Values.Image = Properties.Resources._new;
                 btnSave.Values.Image = Properties.Resources.save;
@@ -125,6 +125,7 @@ namespace UserManagement
                 grpGridview.StateCommon.HeaderPrimary.Back.Image = Properties.Resources.titlebg_green;
 
                 grpGridview.PaletteMode = PaletteMode.Office2010Blue;
+                //dataGridView1.PaletteMode = PaletteMode.Office2010Blue;
             }
         }
 
@@ -173,22 +174,15 @@ namespace UserManagement
 
         private void frmUserManagement_Load(object sender, EventArgs e)
         {
-            clsUtility._UserMessageType = clsUtility.MessageType.Office2010Blue;
-            //if (IsNew)
-            //{
-            //    this.BackgroundImage = UserManagement.Properties.Resources.back_green;
-            //    pnlTitle.BackgroundImage = UserManagement.Properties.Resources.titlebg_green;
-            //}
-            //else
-            //{
-            //    this.BackgroundImage = UserManagement.Properties.Resources.back1;
-            //    pnlTitle.BackgroundImage = UserManagement.Properties.Resources.titlebg;
-            //}
+            //clsUtility._UserMessageType = clsUtility.MessageType.SparklePurple;
+            //clsUtility._UserMessageType = clsUtility.MessageType.Office2010Blue;
+
             LoadTheme();
 
             EnableDisable(false);
 
-            DBName = ObjDAL.GetCurrentDBName(true);
+            //DBName = ObjDAL.GetCurrentDBName(true);
+
             //string a = ObjDAL.ReadConStringFromFile("AppConfig/ServerConfig.sc", true);
             //string[] arr = a.Split(new char[] { ';', '=' });
             //DBName = arr[3].ToString();
@@ -202,14 +196,14 @@ namespace UserManagement
             DataTable dt = null;
             if (admin)
             {
-                dt = ObjDAL.ExecuteSelectStatement("SELECT UserID,UserName,[Password],ISNULL(EmailID,'') AS EmailID,SecurityQuestion,Answer,(CASE IsAdmin WHEN 1 THEN 'Admin' WHEN 0 THEN 'Limited User'END)as 'AccountType'" +
+                dt = ObjDAL.ExecuteSelectStatement("SELECT UserID,UserName,[Password],ISNULL(EmailID,'') AS EmailID,SecurityQuestion,Answer,(CASE IsAdmin WHEN 1 THEN 'Admin' WHEN 0 THEN 'Limited User' END)as 'AccountType'" +
                     ",(CASE ActiveStatus WHEN 1 THEN 'Active' WHEN 0 THEN 'InActive' END)as 'ActiveStatus'" +
-                    " FROM " + DBName + ".[dbo].[UserManagement] WITH(NOLOCK)");
+                    " FROM " + clsUtility.DBName + ".[dbo].[UserManagement] WITH(NOLOCK)");
             }
             else
             {
-                dt = ObjDAL.GetDataCol(DBName + ".dbo.UserManagement", "UserID,UserName,[Password],SecurityQuestion,Answer,ISNULL(EmailID,'') AS EmailID," +
-                    "(CASE IsAdmin WHEN 1 THEN 'Admin' WHEN 0 THEN 'Limited User'END)as 'AccountType',(CASE ActiveStatus WHEN 1 THEN 'Active' WHEN 0 THEN 'InActive' END)as 'ActiveStatus'", "UserID=" + LogID, "UserID");
+                dt = ObjDAL.GetDataCol(clsUtility.DBName + ".dbo.UserManagement", "UserID,UserName,[Password],SecurityQuestion,Answer,ISNULL(EmailID,'') AS EmailID," +
+                    "(CASE IsAdmin WHEN 1 THEN 'Admin' WHEN 0 THEN 'Limited User' END)as 'AccountType',(CASE ActiveStatus WHEN 1 THEN 'Active' WHEN 0 THEN 'InActive' END)as 'ActiveStatus'", "UserID=" + LogID, "UserID");
             }
             if (ObjUtil.ValidateTable(dt))
             {
@@ -574,8 +568,8 @@ namespace UserManagement
         }
         private void UserDeleted()
         {
-            DialogResult d = MessageBox.Show("Are you sure want to delete '" + txtUserName.Text + "' user ", clsUtility.strProjectTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if (d == DialogResult.Yes)
+            bool b = clsUtility.ShowQuestionMessage("Are you sure want to delete '" + txtUserName.Text + "' user ");
+            if (b)
             {
                 if (ObjDAL.DeleteData(DBName + ".dbo.UserManagement", "UserID=" + ID) > 0)
                 {

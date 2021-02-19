@@ -41,9 +41,9 @@ namespace UserManagement
         {
             //this.BackgroundImage = TAILORING.Properties.Resources.Background;
 
-            btnSubmit.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnSubmit.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 
-            btnReset.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnReset.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 
             if (clsUtility.MessageType.SparklePurple == clsUtility._UserMessageType)
             {
@@ -52,13 +52,20 @@ namespace UserManagement
                 this.BackgroundImage = null;
                 this.PaletteMode = PaletteMode.SparklePurple;
                 this.BackColor = Color.FromArgb(82, 91, 114);
+                
+                picIMGPass.Image = Properties.Resources.picIMGPass_Image1;
 
                 btnSubmit.PaletteMode = PaletteMode.SparklePurple;
                 btnReset.PaletteMode = PaletteMode.SparklePurple;
+
+                btnSubmit.Values.Image = Properties.Resources.btnSave_Values_Image;
+                btnReset.Values.Image = Properties.Resources.btnCancel_Values_Image;
             }
             else if (clsUtility.MessageType.Office2010Blue == clsUtility._UserMessageType)
             {
                 Lable_Color(Color.Black);
+
+                picIMGPass.Image = Properties.Resources.picIMGPass_green_Image;
 
                 this.BackgroundImage = Properties.Resources.back_green;
                 pnlTitle.StateCommon.Image = Properties.Resources.titlebg_green;
@@ -67,8 +74,12 @@ namespace UserManagement
 
                 grpKrytonHeader.PaletteMode = PaletteMode.Office2010Blue;
                 cmbSecurity.PaletteMode = PaletteMode.Office2010Blue;
-                btnSubmit.PaletteMode = PaletteMode.Office2010Blue;
-                btnReset.PaletteMode = PaletteMode.Office2010Blue;
+
+                btnSubmit.Values.Image = Properties.Resources.save;
+                btnReset.Values.Image = Properties.Resources.cancel;
+
+                btnSubmit.PaletteMode = PaletteMode.Office2007Blue;
+                btnReset.PaletteMode = PaletteMode.Office2007Blue;
             }
         }
 
@@ -83,19 +94,11 @@ namespace UserManagement
 
         private void ForgetPassword_Load(object sender, EventArgs e)
         {
-            clsUtility._UserMessageType = clsUtility.MessageType.SparklePurple;
-            //if (IsNew)
-            //{
-            //    this.BackgroundImage = UserManagement.Properties.Resources.back_green;
-            //    pnlTitle.BackgroundImage = UserManagement.Properties.Resources.titlebg_green;
-            //}
-            //else
-            //{
-            //    this.BackgroundImage = UserManagement.Properties.Resources.back1;
-            //    pnlTitle.BackgroundImage = UserManagement.Properties.Resources.titlebg;
-            //}
+            //clsUtility._UserMessageType = clsUtility.MessageType.Office2010Blue;
+            //clsUtility._UserMessageType = clsUtility.MessageType.SparklePurple;
+
             LoadTheme();
-            DBName = ObjDAL.GetCurrentDBName(true);
+            //DBName = ObjDAL.GetCurrentDBName(true);
         }
 
         private bool FormValidation()
@@ -135,7 +138,7 @@ namespace UserManagement
             }
             else
             {
-                dt = ObjDAL.GetDataCol(DBName + ".dbo.UserManagement", "[UserName],[SecurityQuestion],[Answer],[Password],EmailID", "UserName='" + txtUserName.Text + "'", null);
+                dt = ObjDAL.GetDataCol(clsUtility.DBName + ".dbo.UserManagement", "[UserName],[SecurityQuestion],[Answer],[Password],EmailID", "UserName='" + txtUserName.Text + "'", null);
                 if (ObjUtil.ValidateTable(dt))
                 {
                     string SecurityQuestion, Answer, Password, EmailID;
@@ -195,7 +198,7 @@ namespace UserManagement
                     ObjThread.ShowImageLoading(clsUtility.strProjectTitle, "Sending An E-Mail please Wait..", this, null);
                     Thread th = new Thread(new ThreadStart(TestLoad));
                     th.Start();
-                    DataTable dt = ObjDAL.ExecuteSelectStatement("SELECT UserName,Password FROM " + DBName + ".dbo.UserManagement WITH(NOLOCK)");
+                    DataTable dt = ObjDAL.ExecuteSelectStatement("SELECT UserName,Password FROM " + clsUtility.DBName + ".dbo.UserManagement WITH(NOLOCK)");
                     string body = string.Empty;
                     string content = string.Empty;
                     content = "Machine Name " + Environment.MachineName + " has request for a new Password for " + clsUtility.strProjectTitle + " and Total Users found : " + dt.Rows.Count;
