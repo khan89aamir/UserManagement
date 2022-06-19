@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Threading;
 using System.Globalization;
-using System.Text.RegularExpressions;
 using CoreApp;
 using ComponentFactory.Krypton.Toolkit;
 
@@ -37,6 +38,16 @@ namespace UserManagement
         public static string User_Lang = "en-US";
         public bool IsNew = true;
 
+        private void ForgetPassword_Load(object sender, EventArgs e)
+        {
+            //clsUtility._UserMessageType = clsUtility.MessageType.Office2010Blue;
+            //clsUtility._UserMessageType = clsUtility.MessageType.Office2007Blue;
+            //clsUtility._UserMessageType = clsUtility.MessageType.SparklePurple;
+            //clsUtility._UserMessageType = clsUtility.MessageType.BlueTheme;
+
+            LoadTheme();
+            //DBName = ObjDAL.GetCurrentDBName(true);
+        }
         private void LoadTheme()
         {
             //this.BackgroundImage = TAILORING.Properties.Resources.Background;
@@ -52,7 +63,7 @@ namespace UserManagement
                 this.BackgroundImage = null;
                 this.PaletteMode = PaletteMode.SparklePurple;
                 this.BackColor = Color.FromArgb(82, 91, 114);
-                
+
                 picIMGPass.Image = Properties.Resources.picIMGPass_Image1;
 
                 btnSubmit.PaletteMode = PaletteMode.SparklePurple;
@@ -60,6 +71,56 @@ namespace UserManagement
 
                 btnSubmit.Values.Image = Properties.Resources.btnSave_Values_Image;
                 btnReset.Values.Image = Properties.Resources.btnCancel_Values_Image;
+            }
+            else if (clsUtility.MessageType.BlueTheme == clsUtility._UserMessageType)
+            {
+                Lable_Color(Color.Black);
+
+                picIMGPass.Image = Properties.Resources.picIMGPass_green_Image;
+
+                //this.BackgroundImage = Properties.Resources.back_green;
+                //pnlTitle.StateCommon.Image = Properties.Resources.titlebg_green;
+                pnlTitle.StateCommon.Color1 = Color.FromArgb(99, 157, 207);
+                pnlTitle.StateCommon.Color2 = Color.FromArgb(99, 157, 207);
+                this.PaletteMode = PaletteMode.Office2007Blue;
+                this.BackColor = Color.White;
+
+                //grpKrytonHeader.StateCommon.HeaderPrimary.Back.Image = Properties.Resources.titlebg_green;
+                grpKrytonHeader.StateCommon.HeaderPrimary.Back.Color1 = Color.FromArgb(99, 157, 207);
+                grpKrytonHeader.StateCommon.HeaderPrimary.Back.Color2 = Color.FromArgb(99, 157, 207);
+                grpKrytonHeader.StateCommon.Border.Color1 = Color.FromArgb(99, 157, 207);
+                grpKrytonHeader.StateNormal.HeaderPrimary.Back.Color1 = Color.FromArgb(99, 157, 207);
+                grpKrytonHeader.StateCommon.HeaderPrimary.Content.ShortText.Color1 = Color.White;
+                grpKrytonHeader.StateCommon.HeaderPrimary.Content.ShortText.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+                //grpUserDetail.BackColor = Color.White;
+
+                cmbSecurity.PaletteMode = PaletteMode.Office2007Blue;
+
+                btnSubmit.Values.Image = Properties.Resources.save;
+                btnReset.Values.Image = Properties.Resources.cancel;
+
+                btnSubmit.PaletteMode = PaletteMode.Office2007Blue;
+                btnReset.PaletteMode = PaletteMode.Office2007Blue;
+            }
+            else if (clsUtility.MessageType.Office2007Blue == clsUtility._UserMessageType)
+            {
+                Lable_Color(Color.Black);
+
+                picIMGPass.Image = Properties.Resources.picIMGPass_green_Image;
+
+                this.BackgroundImage = Properties.Resources.back_green;
+                pnlTitle.StateCommon.Image = Properties.Resources.titlebg_green;
+                this.PaletteMode = PaletteMode.Office2007Blue;
+                this.BackColor = Color.White;
+
+                grpKrytonHeader.StateCommon.HeaderPrimary.Back.Image = Properties.Resources.titlebg_green;
+                cmbSecurity.PaletteMode = PaletteMode.Office2007Blue;
+
+                btnSubmit.Values.Image = Properties.Resources.save;
+                btnReset.Values.Image = Properties.Resources.cancel;
+
+                btnSubmit.PaletteMode = PaletteMode.Office2007Blue;
+                btnReset.PaletteMode = PaletteMode.Office2007Blue;
             }
             else if (clsUtility.MessageType.Office2010Blue == clsUtility._UserMessageType)
             {
@@ -72,14 +133,14 @@ namespace UserManagement
                 this.PaletteMode = PaletteMode.Office2010Blue;
                 this.BackColor = Color.White;
 
-                grpKrytonHeader.PaletteMode = PaletteMode.Office2010Blue;
+                grpKrytonHeader.StateCommon.HeaderPrimary.Back.Image = Properties.Resources.titlebg_green;
                 cmbSecurity.PaletteMode = PaletteMode.Office2010Blue;
 
                 btnSubmit.Values.Image = Properties.Resources.save;
                 btnReset.Values.Image = Properties.Resources.cancel;
 
-                btnSubmit.PaletteMode = PaletteMode.Office2007Blue;
-                btnReset.PaletteMode = PaletteMode.Office2007Blue;
+                btnSubmit.PaletteMode = PaletteMode.Office2010Blue;
+                btnReset.PaletteMode = PaletteMode.Office2010Blue;
             }
         }
 
@@ -90,15 +151,6 @@ namespace UserManagement
             lblRetrive.ForeColor = clr;
             lblSecurityQuestion.ForeColor = clr;
             lblUserName.ForeColor = clr;
-        }
-
-        private void ForgetPassword_Load(object sender, EventArgs e)
-        {
-            //clsUtility._UserMessageType = clsUtility.MessageType.Office2010Blue;
-            //clsUtility._UserMessageType = clsUtility.MessageType.SparklePurple;
-
-            LoadTheme();
-            //DBName = ObjDAL.GetCurrentDBName(true);
         }
 
         private bool FormValidation()

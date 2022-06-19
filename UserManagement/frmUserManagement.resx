@@ -935,21 +935,6 @@
   <data name="grpUserDetails.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 97</value>
   </data>
-  <data name="picIMGPass2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="picIMGPass2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>842, 87</value>
-  </data>
-  <data name="picIMGPass2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 25</value>
-  </data>
-  <data name="picIMGPass2.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="picIMGPass2.TabIndex" type="System.Int32, mscorlib">
-    <value>243</value>
-  </data>
   <data name="&gt;&gt;picIMGPass2.Name" xml:space="preserve">
     <value>picIMGPass2</value>
   </data>
@@ -961,21 +946,6 @@
   </data>
   <data name="&gt;&gt;picIMGPass2.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="picIMGPass1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="picIMGPass1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>404, 50</value>
-  </data>
-  <data name="picIMGPass1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 25</value>
-  </data>
-  <data name="picIMGPass1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="picIMGPass1.TabIndex" type="System.Int32, mscorlib">
-    <value>242</value>
   </data>
   <data name="&gt;&gt;picIMGPass1.Name" xml:space="preserve">
     <value>picIMGPass1</value>
@@ -1046,6 +1016,60 @@
   <data name="&gt;&gt;grpUserDetails.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="picIMGPass2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="picIMGPass2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>842, 87</value>
+  </data>
+  <data name="picIMGPass2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 25</value>
+  </data>
+  <data name="picIMGPass2.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="picIMGPass2.TabIndex" type="System.Int32, mscorlib">
+    <value>243</value>
+  </data>
+  <data name="&gt;&gt;picIMGPass2.Name" xml:space="preserve">
+    <value>picIMGPass2</value>
+  </data>
+  <data name="&gt;&gt;picIMGPass2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;picIMGPass2.Parent" xml:space="preserve">
+    <value>grpUserDetail</value>
+  </data>
+  <data name="&gt;&gt;picIMGPass2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="picIMGPass1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="picIMGPass1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>404, 50</value>
+  </data>
+  <data name="picIMGPass1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 25</value>
+  </data>
+  <data name="picIMGPass1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="picIMGPass1.TabIndex" type="System.Int32, mscorlib">
+    <value>242</value>
+  </data>
+  <data name="&gt;&gt;picIMGPass1.Name" xml:space="preserve">
+    <value>picIMGPass1</value>
+  </data>
+  <data name="&gt;&gt;picIMGPass1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;picIMGPass1.Parent" xml:space="preserve">
+    <value>grpUserDetail</value>
+  </data>
+  <data name="&gt;&gt;picIMGPass1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="dataGridView1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -1114,6 +1138,90 @@
   </data>
   <data name="grpAccountType.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 262</value>
+  </data>
+  <data name="&gt;&gt;rdLimitedUser.Name" xml:space="preserve">
+    <value>rdLimitedUser</value>
+  </data>
+  <data name="&gt;&gt;rdLimitedUser.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdLimitedUser.Parent" xml:space="preserve">
+    <value>grpAccount</value>
+  </data>
+  <data name="&gt;&gt;rdLimitedUser.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;rdAdmin.Name" xml:space="preserve">
+    <value>rdAdmin</value>
+  </data>
+  <data name="&gt;&gt;rdAdmin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdAdmin.Parent" xml:space="preserve">
+    <value>grpAccount</value>
+  </data>
+  <data name="&gt;&gt;rdAdmin.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="grpAccount.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="grpAccount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="grpAccount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>427, 50</value>
+  </data>
+  <data name="grpAccount.TabIndex" type="System.Int32, mscorlib">
+    <value>287</value>
+  </data>
+  <data name="&gt;&gt;grpAccount.Name" xml:space="preserve">
+    <value>grpAccount</value>
+  </data>
+  <data name="&gt;&gt;grpAccount.Type" xml:space="preserve">
+    <value>gGlowBox.gGlowGroupBox, gGlowBox, Version=1.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;grpAccount.Parent" xml:space="preserve">
+    <value>grpAccountType.Panel</value>
+  </data>
+  <data name="&gt;&gt;grpAccount.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;grpAccountType.Panel.Name" xml:space="preserve">
+    <value>grpAccountType.Panel</value>
+  </data>
+  <data name="&gt;&gt;grpAccountType.Panel.Type" xml:space="preserve">
+    <value>ComponentFactory.Krypton.Toolkit.KryptonGroupPanel, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+  </data>
+  <data name="&gt;&gt;grpAccountType.Panel.Parent" xml:space="preserve">
+    <value>grpAccountType</value>
+  </data>
+  <data name="&gt;&gt;grpAccountType.Panel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="grpAccountType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>435, 86</value>
+  </data>
+  <data name="grpAccountType.TabIndex" type="System.Int32, mscorlib">
+    <value>337</value>
+  </data>
+  <data name="grpAccountType.ValuesPrimary.Heading" xml:space="preserve">
+    <value>Select Account Type</value>
+  </data>
+  <data name="grpAccountType.ValuesPrimary.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="&gt;&gt;grpAccountType.Name" xml:space="preserve">
+    <value>grpAccountType</value>
+  </data>
+  <data name="&gt;&gt;grpAccountType.Type" xml:space="preserve">
+    <value>ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+  </data>
+  <data name="&gt;&gt;grpAccountType.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;grpAccountType.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="rdLimitedUser.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1191,65 +1299,53 @@
   <data name="&gt;&gt;rdAdmin.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="grpAccount.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
   </data>
-  <data name="grpAccount.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>pnlTitle</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>pnlTitle</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pnlTitle.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="pnlTitle.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="grpAccount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>427, 50</value>
+  <data name="pnlTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>910, 50</value>
   </data>
-  <data name="grpAccount.TabIndex" type="System.Int32, mscorlib">
-    <value>287</value>
+  <data name="pnlTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>373</value>
   </data>
-  <data name="&gt;&gt;grpAccount.Name" xml:space="preserve">
-    <value>grpAccount</value>
+  <data name="&gt;&gt;pnlTitle.Name" xml:space="preserve">
+    <value>pnlTitle</value>
   </data>
-  <data name="&gt;&gt;grpAccount.Type" xml:space="preserve">
-    <value>gGlowBox.gGlowGroupBox, gGlowBox, Version=1.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;pnlTitle.Type" xml:space="preserve">
+    <value>ComponentFactory.Krypton.Toolkit.KryptonPanel, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
   </data>
-  <data name="&gt;&gt;grpAccount.Parent" xml:space="preserve">
-    <value>grpAccountType.Panel</value>
-  </data>
-  <data name="&gt;&gt;grpAccount.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;grpAccountType.Panel.Name" xml:space="preserve">
-    <value>grpAccountType.Panel</value>
-  </data>
-  <data name="&gt;&gt;grpAccountType.Panel.Type" xml:space="preserve">
-    <value>ComponentFactory.Krypton.Toolkit.KryptonGroupPanel, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
-  </data>
-  <data name="&gt;&gt;grpAccountType.Panel.Parent" xml:space="preserve">
-    <value>grpAccountType</value>
-  </data>
-  <data name="&gt;&gt;grpAccountType.Panel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="grpAccountType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>435, 86</value>
-  </data>
-  <data name="grpAccountType.TabIndex" type="System.Int32, mscorlib">
-    <value>337</value>
-  </data>
-  <data name="grpAccountType.ValuesPrimary.Heading" xml:space="preserve">
-    <value>Select Account Type</value>
-  </data>
-  <data name="grpAccountType.ValuesPrimary.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="&gt;&gt;grpAccountType.Name" xml:space="preserve">
-    <value>grpAccountType</value>
-  </data>
-  <data name="&gt;&gt;grpAccountType.Type" xml:space="preserve">
-    <value>ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
-  </data>
-  <data name="&gt;&gt;grpAccountType.Parent" xml:space="preserve">
+  <data name="&gt;&gt;pnlTitle.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;grpAccountType.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;pnlTitle.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1339,28 +1435,52 @@
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="pnlTitle.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+  <data name="&gt;&gt;rdInActive.Name" xml:space="preserve">
+    <value>rdInActive</value>
   </data>
-  <data name="pnlTitle.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="&gt;&gt;rdInActive.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdInActive.Parent" xml:space="preserve">
+    <value>grpActive</value>
+  </data>
+  <data name="&gt;&gt;rdInActive.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;rdActive.Name" xml:space="preserve">
+    <value>rdActive</value>
+  </data>
+  <data name="&gt;&gt;rdActive.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdActive.Parent" xml:space="preserve">
+    <value>grpActive</value>
+  </data>
+  <data name="&gt;&gt;rdActive.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="grpActive.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="grpActive.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="pnlTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>910, 50</value>
+  <data name="grpActive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 56</value>
   </data>
-  <data name="pnlTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>373</value>
+  <data name="grpActive.TabIndex" type="System.Int32, mscorlib">
+    <value>287</value>
   </data>
-  <data name="&gt;&gt;pnlTitle.Name" xml:space="preserve">
-    <value>pnlTitle</value>
+  <data name="&gt;&gt;grpActive.Name" xml:space="preserve">
+    <value>grpActive</value>
   </data>
-  <data name="&gt;&gt;pnlTitle.Type" xml:space="preserve">
-    <value>ComponentFactory.Krypton.Toolkit.KryptonPanel, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+  <data name="&gt;&gt;grpActive.Type" xml:space="preserve">
+    <value>gGlowBox.gGlowGroupBox, gGlowBox, Version=1.0.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;pnlTitle.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;grpActive.Parent" xml:space="preserve">
+    <value>grpActiveStatus.Panel</value>
   </data>
-  <data name="&gt;&gt;pnlTitle.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;grpActive.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="rdInActive.AutoSize" type="System.Boolean, mscorlib">
@@ -1438,30 +1558,6 @@
   </data>
   <data name="&gt;&gt;rdActive.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="grpActive.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="grpActive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="grpActive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>409, 56</value>
-  </data>
-  <data name="grpActive.TabIndex" type="System.Int32, mscorlib">
-    <value>287</value>
-  </data>
-  <data name="&gt;&gt;grpActive.Name" xml:space="preserve">
-    <value>grpActive</value>
-  </data>
-  <data name="&gt;&gt;grpActive.Type" xml:space="preserve">
-    <value>gGlowBox.gGlowGroupBox, gGlowBox, Version=1.0.2.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;grpActive.Parent" xml:space="preserve">
-    <value>grpActiveStatus.Panel</value>
-  </data>
-  <data name="&gt;&gt;grpActive.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="grpActiveStatus.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
