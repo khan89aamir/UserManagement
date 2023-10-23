@@ -103,6 +103,76 @@ namespace UserManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Blue_add {
+            get {
+                object obj = ResourceManager.GetObject("Blue_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Blue_cancel {
+            get {
+                object obj = ResourceManager.GetObject("Blue_cancel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Blue_delete {
+            get {
+                object obj = ResourceManager.GetObject("Blue_delete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Blue_edit {
+            get {
+                object obj = ResourceManager.GetObject("Blue_edit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Blue_refresh {
+            get {
+                object obj = ResourceManager.GetObject("Blue_refresh", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Blue_save {
+            get {
+                object obj = ResourceManager.GetObject("Blue_save", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Blue_Search {
+            get {
+                object obj = ResourceManager.GetObject("Blue_Search", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnAdd_Values_Image {
             get {
                 object obj = ResourceManager.GetObject("btnAdd.Values.Image", resourceCulture);
@@ -216,6 +286,16 @@ namespace UserManagement.Properties {
         internal static System.Drawing.Bitmap grpSearch_Values_Image {
             get {
                 object obj = ResourceManager.GetObject("grpSearch.Values.Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap picIMGPass_Black {
+            get {
+                object obj = ResourceManager.GetObject("picIMGPass_Black", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

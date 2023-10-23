@@ -59,26 +59,20 @@ namespace UserManagement
 
         private void LoadTheme()
         {
-            //this.BackgroundImage = TAILORING.Properties.Resources.Background;
-
-            btnAdd.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnSave.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnEdit.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnUpdate.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnDelete.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnCancel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-
+            btnAdd.StateCommon.Content.ShortText.Font = new Font("Times New Roman", 10.8f, FontStyle.Regular, GraphicsUnit.Point);
+            btnSave.StateCommon.Content.ShortText.Font = new Font("Times New Roman", 10.8f, FontStyle.Regular, GraphicsUnit.Point);
+            btnEdit.StateCommon.Content.ShortText.Font = new Font("Times New Roman", 10.8f, FontStyle.Regular, GraphicsUnit.Point);
+            btnUpdate.StateCommon.Content.ShortText.Font = new Font("Times New Roman", 10.8f, FontStyle.Regular, GraphicsUnit.Point);
+            btnDelete.StateCommon.Content.ShortText.Font = new Font("Times New Roman", 10.8f, FontStyle.Regular, GraphicsUnit.Point);
+            btnCancel.StateCommon.Content.ShortText.Font = new Font("Times New Roman", 10.8f, FontStyle.Regular, GraphicsUnit.Point);
             picIMGPass1.SizeMode = PictureBoxSizeMode.Zoom;
             picIMGPass2.SizeMode = PictureBoxSizeMode.Zoom;
-
             if (clsUtility.MessageType.SparklePurple == clsUtility._UserMessageType)
             {
-                this.BackgroundImage = null;
-                this.PaletteMode = PaletteMode.SparklePurple;
-                this.BackColor = Color.FromArgb(82, 91, 114);
-
+                BackgroundImage = null;
+                base.PaletteMode = PaletteMode.SparklePurple;
+                BackColor = Color.FromArgb(82, 91, 114);
                 Lable_Color(Color.White);
-
                 btnAdd.PaletteMode = PaletteMode.SparklePurple;
                 btnSave.PaletteMode = PaletteMode.SparklePurple;
                 btnEdit.PaletteMode = PaletteMode.SparklePurple;
@@ -86,19 +80,18 @@ namespace UserManagement
                 btnDelete.PaletteMode = PaletteMode.SparklePurple;
                 btnCancel.PaletteMode = PaletteMode.SparklePurple;
                 cmbSecurity.PaletteMode = PaletteMode.SparklePurple;
-
                 picIMGPass1.Image = Properties.Resources.picIMGPass_Image1;
                 picIMGPass2.Image = Properties.Resources.picIMGPass_Image1;
-
                 grpGridview.PaletteMode = PaletteMode.SparklePurple;
             }
-            else if (clsUtility.MessageType.Office2010Blue == clsUtility._UserMessageType)
+            else if (clsUtility.MessageType.BlueTheme == clsUtility._UserMessageType)
             {
-                this.BackgroundImage = Properties.Resources.back_green;
-                pnlTitle.StateCommon.Image = Properties.Resources.titlebg_green;
-                this.PaletteMode = PaletteMode.Office2010Blue;
-                this.BackColor = Color.White;
+                Color clr= Color.FromArgb(240, 240, 240);
 
+                pnlTitle.StateCommon.Color1 = Color.FromArgb(99, 157, 207);
+                pnlTitle.StateCommon.Color2 = Color.FromArgb(99, 157, 207);
+                base.PaletteMode = PaletteMode.Office2007Blue;
+                BackColor = clr;
                 Lable_Color(Color.Black);
 
                 btnAdd.PaletteMode = PaletteMode.Office2007Blue;
@@ -109,23 +102,100 @@ namespace UserManagement
                 btnCancel.PaletteMode = PaletteMode.Office2007Blue;
                 cmbSecurity.PaletteMode = PaletteMode.Office2007Blue;
 
+                btnAdd.Values.Image = Properties.Resources.Blue_add;
+                btnSave.Values.Image = Properties.Resources.Blue_save;
+                btnEdit.Values.Image = Properties.Resources.Blue_edit;
+                btnUpdate.Values.Image = Properties.Resources.Blue_refresh;
+                btnDelete.Values.Image = Properties.Resources.Blue_delete;
+                btnCancel.Values.Image = Properties.Resources.Blue_delete;
+
+                picIMGPass1.Image = Properties.Resources.picIMGPass_Black;
+                picIMGPass2.Image = Properties.Resources.picIMGPass_Black;
+
+                grpUserDetails.StateCommon.HeaderPrimary.Back.Color1 = Color.FromArgb(99, 157, 207);
+                grpUserDetails.StateCommon.HeaderPrimary.Back.Color2 = Color.FromArgb(99, 157, 207);
+                grpUserDetails.StateCommon.Border.Color1 = Color.FromArgb(99, 157, 207);
+                grpUserDetails.StateNormal.HeaderPrimary.Back.Color1 = Color.FromArgb(99, 157, 207);
+                grpUserDetails.StateCommon.HeaderPrimary.Content.ShortText.Color1 = Color.White;
+                grpUserDetail.BackColor = clr;
+                grpAccountType.StateCommon.HeaderPrimary.Back.Color1 = Color.FromArgb(99, 157, 207);
+                grpAccountType.StateCommon.HeaderPrimary.Back.Color2 = Color.FromArgb(99, 157, 207);
+                grpAccountType.StateCommon.Border.Color1 = Color.FromArgb(99, 157, 207);
+                grpAccountType.StateNormal.HeaderPrimary.Back.Color1 = Color.FromArgb(99, 157, 207);
+                grpAccountType.StateCommon.HeaderPrimary.Content.ShortText.Color1 = Color.White;
+                grpAccountType.BackColor = clr;
+                grpActiveStatus.StateCommon.HeaderPrimary.Back.Color1 = Color.FromArgb(99, 157, 207);
+                grpActiveStatus.StateCommon.HeaderPrimary.Back.Color2 = Color.FromArgb(99, 157, 207);
+                grpActiveStatus.StateCommon.Border.Color1 = Color.FromArgb(99, 157, 207);
+                grpActiveStatus.StateNormal.HeaderPrimary.Back.Color1 = Color.FromArgb(99, 157, 207);
+                grpActiveStatus.StateCommon.HeaderPrimary.Content.ShortText.Color1 = Color.White;
+                grpActiveStatus.BackColor = clr;
+                grpGridview.StateCommon.HeaderPrimary.Back.Color1 = Color.FromArgb(99, 157, 207);
+                grpGridview.StateCommon.HeaderPrimary.Back.Color2 = Color.FromArgb(99, 157, 207);
+                grpGridview.StateCommon.HeaderPrimary.Content.ShortText.Color1 = clr;
+                grpGridview.PaletteMode = PaletteMode.Office2007Blue;
+
+                dataGridView1.PaletteMode = PaletteMode.Office2007Blue;
+            }
+            else if (clsUtility._UserMessageType == clsUtility.MessageType.Office2007Blue)
+            {
+                Color clr= Color.White;
+
+                BackgroundImage = Properties.Resources.back_green;
+                pnlTitle.StateCommon.Image = Properties.Resources.titlebg_green;
+                base.PaletteMode = PaletteMode.Office2007Blue;
+                BackColor = clr;
+                Lable_Color(Color.Black);
+                btnAdd.PaletteMode = PaletteMode.Office2007Blue;
+                btnSave.PaletteMode = PaletteMode.Office2007Blue;
+                btnEdit.PaletteMode = PaletteMode.Office2007Blue;
+                btnUpdate.PaletteMode = PaletteMode.Office2007Blue;
+                btnDelete.PaletteMode = PaletteMode.Office2007Blue;
+                btnCancel.PaletteMode = PaletteMode.Office2007Blue;
+                cmbSecurity.PaletteMode = PaletteMode.Office2007Blue;
                 btnAdd.Values.Image = Properties.Resources._new;
                 btnSave.Values.Image = Properties.Resources.save;
                 btnEdit.Values.Image = Properties.Resources.edit;
                 btnUpdate.Values.Image = Properties.Resources.update;
                 btnDelete.Values.Image = Properties.Resources.delete;
                 btnCancel.Values.Image = Properties.Resources.cancel;
-
                 picIMGPass1.Image = Properties.Resources.picIMGPass_green_Image;
                 picIMGPass2.Image = Properties.Resources.picIMGPass_green_Image;
-
                 grpUserDetails.StateCommon.HeaderPrimary.Back.Image = Properties.Resources.titlebg_green;
                 grpAccountType.StateCommon.HeaderPrimary.Back.Image = Properties.Resources.titlebg_green;
                 grpActiveStatus.StateCommon.HeaderPrimary.Back.Image = Properties.Resources.titlebg_green;
                 grpGridview.StateCommon.HeaderPrimary.Back.Image = Properties.Resources.titlebg_green;
+                grpGridview.PaletteMode = PaletteMode.Office2007Blue;
+            }
+            else if (clsUtility.MessageType.Office2010Blue == clsUtility._UserMessageType)
+            {
+                Color clr = Color.White;
 
+                BackgroundImage = Properties.Resources.back_green;
+                pnlTitle.StateCommon.Image = Properties.Resources.titlebg_green;
+                base.PaletteMode = PaletteMode.Office2010Blue;
+                BackColor = clr;
+                Lable_Color(Color.Black);
+                btnAdd.PaletteMode = PaletteMode.Office2010Blue;
+                btnSave.PaletteMode = PaletteMode.Office2010Blue;
+                btnEdit.PaletteMode = PaletteMode.Office2010Blue;
+                btnUpdate.PaletteMode = PaletteMode.Office2010Blue;
+                btnDelete.PaletteMode = PaletteMode.Office2010Blue;
+                btnCancel.PaletteMode = PaletteMode.Office2010Blue;
+                cmbSecurity.PaletteMode = PaletteMode.Office2010Blue;
+                btnAdd.Values.Image = Properties.Resources._new;
+                btnSave.Values.Image = Properties.Resources.save;
+                btnEdit.Values.Image = Properties.Resources.edit;
+                btnUpdate.Values.Image = Properties.Resources.update;
+                btnDelete.Values.Image = Properties.Resources.delete;
+                btnCancel.Values.Image = Properties.Resources.cancel;
+                picIMGPass1.Image = Properties.Resources.picIMGPass_green_Image;
+                picIMGPass2.Image = Properties.Resources.picIMGPass_green_Image;
+                grpUserDetails.StateCommon.HeaderPrimary.Back.Image = Properties.Resources.titlebg_green;
+                grpAccountType.StateCommon.HeaderPrimary.Back.Image = Properties.Resources.titlebg_green;
+                grpActiveStatus.StateCommon.HeaderPrimary.Back.Image = Properties.Resources.titlebg_green;
+                grpGridview.StateCommon.HeaderPrimary.Back.Image = Properties.Resources.titlebg_green;
                 grpGridview.PaletteMode = PaletteMode.Office2010Blue;
-                //dataGridView1.PaletteMode = PaletteMode.Office2010Blue;
             }
         }
 
@@ -176,6 +246,7 @@ namespace UserManagement
         {
             //clsUtility._UserMessageType = clsUtility.MessageType.SparklePurple;
             //clsUtility._UserMessageType = clsUtility.MessageType.Office2010Blue;
+            clsUtility._UserMessageType = clsUtility.MessageType.BlueTheme;
 
             LoadTheme();
 
@@ -198,7 +269,7 @@ namespace UserManagement
             {
                 dt = ObjDAL.ExecuteSelectStatement("SELECT UserID,UserName,[Password],ISNULL(EmailID,'') AS EmailID,SecurityQuestion,Answer,(CASE IsAdmin WHEN 1 THEN 'Admin' WHEN 0 THEN 'Limited User' END)as 'AccountType'" +
                     ",(CASE ActiveStatus WHEN 1 THEN 'Active' WHEN 0 THEN 'InActive' END)as 'ActiveStatus'" +
-                    " FROM " + clsUtility.DBName + ".[dbo].[UserManagement] WITH(NOLOCK)");
+                    " FROM " + clsUtility.DBName + ".[dbo].[UserManagement] WITH(NOLOCK) WHERE UserName<>'atech'");
             }
             else
             {
