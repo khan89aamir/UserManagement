@@ -56,7 +56,27 @@ namespace UserManagement
                 return false;
             }
         }
+        private void frmUserManagement_Load(object sender, EventArgs e)
+        {
+            //clsUtility._UserMessageType = clsUtility.MessageType.SparklePurple;
+            //clsUtility._UserMessageType = clsUtility.MessageType.Office2010Blue;
+            //clsUtility._UserMessageType = clsUtility.MessageType.Office2007Blue;
+            //clsUtility._UserMessageType = clsUtility.MessageType.BlueTheme;
 
+            LoadTheme();
+
+            EnableDisable(false);
+
+            //DBName = ObjDAL.GetCurrentDBName(true);
+
+            //string a = ObjDAL.ReadConStringFromFile("AppConfig/ServerConfig.sc", true);
+            //string[] arr = a.Split(new char[] { ';', '=' });
+            //DBName = arr[3].ToString();
+            LoadData();
+
+            ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
+            ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.Beginning, admin);
+        }
         private void LoadTheme()
         {
             btnAdd.StateCommon.Content.ShortText.Font = new Font("Times New Roman", 10.8f, FontStyle.Regular, GraphicsUnit.Point);
@@ -696,7 +716,7 @@ namespace UserManagement
 
         private void cmbSecurity_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            lblPassword.Focus();
+            grpUserDetail.Focus();
         }
     }
 }
