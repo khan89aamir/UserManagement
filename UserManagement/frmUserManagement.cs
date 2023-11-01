@@ -61,7 +61,7 @@ namespace UserManagement
             //clsUtility._UserMessageType = clsUtility.MessageType.SparklePurple;
             //clsUtility._UserMessageType = clsUtility.MessageType.Office2010Blue;
             //clsUtility._UserMessageType = clsUtility.MessageType.Office2007Blue;
-            //clsUtility._UserMessageType = clsUtility.MessageType.BlueTheme;
+            clsUtility._UserMessageType = clsUtility.MessageType.BlueTheme;
 
             LoadTheme();
 
@@ -110,7 +110,7 @@ namespace UserManagement
 
                 pnlTitle.StateCommon.Color1 = Color.FromArgb(99, 157, 207);
                 pnlTitle.StateCommon.Color2 = Color.FromArgb(99, 157, 207);
-                base.PaletteMode = PaletteMode.Office2007Blue;
+                base.PaletteMode = PaletteMode.Office2010Blue;
                 BackColor = clr;
                 Lable_Color(Color.Black);
 
@@ -127,7 +127,7 @@ namespace UserManagement
                 btnEdit.Values.Image = Properties.Resources.Blue_edit;
                 btnUpdate.Values.Image = Properties.Resources.Blue_refresh;
                 btnDelete.Values.Image = Properties.Resources.Blue_delete;
-                btnCancel.Values.Image = Properties.Resources.Blue_delete;
+                btnCancel.Values.Image = Properties.Resources.Blue_cancel;
 
                 picIMGPass1.Image = Properties.Resources.picIMGPass_Black;
                 picIMGPass2.Image = Properties.Resources.picIMGPass_Black;
@@ -156,6 +156,9 @@ namespace UserManagement
                 grpGridview.PaletteMode = PaletteMode.Office2007Blue;
 
                 dataGridView1.PaletteMode = PaletteMode.Office2007Blue;
+                dataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(183, 219, 255);
+                dataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.Black;
+
             }
             else if (clsUtility._UserMessageType == clsUtility.MessageType.Office2007Blue)
             {
@@ -236,7 +239,7 @@ namespace UserManagement
 
             if (Color.White == clr)
             {
-                lblManAnswer.ForeColor = clr;
+                //lblManAnswer.ForeColor = clr;
                 lblManEmail.ForeColor = clr;
                 lblManPass.ForeColor = clr;
                 lblManUserName.ForeColor = clr;
@@ -244,7 +247,7 @@ namespace UserManagement
             }
             else
             {
-                lblManAnswer.ForeColor = Color.FromArgb(192, 0, 0);
+                //lblManAnswer.ForeColor = Color.FromArgb(192, 0, 0);
                 lblManEmail.ForeColor = Color.FromArgb(192, 0, 0);
                 lblManPass.ForeColor = Color.FromArgb(192, 0, 0);
                 lblManUserName.ForeColor = Color.FromArgb(192, 0, 0);
@@ -262,26 +265,26 @@ namespace UserManagement
             cmbSecurity.Enabled = b;
         }
 
-        private void frmUserManagement_Load(object sender, EventArgs e)
-        {
-            //clsUtility._UserMessageType = clsUtility.MessageType.SparklePurple;
-            //clsUtility._UserMessageType = clsUtility.MessageType.Office2010Blue;
-            clsUtility._UserMessageType = clsUtility.MessageType.BlueTheme;
+        //private void frmUserManagement_Load(object sender, EventArgs e)
+        //{
+        //    //clsUtility._UserMessageType = clsUtility.MessageType.SparklePurple;
+        //    //clsUtility._UserMessageType = clsUtility.MessageType.Office2010Blue;
+        //    clsUtility._UserMessageType = clsUtility.MessageType.BlueTheme;
 
-            LoadTheme();
+        //    LoadTheme();
 
-            EnableDisable(false);
+        //    EnableDisable(false);
 
-            //DBName = ObjDAL.GetCurrentDBName(true);
+        //    //DBName = ObjDAL.GetCurrentDBName(true);
 
-            //string a = ObjDAL.ReadConStringFromFile("AppConfig/ServerConfig.sc", true);
-            //string[] arr = a.Split(new char[] { ';', '=' });
-            //DBName = arr[3].ToString();
-            LoadData();
+        //    //string a = ObjDAL.ReadConStringFromFile("AppConfig/ServerConfig.sc", true);
+        //    //string[] arr = a.Split(new char[] { ';', '=' });
+        //    //DBName = arr[3].ToString();
+        //    LoadData();
 
-            ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
-            ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.Beginning, admin);
-        }
+        //    ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
+        //    ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.Beginning, admin);
+        //}
         private void LoadData()
         {
             DataTable dt = null;

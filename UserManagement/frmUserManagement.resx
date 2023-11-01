@@ -130,7 +130,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblUserName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 12</value>
+    <value>17, 20</value>
   </data>
   <data name="lblUserName.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 17</value>
@@ -163,7 +163,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 55</value>
+    <value>17, 82</value>
   </data>
   <data name="lblPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 17</value>
@@ -184,10 +184,10 @@
     <value>grpUserDetail</value>
   </data>
   <data name="&gt;&gt;lblPassword.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>10</value>
   </data>
   <data name="txtUserName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 9</value>
+    <value>180, 17</value>
   </data>
   <data name="txtUserName.Size" type="System.Drawing.Size, System.Drawing">
     <value>206, 29</value>
@@ -205,10 +205,10 @@
     <value>grpUserDetail</value>
   </data>
   <data name="&gt;&gt;txtUserName.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>7</value>
   </data>
   <data name="txtPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 50</value>
+    <value>180, 77</value>
   </data>
   <data name="txtPassword.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
     <value>●</value>
@@ -229,10 +229,10 @@
     <value>grpUserDetail</value>
   </data>
   <data name="&gt;&gt;txtPassword.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>5</value>
   </data>
   <data name="txtVerifyPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>619, 48</value>
+    <value>619, 75</value>
   </data>
   <data name="txtVerifyPassword.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
     <value>●</value>
@@ -253,7 +253,7 @@
     <value>grpUserDetail</value>
   </data>
   <data name="&gt;&gt;txtVerifyPassword.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="lblVerifyPass.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -265,7 +265,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblVerifyPass.Location" type="System.Drawing.Point, System.Drawing">
-    <value>504, 52</value>
+    <value>504, 79</value>
   </data>
   <data name="lblVerifyPass.Size" type="System.Drawing.Size, System.Drawing">
     <value>113, 17</value>
@@ -286,7 +286,7 @@
     <value>grpUserDetail</value>
   </data>
   <data name="&gt;&gt;lblVerifyPass.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="lblManEmail.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -298,7 +298,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblManEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>827, 8</value>
+    <value>827, 16</value>
   </data>
   <data name="lblManEmail.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 17</value>
@@ -321,72 +321,6 @@
   <data name="&gt;&gt;lblManEmail.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="lblManAnswer.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblManAnswer.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 11.25pt</value>
-  </data>
-  <data name="lblManAnswer.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblManAnswer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>827, 87</value>
-  </data>
-  <data name="lblManAnswer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>15, 17</value>
-  </data>
-  <data name="lblManAnswer.TabIndex" type="System.Int32, mscorlib">
-    <value>240</value>
-  </data>
-  <data name="lblManAnswer.Text" xml:space="preserve">
-    <value>*</value>
-  </data>
-  <data name="&gt;&gt;lblManAnswer.Name" xml:space="preserve">
-    <value>lblManAnswer</value>
-  </data>
-  <data name="&gt;&gt;lblManAnswer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblManAnswer.Parent" xml:space="preserve">
-    <value>grpUserDetail</value>
-  </data>
-  <data name="&gt;&gt;lblManAnswer.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 11.25pt</value>
-  </data>
-  <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>473, 91</value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>15, 17</value>
-  </data>
-  <data name="label9.TabIndex" type="System.Int32, mscorlib">
-    <value>239</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>*</value>
-  </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
-  </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
-    <value>grpUserDetail</value>
-  </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
   <data name="lblManVerifyPass.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -397,7 +331,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblManVerifyPass.Location" type="System.Drawing.Point, System.Drawing">
-    <value>827, 48</value>
+    <value>827, 75</value>
   </data>
   <data name="lblManVerifyPass.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 17</value>
@@ -418,7 +352,7 @@
     <value>grpUserDetail</value>
   </data>
   <data name="&gt;&gt;lblManVerifyPass.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>6</value>
   </data>
   <data name="lblManPass.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -430,7 +364,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblManPass.Location" type="System.Drawing.Point, System.Drawing">
-    <value>388, 50</value>
+    <value>388, 77</value>
   </data>
   <data name="lblManPass.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 17</value>
@@ -451,7 +385,7 @@
     <value>grpUserDetail</value>
   </data>
   <data name="&gt;&gt;lblManPass.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>8</value>
   </data>
   <data name="lblManUserName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -463,7 +397,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblManUserName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>388, 9</value>
+    <value>388, 17</value>
   </data>
   <data name="lblManUserName.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 17</value>
@@ -484,7 +418,7 @@
     <value>grpUserDetail</value>
   </data>
   <data name="&gt;&gt;lblManUserName.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>9</value>
   </data>
   <data name="cmbSecurity.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 12pt</value>
@@ -505,13 +439,16 @@
     <value>Who was your childhood hero? </value>
   </data>
   <data name="cmbSecurity.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 91</value>
+    <value>541, 7</value>
   </data>
   <data name="cmbSecurity.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 27</value>
+    <value>93, 27</value>
   </data>
   <data name="cmbSecurity.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
+  </data>
+  <data name="cmbSecurity.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;cmbSecurity.Name" xml:space="preserve">
     <value>cmbSecurity</value>
@@ -520,16 +457,16 @@
     <value>ComponentFactory.Krypton.Toolkit.KryptonComboBox, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
   </data>
   <data name="&gt;&gt;cmbSecurity.Parent" xml:space="preserve">
-    <value>grpUserDetail</value>
+    <value>pnlTitle</value>
   </data>
   <data name="&gt;&gt;cmbSecurity.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>5</value>
   </data>
   <data name="txtEmail.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 12pt</value>
   </data>
   <data name="txtEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>619, 8</value>
+    <value>619, 16</value>
   </data>
   <data name="txtEmail.MaxLength" type="System.Int32, mscorlib">
     <value>25</value>
@@ -550,7 +487,7 @@
     <value>grpUserDetail</value>
   </data>
   <data name="&gt;&gt;txtEmail.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>11</value>
   </data>
   <data name="lblEmail.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -562,7 +499,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>507, 12</value>
+    <value>507, 20</value>
   </data>
   <data name="lblEmail.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 17</value>
@@ -583,13 +520,13 @@
     <value>grpUserDetail</value>
   </data>
   <data name="&gt;&gt;lblEmail.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>12</value>
   </data>
   <data name="txtAsnwer.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 12pt</value>
   </data>
   <data name="txtAsnwer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>619, 87</value>
+    <value>784, 8</value>
   </data>
   <data name="txtAsnwer.MaxLength" type="System.Int32, mscorlib">
     <value>12</value>
@@ -598,10 +535,13 @@
     <value>●</value>
   </data>
   <data name="txtAsnwer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 29</value>
+    <value>84, 29</value>
   </data>
   <data name="txtAsnwer.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
+  </data>
+  <data name="txtAsnwer.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;txtAsnwer.Name" xml:space="preserve">
     <value>txtAsnwer</value>
@@ -610,10 +550,10 @@
     <value>ComponentFactory.Krypton.Toolkit.KryptonTextBox, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
   </data>
   <data name="&gt;&gt;txtAsnwer.Parent" xml:space="preserve">
-    <value>grpUserDetail</value>
+    <value>pnlTitle</value>
   </data>
   <data name="&gt;&gt;txtAsnwer.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>4</value>
   </data>
   <data name="lblAnswer.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -625,7 +565,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblAnswer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>507, 92</value>
+    <value>672, 13</value>
   </data>
   <data name="lblAnswer.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 17</value>
@@ -636,6 +576,9 @@
   <data name="lblAnswer.Text" xml:space="preserve">
     <value>Enter Answer :</value>
   </data>
+  <data name="lblAnswer.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;lblAnswer.Name" xml:space="preserve">
     <value>lblAnswer</value>
   </data>
@@ -643,10 +586,10 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblAnswer.Parent" xml:space="preserve">
-    <value>grpUserDetail</value>
+    <value>pnlTitle</value>
   </data>
   <data name="&gt;&gt;lblAnswer.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>6</value>
   </data>
   <data name="lblSecurityQuestion.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -658,7 +601,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblSecurityQuestion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 98</value>
+    <value>378, 14</value>
   </data>
   <data name="lblSecurityQuestion.Size" type="System.Drawing.Size, System.Drawing">
     <value>159, 17</value>
@@ -669,6 +612,9 @@
   <data name="lblSecurityQuestion.Text" xml:space="preserve">
     <value>Select Security Question :</value>
   </data>
+  <data name="lblSecurityQuestion.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;lblSecurityQuestion.Name" xml:space="preserve">
     <value>lblSecurityQuestion</value>
   </data>
@@ -676,10 +622,10 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblSecurityQuestion.Parent" xml:space="preserve">
-    <value>grpUserDetail</value>
+    <value>pnlTitle</value>
   </data>
   <data name="&gt;&gt;lblSecurityQuestion.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>3</value>
   </data>
   <data name="btnCancel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -935,17 +881,20 @@
   <data name="grpUserDetails.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 97</value>
   </data>
-  <data name="&gt;&gt;picIMGPass2.Name" xml:space="preserve">
-    <value>picIMGPass2</value>
+  <data name="picIMGPass1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;picIMGPass2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="picIMGPass1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>404, 77</value>
   </data>
-  <data name="&gt;&gt;picIMGPass2.Parent" xml:space="preserve">
-    <value>grpUserDetail</value>
+  <data name="picIMGPass1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 25</value>
   </data>
-  <data name="&gt;&gt;picIMGPass2.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="picIMGPass1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="picIMGPass1.TabIndex" type="System.Int32, mscorlib">
+    <value>242</value>
   </data>
   <data name="&gt;&gt;picIMGPass1.Name" xml:space="preserve">
     <value>picIMGPass1</value>
@@ -957,7 +906,7 @@
     <value>grpUserDetail</value>
   </data>
   <data name="&gt;&gt;picIMGPass1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="grpUserDetail.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1020,7 +969,7 @@
     <value>NoControl</value>
   </data>
   <data name="picIMGPass2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>842, 87</value>
+    <value>874, 14</value>
   </data>
   <data name="picIMGPass2.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 25</value>
@@ -1031,6 +980,9 @@
   <data name="picIMGPass2.TabIndex" type="System.Int32, mscorlib">
     <value>243</value>
   </data>
+  <data name="picIMGPass2.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;picIMGPass2.Name" xml:space="preserve">
     <value>picIMGPass2</value>
   </data>
@@ -1038,37 +990,10 @@
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;picIMGPass2.Parent" xml:space="preserve">
-    <value>grpUserDetail</value>
+    <value>pnlTitle</value>
   </data>
   <data name="&gt;&gt;picIMGPass2.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="picIMGPass1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="picIMGPass1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>404, 50</value>
-  </data>
-  <data name="picIMGPass1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 25</value>
-  </data>
-  <data name="picIMGPass1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="picIMGPass1.TabIndex" type="System.Int32, mscorlib">
-    <value>242</value>
-  </data>
-  <data name="&gt;&gt;picIMGPass1.Name" xml:space="preserve">
-    <value>picIMGPass1</value>
-  </data>
-  <data name="&gt;&gt;picIMGPass1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;picIMGPass1.Parent" xml:space="preserve">
-    <value>grpUserDetail</value>
-  </data>
-  <data name="&gt;&gt;picIMGPass1.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="dataGridView1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1138,90 +1063,6 @@
   </data>
   <data name="grpAccountType.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 262</value>
-  </data>
-  <data name="&gt;&gt;rdLimitedUser.Name" xml:space="preserve">
-    <value>rdLimitedUser</value>
-  </data>
-  <data name="&gt;&gt;rdLimitedUser.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rdLimitedUser.Parent" xml:space="preserve">
-    <value>grpAccount</value>
-  </data>
-  <data name="&gt;&gt;rdLimitedUser.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;rdAdmin.Name" xml:space="preserve">
-    <value>rdAdmin</value>
-  </data>
-  <data name="&gt;&gt;rdAdmin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rdAdmin.Parent" xml:space="preserve">
-    <value>grpAccount</value>
-  </data>
-  <data name="&gt;&gt;rdAdmin.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="grpAccount.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="grpAccount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="grpAccount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>427, 50</value>
-  </data>
-  <data name="grpAccount.TabIndex" type="System.Int32, mscorlib">
-    <value>287</value>
-  </data>
-  <data name="&gt;&gt;grpAccount.Name" xml:space="preserve">
-    <value>grpAccount</value>
-  </data>
-  <data name="&gt;&gt;grpAccount.Type" xml:space="preserve">
-    <value>gGlowBox.gGlowGroupBox, gGlowBox, Version=1.0.2.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;grpAccount.Parent" xml:space="preserve">
-    <value>grpAccountType.Panel</value>
-  </data>
-  <data name="&gt;&gt;grpAccount.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;grpAccountType.Panel.Name" xml:space="preserve">
-    <value>grpAccountType.Panel</value>
-  </data>
-  <data name="&gt;&gt;grpAccountType.Panel.Type" xml:space="preserve">
-    <value>ComponentFactory.Krypton.Toolkit.KryptonGroupPanel, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
-  </data>
-  <data name="&gt;&gt;grpAccountType.Panel.Parent" xml:space="preserve">
-    <value>grpAccountType</value>
-  </data>
-  <data name="&gt;&gt;grpAccountType.Panel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="grpAccountType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>435, 86</value>
-  </data>
-  <data name="grpAccountType.TabIndex" type="System.Int32, mscorlib">
-    <value>337</value>
-  </data>
-  <data name="grpAccountType.ValuesPrimary.Heading" xml:space="preserve">
-    <value>Select Account Type</value>
-  </data>
-  <data name="grpAccountType.ValuesPrimary.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="&gt;&gt;grpAccountType.Name" xml:space="preserve">
-    <value>grpAccountType</value>
-  </data>
-  <data name="&gt;&gt;grpAccountType.Type" xml:space="preserve">
-    <value>ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
-  </data>
-  <data name="&gt;&gt;grpAccountType.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;grpAccountType.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="rdLimitedUser.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1299,53 +1140,65 @@
   <data name="&gt;&gt;rdAdmin.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
+  <data name="grpAccount.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>pnlTitle</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
-    <value>pictureBox1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
-    <value>pnlTitle</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="pnlTitle.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="pnlTitle.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="grpAccount.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="pnlTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>910, 50</value>
+  <data name="grpAccount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>427, 50</value>
   </data>
-  <data name="pnlTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>373</value>
+  <data name="grpAccount.TabIndex" type="System.Int32, mscorlib">
+    <value>287</value>
   </data>
-  <data name="&gt;&gt;pnlTitle.Name" xml:space="preserve">
-    <value>pnlTitle</value>
+  <data name="&gt;&gt;grpAccount.Name" xml:space="preserve">
+    <value>grpAccount</value>
   </data>
-  <data name="&gt;&gt;pnlTitle.Type" xml:space="preserve">
-    <value>ComponentFactory.Krypton.Toolkit.KryptonPanel, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+  <data name="&gt;&gt;grpAccount.Type" xml:space="preserve">
+    <value>gGlowBox.gGlowGroupBox, gGlowBox, Version=1.0.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;pnlTitle.Parent" xml:space="preserve">
+  <data name="&gt;&gt;grpAccount.Parent" xml:space="preserve">
+    <value>grpAccountType.Panel</value>
+  </data>
+  <data name="&gt;&gt;grpAccount.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;grpAccountType.Panel.Name" xml:space="preserve">
+    <value>grpAccountType.Panel</value>
+  </data>
+  <data name="&gt;&gt;grpAccountType.Panel.Type" xml:space="preserve">
+    <value>ComponentFactory.Krypton.Toolkit.KryptonGroupPanel, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+  </data>
+  <data name="&gt;&gt;grpAccountType.Panel.Parent" xml:space="preserve">
+    <value>grpAccountType</value>
+  </data>
+  <data name="&gt;&gt;grpAccountType.Panel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="grpAccountType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>435, 86</value>
+  </data>
+  <data name="grpAccountType.TabIndex" type="System.Int32, mscorlib">
+    <value>337</value>
+  </data>
+  <data name="grpAccountType.ValuesPrimary.Heading" xml:space="preserve">
+    <value>Select Account Type</value>
+  </data>
+  <data name="grpAccountType.ValuesPrimary.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="&gt;&gt;grpAccountType.Name" xml:space="preserve">
+    <value>grpAccountType</value>
+  </data>
+  <data name="&gt;&gt;grpAccountType.Type" xml:space="preserve">
+    <value>ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+  </data>
+  <data name="&gt;&gt;grpAccountType.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;pnlTitle.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;grpAccountType.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1435,52 +1288,28 @@
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;rdInActive.Name" xml:space="preserve">
-    <value>rdInActive</value>
+  <data name="pnlTitle.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
   </data>
-  <data name="&gt;&gt;rdInActive.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rdInActive.Parent" xml:space="preserve">
-    <value>grpActive</value>
-  </data>
-  <data name="&gt;&gt;rdInActive.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;rdActive.Name" xml:space="preserve">
-    <value>rdActive</value>
-  </data>
-  <data name="&gt;&gt;rdActive.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rdActive.Parent" xml:space="preserve">
-    <value>grpActive</value>
-  </data>
-  <data name="&gt;&gt;rdActive.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="grpActive.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="grpActive.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="pnlTitle.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="grpActive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>409, 56</value>
+  <data name="pnlTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>910, 50</value>
   </data>
-  <data name="grpActive.TabIndex" type="System.Int32, mscorlib">
-    <value>287</value>
+  <data name="pnlTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>373</value>
   </data>
-  <data name="&gt;&gt;grpActive.Name" xml:space="preserve">
-    <value>grpActive</value>
+  <data name="&gt;&gt;pnlTitle.Name" xml:space="preserve">
+    <value>pnlTitle</value>
   </data>
-  <data name="&gt;&gt;grpActive.Type" xml:space="preserve">
-    <value>gGlowBox.gGlowGroupBox, gGlowBox, Version=1.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;pnlTitle.Type" xml:space="preserve">
+    <value>ComponentFactory.Krypton.Toolkit.KryptonPanel, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
   </data>
-  <data name="&gt;&gt;grpActive.Parent" xml:space="preserve">
-    <value>grpActiveStatus.Panel</value>
+  <data name="&gt;&gt;pnlTitle.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="&gt;&gt;grpActive.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;pnlTitle.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="rdInActive.AutoSize" type="System.Boolean, mscorlib">
@@ -1558,6 +1387,30 @@
   </data>
   <data name="&gt;&gt;rdActive.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="grpActive.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="grpActive.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="grpActive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 56</value>
+  </data>
+  <data name="grpActive.TabIndex" type="System.Int32, mscorlib">
+    <value>287</value>
+  </data>
+  <data name="&gt;&gt;grpActive.Name" xml:space="preserve">
+    <value>grpActive</value>
+  </data>
+  <data name="&gt;&gt;grpActive.Type" xml:space="preserve">
+    <value>gGlowBox.gGlowGroupBox, gGlowBox, Version=1.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;grpActive.Parent" xml:space="preserve">
+    <value>grpActiveStatus.Panel</value>
+  </data>
+  <data name="&gt;&gt;grpActive.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="grpActiveStatus.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
